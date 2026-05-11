@@ -2,7 +2,7 @@
 ---
 
 // Chirpy 主题样式覆盖
-// v=2026040315 用于强制刷新 Safari 桌面应用缓存
+// v=2026040317 用于强制刷新缓存
 
 /* 固定顶部导航栏 - 适配 iPhone */
 #topbar {
@@ -35,7 +35,7 @@
   margin-right: 0 !important;
 }
 
-/* 隐藏底部原始主题切换按钮（用头像左上角代理按钮替代） */
+/* 隐藏底部原始主题切换按钮 */
 #sidebar .sidebar-bottom #mode-toggle,
 #sidebar #mode-toggle {
   display: none !important;
@@ -85,10 +85,10 @@
 }
 
 /* =====================================================
-   博客布局改造：扩大正文宽度
+   博客布局改造
    ===================================================== */
 
-/* ===== 第一步：扩大容器宽度 ===== */
+/* 扩大容器宽度 */
 #main-wrapper .container-fluid {
   max-width: 1600px !important;
   margin: 0 auto !important;
@@ -96,13 +96,9 @@
   padding-right: 2rem !important;
 }
 
-/* ===== 第二步：左侧导航栏收起功能 ===== */
-/* 使用最高优先级覆盖 Chirpy 主题的 sidebar 样式 */
-#sidebar.collapsed,
-#sidebar.d-flex.flex-column.align-items-end.collapsed,
-html body #sidebar.collapsed,
-#main-wrapper #sidebar.collapsed,
-#topbar + #main-wrapper .container-fluid .row #sidebar.collapsed {
+/* ===== 问题2：左侧导航栏收起功能 ===== */
+/* 收起sidebar */
+#sidebar.collapsed {
   width: 0 !important;
   min-width: 0 !important;
   max-width: 0 !important;
@@ -114,24 +110,17 @@ html body #sidebar.collapsed,
   display: none !important;
 }
 
-/* 收起后的所有子元素也隐藏 */
-#sidebar.collapsed *,
-.d-flex.flex-column.align-items-end.collapsed * {
+#sidebar.collapsed * {
   visibility: hidden !important;
-  opacity: 0 !important;
 }
 
-/* ===== 收起按钮 - 放在sidebar外部，固定在左侧边缘 ===== */
+/* ===== 问题2：收起按钮 - 固定在左侧边缘 ===== */
 #sidebar-toggle {
-  /* 基础样式 */
   position: fixed !important;
-  left: 8px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
   width: 20px !important;
   height: 60px !important;
   border: none !important;
-  border-radius: 0 6px 6px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
   background: var(--sidebar-bg-hover, #e8e8e8) !important;
   color: var(--text-color, #555) !important;
   cursor: pointer !important;
@@ -142,159 +131,86 @@ html body #sidebar.collapsed,
   z-index: 1001 !important;
   padding: 0 !important;
   margin: 0 !important;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1) !important;
-  transition: background 0.2s, box-shadow 0.2s, left 0.3s !important;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15) !important;
+  transition: background 0.2s !important;
   
   &:hover {
     background: var(--sidebar-bg, #ddd) !important;
-    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15) !important;
-  }
-  
-  /* 展开状态 - 按钮在sidebar左边缘外 */
-  .expanded & {
-    left: 8px !important;
   }
 }
 
-/* ===== 第三步：右侧TOC改为浮动定位（不占位） ===== */
-/* 使用最高优先级覆盖 Chirpy 主题的 panel-wrapper 样式 */
+/* 移动端隐藏收起按钮 */
+@media (max-width: 767px) {
+  #sidebar-toggle {
+    display: none !important;
+  }
+}
+
+/* ===== 问题3：右侧面板浮动定位 ===== */
+/* 使用flex布局让右侧面板排序 */
+#core-wrapper,
+#main-wrapper .row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+}
+
+#core-wrapper > * {
+  flex-shrink: 0 !important;
+}
+
+/* 右侧面板 */
 #panel-wrapper,
-html #panel-wrapper,
-body #panel-wrapper,
-#main-wrapper #panel-wrapper,
-.container-fluid .row #panel-wrapper {
+#core-wrapper > aside,
+[class*="col-lg-3"]:last-child {
   position: sticky !important;
   top: calc(4rem + var(--navbar-height, 3.125rem)) !important;
-  float: right !important;
   width: 220px !important;
   min-width: 220px !important;
   max-width: 220px !important;
   height: fit-content !important;
   max-height: calc(100vh - 8rem) !important;
   overflow-y: auto !important;
-  overflow-x: hidden !important;
   margin-left: 1.5rem !important;
-  padding: 1rem !important;
-  background: var(--card-bg) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 0.5rem !important;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-  z-index: 100 !important;
   flex-shrink: 0 !important;
-  /* Flexbox排序：将TOC显示在最前面 */
-  display: flex !important;
-  flex-direction: column !important;
 }
 
-/* 问题1：TOC在flex布局中显示在最前 - 使用更强制的方式 */
-#panel-wrapper {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-#panel-wrapper #toc,
-#panel-wrapper > div#toc,
-#panel-wrapper > .panel#toc {
-  order: -1 !important;
-  -webkit-box-ordinal-group: 0 !important;
-  -ms-flex-order: -1 !important;
-}
-
-/* 当sidebar收起时，TOC可以更宽 */
-#panel-wrapper.sidebar-collapsed {
+/* sidebar收起时右侧面板可以更宽 */
+#sidebar.collapsed ~ * aside,
+#sidebar.collapsed ~ * [class*="col-lg-3"]:last-child {
   width: 260px !important;
   min-width: 260px !important;
   max-width: 260px !important;
 }
 
-/* TOC内容区 */
-#panel-wrapper .panel {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+/* ===== 问题1：TOC面板移到最前面 ===== */
+/* 使用CSS order或JS操作，让toc-wrapper显示在最前 */
+#toc-wrapper,
+[id*="toc-wrapper"] {
+  order: -1 !important;
 }
 
-/* TOC列表样式优化 */
-#panel-wrapper #toc {
-  font-size: 0.85rem;
-  
-  .toc-title {
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: var(--text-color);
-  }
-  
-  .toc-nav {
-    li {
-      padding: 0.25rem 0;
-      
-      a {
-        color: var(--link-color);
-        text-decoration: none;
-        
-        &:hover {
-          color: var(--link-hover-color);
-        }
-      }
-    }
-  }
-}
-
-/* TOC 当前项高亮 */
-#panel-wrapper #toc .toc-nav a.active {
-  color: var(--link-hover-color) !important;
-  font-weight: 600 !important;
-  background: var(--sidebar-bg-hover) !important;
-  padding: 0.25rem 0.5rem !important;
-  border-radius: 4px !important;
+/* 直接让右侧面板内的toc相关元素排序 */
+#core-wrapper aside > [id*="toc"],
+#core-wrapper aside > .position-sticky {
+  order: -1 !important;
 }
 
 /* ===== 主内容区布局优化 ===== */
-/* 问题3：Sidebar收起时正文区域扩展 */
-#main-wrapper .container-fluid > .row {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  margin: 0 !important;
-  
-  /* 主内容区 - 默认 */
-  & > #content,
-  & > div#content,
-  #content {
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    max-width: 66.666% !important; /* col-lg-8 默认 */
-    padding: 0 !important;
-    
-    /* 文章内容 */
-    .post {
-      max-width: 1100px !important;
-      
-      .post-meta,
-      .post-content,
-      .post-footer {
-        max-width: 100% !important;
-      }
-    }
-    
-    /* 页面内容 */
-    .page {
-      max-width: 1100px !important;
-    }
-  }
+main {
+  max-width: 1100px !important;
 }
 
-/* 问题3：Sidebar收起时正文区域变宽 */
-#sidebar.collapsed ~ .container-fluid .row > #content,
-#sidebar.collapsed ~ * #content,
-html[data-sidebar-collapsed="true"] #content {
-  max-width: 83.333% !important; /* col-lg-10 或更宽 */
+/* 问题3：sidebar收起时main变宽 */
+#sidebar.collapsed ~ .container-fluid main,
+#sidebar.collapsed ~ * main {
+  max-width: 100% !important;
 }
 
 /* ===== 响应式调整 ===== */
 @media (max-width: 1199px) {
-  #panel-wrapper {
-    display: none !important;  // 小屏幕隐藏TOC
+  #core-wrapper aside,
+  [class*="col-lg-3"]:last-child {
+    display: none !important;
   }
 }
 
@@ -303,7 +219,8 @@ html[data-sidebar-collapsed="true"] #content {
     max-width: 1200px !important;
   }
   
-  #panel-wrapper {
+  #core-wrapper aside,
+  [class*="col-lg-3"]:last-child {
     width: 180px !important;
     min-width: 180px !important;
     max-width: 180px !important;
@@ -321,8 +238,7 @@ html[data-sidebar-collapsed="true"] #content {
     max-width: 1600px !important;
   }
   
-  /* 大屏时正文区域可以更宽 */
-  #main-wrapper .container-fluid > .row > #content .post {
+  main {
     max-width: 1200px !important;
   }
 }
@@ -342,14 +258,6 @@ html[data-sidebar-collapsed="true"] #content {
     z-index: 1000 !important;
     background: var(--sidebar-bg) !important;
     box-shadow: 2px 0 8px rgba(0,0,0,0.1) !important;
-  }
-  
-  #panel-wrapper {
-    display: none !important;
-  }
-  
-  #sidebar-toggle {
-    display: none !important;  // 移动端隐藏收起按钮
   }
 }
 
