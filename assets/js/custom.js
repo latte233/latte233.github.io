@@ -5,13 +5,16 @@
   'use strict';
 
   // defer 脚本执行时 DOM 已完整，直接初始化
-  // （DOMContentLoaded 可能已触发，也可能还没，两种情况都处理）
+  window.__customJsLoaded = true;
+  window.__customJsReadyState = document.readyState;
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
+      window.__customJsInitTime = 'DOMContentLoaded';
       observeTOCAndInit();
       addThemeBtn();
     });
   } else {
+    window.__customJsInitTime = 'immediate-' + document.readyState;
     observeTOCAndInit();
     addThemeBtn();
   }
