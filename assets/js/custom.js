@@ -14,30 +14,24 @@
 
   // 问题1：将TOC移到panel-wrapper最前面
   function reorderTOC() {
+    // 找到panel-wrapper
+    var panelWrapper = document.getElementById('panel-wrapper');
+    if (!panelWrapper) return;
+
     // 找到toc-wrapper（文章内容面板）
-    var tocWrapper = document.getElementById('toc-wrapper') || 
-                     document.querySelector('[id*="toc"]') ||
-                     document.querySelector('.position-sticky.ps-0.pe-4.pb-4');
-    
+    var tocWrapper = document.getElementById('toc-wrapper');
     if (!tocWrapper) return;
 
-    // 找到toc-wrapper的父容器
-    var parent = tocWrapper.parentElement;
-    if (!parent) return;
+    // 如果toc-wrapper已经在第一个位置，直接返回
+    if (panelWrapper.firstChild === tocWrapper) return;
 
-    // 查找access-lastmod和热门标签
-    var accessLastmod = document.getElementById('access-lastmod') || 
-                        parent.querySelector('[id*="lastmod"]') ||
-                        parent.querySelector('.panel-heading');
-    
-    // 找到toc-wrapper在父容器中的索引
-    var children = Array.prototype.slice.call(parent.children);
+    // 找到panel-wrapper中的所有子元素
+    var children = Array.prototype.slice.call(panelWrapper.children);
     var tocIndex = children.indexOf(tocWrapper);
-    var targetIndex = accessLastmod ? children.indexOf(accessLastmod) : 0;
 
-    // 如果toc-wrapper不在最前面，则移动它
-    if (tocIndex > targetIndex && targetIndex >= 0) {
-      parent.insertBefore(tocWrapper, accessLastmod);
+    // 如果找到了toc-wrapper且不在最前面，则移动它到最前面
+    if (tocIndex > 0) {
+      panelWrapper.insertBefore(tocWrapper, panelWrapper.firstChild);
     }
   }
 
