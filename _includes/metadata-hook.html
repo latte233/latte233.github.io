@@ -30,11 +30,14 @@
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
-      var orig = document.getElementById('mode-toggle');
-      if (orig) orig.click();
+      // Chirpy 7.x 通过 Theme.flip() 切换主题
+      if (typeof Theme !== 'undefined' && Theme.flip) {
+        Theme.flip();
+      }
       setTimeout(updateIcon, 80);
     });
 
+    // 监听 data-mode 属性变化，同步图标
     var observer = new MutationObserver(function () { updateIcon(); });
     observer.observe(document.documentElement, {
       attributes: true,
@@ -42,13 +45,6 @@
     });
 
     topbar.appendChild(btn);
-
-    // 隐藏 sidebar 底部原始按钮
-    var orig = document.getElementById('mode-toggle');
-    if (orig) {
-      orig.style.setProperty('display', 'none', 'important');
-      orig.style.setProperty('visibility', 'hidden', 'important');
-    }
   }
 
   // 用 MutationObserver 监听 #topbar 出现，比 setTimeout 更可靠
@@ -159,4 +155,4 @@
 </style>
 
 <!-- 自定义JS：左侧导航收起功能 & TOC排序 -->
-<script src="/assets/js/custom.js?v=2026051104" defer></script>
+<script src="/assets/js/custom.js?v=2026051105" defer></script>
