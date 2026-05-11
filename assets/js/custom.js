@@ -1,75 +1,76 @@
 // 博客布局改造：左侧导航收起功能 & TOC优化
-// v=2026040315
+// v=2026040316
 
 (function() {
   'use strict';
 
   // 等待DOM加载完成
   document.addEventListener('DOMContentLoaded', function() {
-    reorderPanelWrapper(); // 问题1：将TOC移到面板最上方
-    initSidebarToggle();   // 问题2&3：修复收起按钮和正文宽度
+    // 问题1：将TOC移到panel-wrapper最前面
+    reorderPanelWrapper();
+    // 问题2&3：修复收起按钮和正文宽度
+    initSidebarToggle();
   });
 
   // 问题1：将TOC移到panel-wrapper最前面
   function reorderPanelWrapper() {
-    const panelWrapper = document.getElementById('panel-wrapper');
+    var panelWrapper = document.getElementById('panel-wrapper');
     if (!panelWrapper) return;
 
-    const toc = document.getElementById('toc');
-    if (!toc) return;
+    // 找到所有子元素
+    var children = Array.prototype.slice.call(panelWrapper.children);
+    var tocElement = null;
+    var tocIndex = -1;
 
-    // 检查TOC是否已在最前面
-    if (panelWrapper.firstChild === toc) return;
-
-    // 找到panel-wrapper中的所有子元素，按类别分组
-    const children = Array.from(panelWrapper.children);
-    let tocElement = null;
-    let recentUpdate = null;
-    let tags = null;
-
-    children.forEach(function(child) {
+    // 查找TOC元素 - Chirpy主题中TOC可能是一个单独的div#toc或包含在panel中
+    children.forEach(function(child, index) {
+      // 检查是否是直接的toc元素
       if (child.id === 'toc') {
         tocElement = child;
-      } else if (child.id && child.id.includes('related') || 
-                 (child.querySelector && child.querySelector('.section-title') && 
-                  child.querySelector('.section-title').textContent.includes('最近'))) {
-        recentUpdate = child;
-      } else if (child.classList.contains('panel') && !tocElement) {
-        // 检查是否是TOC面板
-        const tocTitle = child.querySelector('.panel-title, .toc-title, .section-title');
-        if (tocTitle && tocTitle.textContent.includes('目录')) {
+        tocIndex = index;
+      }
+      // 检查是否是panel结构中的toc
+      else if (child.classList && child.classList.contains('panel')) {
+        var tocTitle = child.querySelector('.panel-title, .toc-title, [class*="toc"]');
+        if (tocTitle && tocTitle.textContent.indexOf('目录') !== -1) {
           tocElement = child;
+          tocIndex = index;
         }
       }
     });
 
-    // 如果找到了TOC，将其移到最前面
-    if (tocElement) {
+    // 如果找到了TOC且不在最前面，则移到最前面
+    if (tocElement && tocIndex > 0) {
       panelWrapper.insertBefore(tocElement, panelWrapper.firstChild);
+    }
+
+    // 同时确保CSS order生效
+    var tocEl = document.getElementById('toc');
+    if (tocEl) {
+      tocEl.style.order = '-1';
     }
   }
 
   // 问题2&3：左侧导航收起/展开功能 + 正文宽度调整
   function initSidebarToggle() {
-    const sidebar = document.getElementById('sidebar');
+    var sidebar = document.getElementById('sidebar');
     if (!sidebar) return;
 
     // 检查是否已有收起按钮
     if (document.getElementById('sidebar-toggle')) return;
 
     // 获取正文区域
-    const mainContent = document.getElementById('core-wrapper') || 
-                        document.querySelector('.col-lg-8, .col-12.col-lg-8, #content');
+    var coreWrapper = document.getElementById('core-wrapper');
 
     // 创建收起按钮 - 放在main-wrapper中，不在sidebar内
-    const toggleBtn = document.createElement('button');
+    var toggleBtn = document.createElement('button');
     toggleBtn.id = 'sidebar-toggle';
-    toggleBtn.innerHTML = '◀';
+    toggleBtn.innerHTML = '&#9664;'; // ◀ 左箭头
     toggleBtn.title = '收起/展开侧边栏';
     toggleBtn.setAttribute('aria-label', '收起/展开侧边栏');
 
     // 将按钮添加到main-wrapper的开头（sidebar之前）
-    const mainWrapper = document.getElementById('main-wrapper');
+    var mainWrapper = document.getElementById('main-wrapper');
     if (mainWrapper) {
       mainWrapper.insertBefore(toggleBtn, mainWrapper.firstChild);
     } else {
@@ -82,22 +83,24 @@
       
       // 更新按钮图标和位置
       if (sidebar.classList.contains('collapsed')) {
-        toggleBtn.innerHTML = '▶';
+        toggleBtn.innerHTML = '&#9654;'; // ▶ 右箭头
         toggleBtn.style.position = 'fixed';
-        toggleBtn.style.left = '8px';
+        toggleBtn.style.left = '0';
         toggleBtn.style.top = '50%';
         toggleBtn.style.transform = 'translateY(-50%)';
         toggleBtn.style.zIndex = '1001';
+        toggleBtn.style.borderRadius = '0 8px 8px 0';
         
         // 问题3：展开正文区域
         expandMainContent();
       } else {
-        toggleBtn.innerHTML = '◀';
+        toggleBtn.innerHTML = '&#9664;'; // ◀ 左箭头
         toggleBtn.style.position = '';
         toggleBtn.style.left = '';
         toggleBtn.style.top = '';
         toggleBtn.style.transform = '';
         toggleBtn.style.zIndex = '';
+        toggleBtn.style.borderRadius = '';
         
         // 问题3：恢复正文区域
         collapseMainContent();
@@ -108,15 +111,16 @@
     });
 
     // 恢复之前的状态
-    const savedState = localStorage.getItem('sidebar-collapsed');
+    var savedState = localStorage.getItem('sidebar-collapsed');
     if (savedState === 'true') {
       sidebar.classList.add('collapsed');
-      toggleBtn.innerHTML = '▶';
+      toggleBtn.innerHTML = '&#9654;'; // ▶ 右箭头
       toggleBtn.style.position = 'fixed';
-      toggleBtn.style.left = '8px';
+      toggleBtn.style.left = '0';
       toggleBtn.style.top = '50%';
       toggleBtn.style.transform = 'translateY(-50%)';
       toggleBtn.style.zIndex = '1001';
+      toggleBtn.style.borderRadius = '0 8px 8px 0';
       
       expandMainContent();
     }
@@ -125,16 +129,18 @@
   // 问题3：展开正文区域
   function expandMainContent() {
     // 找到主内容区域并扩展
-    const coreWrapper = document.getElementById('core-wrapper');
+    var coreWrapper = document.getElementById('core-wrapper');
     if (coreWrapper) {
+      // 移除原有的col类
       coreWrapper.classList.remove('col-lg-8', 'col-xl-9');
+      // 添加更宽的类
       coreWrapper.classList.add('col-lg-10', 'col-xl-11');
       coreWrapper.style.flex = '1 1 auto';
       coreWrapper.style.maxWidth = '100%';
     }
 
-    // 隐藏右侧面板（当sidebar收起时，给正文更多空间）
-    const panelWrapper = document.getElementById('panel-wrapper');
+    // 隐藏或缩小右侧面板（当sidebar收起时，给正文更多空间）
+    var panelWrapper = document.getElementById('panel-wrapper');
     if (panelWrapper) {
       panelWrapper.classList.add('sidebar-collapsed');
     }
@@ -142,7 +148,7 @@
 
   // 问题3：恢复正文区域
   function collapseMainContent() {
-    const coreWrapper = document.getElementById('core-wrapper');
+    var coreWrapper = document.getElementById('core-wrapper');
     if (coreWrapper) {
       coreWrapper.classList.add('col-lg-8', 'col-xl-9');
       coreWrapper.classList.remove('col-lg-10', 'col-xl-11');
@@ -151,7 +157,7 @@
     }
 
     // 显示右侧面板
-    const panelWrapper = document.getElementById('panel-wrapper');
+    var panelWrapper = document.getElementById('panel-wrapper');
     if (panelWrapper) {
       panelWrapper.classList.remove('sidebar-collapsed');
     }
@@ -159,17 +165,17 @@
 
   // TOC滚动高亮优化
   function initTOCHighlight() {
-    const tocLinks = document.querySelectorAll('#toc .toc-nav a');
+    var tocLinks = document.querySelectorAll('#toc .toc-nav a, .toc-link');
     if (tocLinks.length === 0) return;
 
-    const headings = Array.from(document.querySelectorAll('.post-content h1, .post-content h2, .post-content h3'));
+    var headings = Array.from(document.querySelectorAll('.post-content h1, .post-content h2, .post-content h3'));
     
     if (headings.length === 0) return;
 
-    const observer = new IntersectionObserver(function(entries) {
+    var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
+          var id = entry.target.getAttribute('id');
           tocLinks.forEach(function(link) {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + id) {

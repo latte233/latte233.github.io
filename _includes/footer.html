@@ -43,9 +43,17 @@
   flex-direction: column !important;
 }
 
-/* 问题1：TOC显示在最前面 */
-#panel-wrapper #toc {
+/* 问题1：TOC在flex布局中显示在最前 */
+#panel-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+}
+#panel-wrapper #toc,
+#panel-wrapper > div#toc,
+#panel-wrapper > .panel#toc {
   order: -1 !important;
+  -webkit-box-ordinal-group: 0 !important;
+  -ms-flex-order: -1 !important;
 }
 
 /* 问题3：当sidebar收起时，TOC可以更宽 */
@@ -99,4 +107,4 @@
 </style>
 
 <!-- 自定义JS：左侧导航收起功能 & TOC排序 -->
-<script src="/assets/js/custom.js?v=2026040315" defer></script>
+<script src="/assets/js/custom.js?v=2026040316" defer></script>

@@ -186,9 +186,18 @@ body #panel-wrapper,
   flex-direction: column !important;
 }
 
-/* TOC在flex布局中显示在最前 */
-#panel-wrapper #toc {
+/* 问题1：TOC在flex布局中显示在最前 - 使用更强制的方式 */
+#panel-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#panel-wrapper #toc,
+#panel-wrapper > div#toc,
+#panel-wrapper > .panel#toc {
   order: -1 !important;
+  -webkit-box-ordinal-group: 0 !important;
+  -ms-flex-order: -1 !important;
 }
 
 /* 当sidebar收起时，TOC可以更宽 */
