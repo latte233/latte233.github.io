@@ -1,16 +1,11 @@
 <!-- 主题切换按钮：插入到 topbar 右侧，sidebar 收起后仍可见 -->
 <script>
 (function () {
-  var INSERTED = false;
-
   function addThemeBtn() {
-    if (INSERTED) return;
-    if (document.getElementById('topbar-theme-btn')) { INSERTED = true; return; }
+    if (document.getElementById('topbar-theme-btn')) return;
 
     var topbar = document.getElementById('topbar');
     if (!topbar) return;
-
-    INSERTED = true;
 
     function isDark() {
       return document.documentElement.getAttribute('data-mode') === 'dark'
@@ -30,16 +25,14 @@
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
-      // Chirpy 7.x 通过 Theme.flip() 切换主题
       if (typeof Theme !== 'undefined' && Theme.flip) {
         Theme.flip();
       }
       setTimeout(updateIcon, 80);
     });
 
-    // 监听 data-mode 属性变化，同步图标
-    var observer = new MutationObserver(function () { updateIcon(); });
-    observer.observe(document.documentElement, {
+    var attrObserver = new MutationObserver(function () { updateIcon(); });
+    attrObserver.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['data-mode']
     });
@@ -47,28 +40,11 @@
     topbar.appendChild(btn);
   }
 
-  // 用 MutationObserver 监听 #topbar 出现，比 setTimeout 更可靠
-  function waitForTopbar() {
-    if (document.getElementById('topbar')) {
-      addThemeBtn();
-      return;
-    }
-    var mo = new MutationObserver(function (mutations, obs) {
-      if (document.getElementById('topbar')) {
-        obs.disconnect();
-        addThemeBtn();
-      }
-    });
-    mo.observe(document.documentElement, { childList: true, subtree: true });
-    // 兜底：最多等 5 秒
-    setTimeout(function () { mo.disconnect(); addThemeBtn(); }, 5000);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', waitForTopbar);
-  } else {
-    waitForTopbar();
-  }
+  // 多时机触发，确保按钮一定被插入
+  document.addEventListener('DOMContentLoaded', addThemeBtn);
+  window.addEventListener('load', addThemeBtn);
+  // 兜底：500ms 后再试一次（应对 defer 脚本重建 DOM 的情况）
+  setTimeout(addThemeBtn, 500);
 })();
 </script>
 
@@ -155,4 +131,4 @@
 </style>
 
 <!-- 自定义JS：左侧导航收起功能 & TOC排序 -->
-<script src="/assets/js/custom.js?v=2026051105" defer></script>
+<script src="/assets/js/custom.js?v=2026051106" defer></script>
