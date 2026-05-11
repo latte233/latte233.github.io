@@ -2,7 +2,7 @@
 ---
 
 // Chirpy 主题样式覆盖
-// v=2026040311 用于强制刷新 Safari 桌面应用缓存
+// v=2026040313 用于强制刷新 Safari 桌面应用缓存
 
 /* 固定顶部导航栏 - 适配 iPhone */
 #topbar {
@@ -12,7 +12,7 @@
   z-index: 9999 !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   padding-top: env(safe-area-inset-top) !important;
-  height: calc(var(--navbar-height, 3.125rem) + env(safe-area-inset-top)) !important;
+  height: calc(var(--navbar-height, 3.125rem) + env(--topbar-padding-bottom, 0.5rem) + env(safe-area-inset-top)) !important;
 }
 
 #main-wrapper {
@@ -97,8 +97,28 @@
 }
 
 /* ===== 第二步：左侧导航栏收起功能 ===== */
-#sidebar {
-  transition: width 0.3s ease, transform 0.3s ease !important;
+/* 使用最高优先级覆盖 Chirpy 主题的 sidebar 样式 */
+#sidebar.collapsed,
+#sidebar.d-flex.flex-column.align-items-end.collapsed,
+html body #sidebar.collapsed,
+#main-wrapper #sidebar.collapsed,
+#topbar + #main-wrapper .container-fluid .row #sidebar.collapsed {
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: none !important;
+}
+
+/* 收起后的所有子元素也隐藏 */
+#sidebar.collapsed *,
+.d-flex.flex-column.align-items-end.collapsed * {
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
 
 /* 收起按钮 */
@@ -110,42 +130,30 @@
   height: 24px;
   border-radius: 4px;
   border: none;
-  background: var(--sidebar-bg-hover);
-  color: var(--text-color);
+  background: var(--sidebar-bg-hover, #e0e0e0) !important;
+  color: var(--text-color, #333) !important;
   cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.2s;
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s;
   font-size: 12px;
   margin: 0.5rem auto;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 1001 !important;
   
   &:hover {
-    opacity: 1;
+    opacity: 1 !important;
+    background: var(--sidebar-bg-hover, #ccc) !important;
   }
-}
-
-/* 收起后的左侧导航样式 */
-#sidebar.collapsed {
-  width: 0 !important;
-  min-width: 0 !important;
-  overflow: hidden !important;
-  transform: translateX(-100%);
-  
-  .site-title,
-  .site-subtitle,
-  .nav-tabs,
-  .sidebar-bottom,
-  #avatar-theme-btn {
-    display: none !important;
-  }
-}
-
-/* 左侧导航收起按钮（放在右上角） */
-#sidebar {
-  position: relative;
 }
 
 /* ===== 第三步：右侧TOC改为浮动定位（不占位） ===== */
-#panel-wrapper {
+/* 使用最高优先级覆盖 Chirpy 主题的 panel-wrapper 样式 */
+#panel-wrapper,
+html #panel-wrapper,
+body #panel-wrapper,
+#main-wrapper #panel-wrapper,
+.container-fluid .row #panel-wrapper {
   position: sticky !important;
   top: calc(4rem + var(--navbar-height, 3.125rem)) !important;
   float: right !important;
@@ -158,19 +166,20 @@
   overflow-x: hidden !important;
   margin-left: 1.5rem !important;
   padding: 1rem !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  z-index: 100 !important;
-}
-
-/* TOC内容区 */
-#panel-wrapper .panel {
   background: var(--card-bg) !important;
   border: 1px solid var(--border-color) !important;
   border-radius: 0.5rem !important;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-  padding: 1rem !important;
+  z-index: 100 !important;
+  flex-shrink: 0 !important;
+}
+
+/* TOC内容区 */
+#panel-wrapper .panel {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 /* TOC列表样式优化 */
@@ -199,6 +208,15 @@
   }
 }
 
+/* TOC 当前项高亮 */
+#panel-wrapper #toc .toc-nav a.active {
+  color: var(--link-hover-color) !important;
+  font-weight: 600 !important;
+  background: var(--sidebar-bg-hover) !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 4px !important;
+}
+
 /* ===== 主内容区布局优化 ===== */
 #main-wrapper .container-fluid > .row {
   display: flex !important;
@@ -206,7 +224,9 @@
   margin: 0 !important;
   
   /* 主内容区 */
-  & > #content {
+  & > #content,
+  & > div#content,
+  #content {
     flex: 1 1 auto !important;
     min-width: 0 !important;
     max-width: 100% !important;
@@ -299,13 +319,4 @@ pre {
 .page-content img {
   max-width: 100% !important;
   height: auto !important;
-}
-
-/* TOC 当前项高亮 */
-#panel-wrapper #toc .toc-nav a.active {
-  color: var(--link-hover-color) !important;
-  font-weight: 600 !important;
-  background: var(--sidebar-bg-hover) !important;
-  padding: 0.25rem 0.5rem !important;
-  border-radius: 4px !important;
 }

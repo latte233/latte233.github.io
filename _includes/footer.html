@@ -9,5 +9,59 @@
   </div>
 </footer>
 
+<!-- 自定义样式：最高优先级覆盖 -->
+<style id="custom-layout-styles">
+/* 左侧导航收起 - 最高优先级 */
+#sidebar.collapsed {
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  display: none !important;
+}
+#sidebar.collapsed * {
+  visibility: hidden !important;
+}
+
+/* 右侧TOC浮动定位 */
+#panel-wrapper {
+  position: sticky !important;
+  top: calc(4rem + var(--navbar-height, 3.125rem)) !important;
+  float: right !important;
+  width: 220px !important;
+  min-width: 220px !important;
+  max-width: 220px !important;
+  height: fit-content !important;
+  max-height: calc(100vh - 8rem) !important;
+  overflow-y: auto !important;
+  margin-left: 1.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* 收起按钮样式 */
+#sidebar-toggle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 4px !important;
+  border: none !important;
+  background: var(--sidebar-bg-hover, #e0e0e0) !important;
+  color: var(--text-color, #333) !important;
+  cursor: pointer !important;
+  opacity: 0.7 !important;
+  font-size: 12px !important;
+  margin: 0.5rem auto !important;
+  padding: 0 !important;
+  z-index: 1001 !important;
+}
+#sidebar-toggle:hover {
+  opacity: 1 !important;
+}
+</style>
+
 <!-- 自定义JS：左侧导航收起功能 -->
-<script src="{{ '/assets/js/custom.js' | relative_url | append: '?v=2026040311' }}" defer></script>
+<script src="{{ '/assets/js/custom.js' | relative_url | append: '?v=2026040313' }}" defer></script>
