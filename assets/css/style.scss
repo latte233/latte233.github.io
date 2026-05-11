@@ -2,7 +2,7 @@
 ---
 
 // Chirpy 主题样式覆盖
-// v=2026040306 用于强制刷新 Safari 桌面应用缓存
+// v=2026040311 用于强制刷新 Safari 桌面应用缓存
 
 /* 固定顶部导航栏 - 适配 iPhone */
 #topbar {
@@ -84,53 +84,228 @@
   }
 }
 
-/* ===== 收窄左右侧边栏，扩大文章内容区 ===== */
+/* =====================================================
+   博客布局改造：扩大正文宽度
+   ===================================================== */
 
-// 左侧边栏：从默认 ~260px 收窄到 150px
+/* ===== 第一步：扩大容器宽度 ===== */
+#main-wrapper .container-fluid {
+  max-width: 1600px !important;
+  margin: 0 auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* ===== 第二步：左侧导航栏收起功能 ===== */
 #sidebar {
-  width: 150px !important;
+  transition: width 0.3s ease, transform 0.3s ease !important;
+}
 
-  .site-title {
-    font-size: 1.1rem !important;
-  }
-
-  .site-subtitle {
-    font-size: 0.78rem !important;
+/* 收起按钮 */
+#sidebar-toggle {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: none;
+  background: var(--sidebar-bg-hover);
+  color: var(--text-color);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  font-size: 12px;
+  margin: 0.5rem auto;
+  
+  &:hover {
+    opacity: 1;
   }
 }
 
-// 右侧面板（目录/最近更新/标签）：从默认 ~260px 收窄到 150px
+/* 收起后的左侧导航样式 */
+#sidebar.collapsed {
+  width: 0 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  transform: translateX(-100%);
+  
+  .site-title,
+  .site-subtitle,
+  .nav-tabs,
+  .sidebar-bottom,
+  #avatar-theme-btn {
+    display: none !important;
+  }
+}
+
+/* 左侧导航收起按钮（放在右上角） */
+#sidebar {
+  position: relative;
+}
+
+/* ===== 第三步：右侧TOC改为浮动定位（不占位） ===== */
 #panel-wrapper {
-  width: 150px !important;
-  min-width: 150px !important;
-  max-width: 150px !important;
-
-  .panel-heading {
-    font-size: 0.85rem !important;
-  }
+  position: sticky !important;
+  top: calc(4rem + var(--navbar-height, 3.125rem)) !important;
+  float: right !important;
+  width: 220px !important;
+  min-width: 220px !important;
+  max-width: 220px !important;
+  height: fit-content !important;
+  max-height: calc(100vh - 8rem) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  margin-left: 1.5rem !important;
+  padding: 1rem !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 100 !important;
 }
 
-// 主内容区自动填满剩余空间
-#main-wrapper {
-  .container-fluid {
-    > .row {
-      > div#content {
-        flex: 1 1 0 !important;
-        max-width: none !important;
+/* TOC内容区 */
+#panel-wrapper .panel {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  padding: 1rem !important;
+}
+
+/* TOC列表样式优化 */
+#panel-wrapper #toc {
+  font-size: 0.85rem;
+  
+  .toc-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+  }
+  
+  .toc-nav {
+    li {
+      padding: 0.25rem 0;
+      
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+        
+        &:hover {
+          color: var(--link-hover-color);
+        }
       }
     }
   }
 }
 
-// 大屏（≥1200px）时微调
-@media (min-width: 1200px) {
-  #sidebar {
-    width: 160px !important;
+/* ===== 主内容区布局优化 ===== */
+#main-wrapper .container-fluid > .row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  margin: 0 !important;
+  
+  /* 主内容区 */
+  & > #content {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    
+    /* 文章内容 */
+    .post {
+      max-width: 1100px !important;
+      
+      .post-meta,
+      .post-content,
+      .post-footer {
+        max-width: 100% !important;
+      }
+    }
+    
+    /* 页面内容 */
+    .page {
+      max-width: 1100px !important;
+    }
   }
+}
 
+/* ===== 响应式调整 ===== */
+@media (max-width: 1199px) {
   #panel-wrapper {
-    width: 160px !important;
-    min-width: 160px !important;
-    max-width: 160px !important;
+    display: none !important;  // 小屏幕隐藏TOC
   }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  #main-wrapper .container-fluid {
+    max-width: 1200px !important;
+  }
+  
+  #panel-wrapper {
+    width: 180px !important;
+    min-width: 180px !important;
+    max-width: 180px !important;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1599px) {
+  #main-wrapper .container-fluid {
+    max-width: 1400px !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  #main-wrapper .container-fluid {
+    max-width: 1600px !important;
+  }
+  
+  /* 大屏时正文区域可以更宽 */
+  #main-wrapper .container-fluid > .row > #content .post {
+    max-width: 1200px !important;
+  }
+}
+
+/* 移动端适配 */
+@media (max-width: 767px) {
+  #main-wrapper .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  #sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: calc(var(--navbar-height, 3.125rem) + 3.5rem) !important;
+    height: calc(100vh - 8rem) !important;
+    z-index: 1000 !important;
+    background: var(--sidebar-bg) !important;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1) !important;
+  }
+  
+  #panel-wrapper {
+    display: none !important;
+  }
+}
+
+/* 代码块样式优化 */
+pre {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
+
+/* 图片响应式 */
+.post-content img,
+.page-content img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* TOC 当前项高亮 */
+#panel-wrapper #toc .toc-nav a.active {
+  color: var(--link-hover-color) !important;
+  font-weight: 600 !important;
+  background: var(--sidebar-bg-hover) !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 4px !important;
 }
