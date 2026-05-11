@@ -2,7 +2,7 @@
 ---
 
 // Chirpy 主题样式覆盖
-// v=2026040313 用于强制刷新 Safari 桌面应用缓存
+// v=2026040315 用于强制刷新 Safari 桌面应用缓存
 
 /* 固定顶部导航栏 - 适配 iPhone */
 #topbar {
@@ -12,7 +12,7 @@
   z-index: 9999 !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   padding-top: env(safe-area-inset-top) !important;
-  height: calc(var(--navbar-height, 3.125rem) + env(--topbar-padding-bottom, 0.5rem) + env(safe-area-inset-top)) !important;
+  height: calc(var(--navbar-height, 3.125rem) + var(--topbar-padding-bottom, 0.5rem) + env(safe-area-inset-top)) !important;
 }
 
 #main-wrapper {
@@ -121,29 +121,38 @@ html body #sidebar.collapsed,
   opacity: 0 !important;
 }
 
-/* 收起按钮 */
+/* ===== 收起按钮 - 放在sidebar外部，固定在左侧边缘 ===== */
 #sidebar-toggle {
+  /* 基础样式 */
+  position: fixed !important;
+  left: 8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 20px !important;
+  height: 60px !important;
+  border: none !important;
+  border-radius: 0 6px 6px 0 !important;
+  background: var(--sidebar-bg-hover, #e8e8e8) !important;
+  color: var(--text-color, #555) !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
   display: flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  border: none;
-  background: var(--sidebar-bg-hover, #e0e0e0) !important;
-  color: var(--text-color, #333) !important;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s, background 0.2s;
-  font-size: 12px;
-  margin: 0.5rem auto;
-  padding: 0 !important;
-  position: relative !important;
+  align-items: center !important;
+  justify-content: center !important;
   z-index: 1001 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1) !important;
+  transition: background 0.2s, box-shadow 0.2s, left 0.3s !important;
   
   &:hover {
-    opacity: 1 !important;
-    background: var(--sidebar-bg-hover, #ccc) !important;
+    background: var(--sidebar-bg, #ddd) !important;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  /* 展开状态 - 按钮在sidebar左边缘外 */
+  .expanded & {
+    left: 8px !important;
   }
 }
 
@@ -172,6 +181,21 @@ body #panel-wrapper,
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
   z-index: 100 !important;
   flex-shrink: 0 !important;
+  /* Flexbox排序：将TOC显示在最前面 */
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* TOC在flex布局中显示在最前 */
+#panel-wrapper #toc {
+  order: -1 !important;
+}
+
+/* 当sidebar收起时，TOC可以更宽 */
+#panel-wrapper.sidebar-collapsed {
+  width: 260px !important;
+  min-width: 260px !important;
+  max-width: 260px !important;
 }
 
 /* TOC内容区 */
@@ -218,18 +242,19 @@ body #panel-wrapper,
 }
 
 /* ===== 主内容区布局优化 ===== */
+/* 问题3：Sidebar收起时正文区域扩展 */
 #main-wrapper .container-fluid > .row {
   display: flex !important;
   flex-wrap: nowrap !important;
   margin: 0 !important;
   
-  /* 主内容区 */
+  /* 主内容区 - 默认 */
   & > #content,
   & > div#content,
   #content {
     flex: 1 1 auto !important;
     min-width: 0 !important;
-    max-width: 100% !important;
+    max-width: 66.666% !important; /* col-lg-8 默认 */
     padding: 0 !important;
     
     /* 文章内容 */
@@ -248,6 +273,13 @@ body #panel-wrapper,
       max-width: 1100px !important;
     }
   }
+}
+
+/* 问题3：Sidebar收起时正文区域变宽 */
+#sidebar.collapsed ~ .container-fluid .row > #content,
+#sidebar.collapsed ~ * #content,
+html[data-sidebar-collapsed="true"] #content {
+  max-width: 83.333% !important; /* col-lg-10 或更宽 */
 }
 
 /* ===== 响应式调整 ===== */
@@ -305,6 +337,10 @@ body #panel-wrapper,
   
   #panel-wrapper {
     display: none !important;
+  }
+  
+  #sidebar-toggle {
+    display: none !important;  // 移动端隐藏收起按钮
   }
 }
 

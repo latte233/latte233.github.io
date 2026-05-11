@@ -38,30 +38,65 @@
   overflow-y: auto !important;
   margin-left: 1.5rem !important;
   flex-shrink: 0 !important;
+  /* 问题1：使用flex排序让TOC显示在最前面 */
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-/* 收起按钮样式 */
+/* 问题1：TOC显示在最前面 */
+#panel-wrapper #toc {
+  order: -1 !important;
+}
+
+/* 问题3：当sidebar收起时，TOC可以更宽 */
+#panel-wrapper.sidebar-collapsed {
+  width: 260px !important;
+  min-width: 260px !important;
+  max-width: 260px !important;
+}
+
+/* 问题2：收起按钮样式 - 固定在左侧边缘 */
 #sidebar-toggle {
+  position: fixed !important;
+  left: 8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 20px !important;
+  height: 60px !important;
+  border: none !important;
+  border-radius: 0 6px 6px 0 !important;
+  background: var(--sidebar-bg-hover, #e8e8e8) !important;
+  color: var(--text-color, #555) !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 24px !important;
-  height: 24px !important;
-  border-radius: 4px !important;
-  border: none !important;
-  background: var(--sidebar-bg-hover, #e0e0e0) !important;
-  color: var(--text-color, #333) !important;
-  cursor: pointer !important;
-  opacity: 0.7 !important;
-  font-size: 12px !important;
-  margin: 0.5rem auto !important;
-  padding: 0 !important;
   z-index: 1001 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1) !important;
+  transition: background 0.2s, box-shadow 0.2s !important;
 }
 #sidebar-toggle:hover {
-  opacity: 1 !important;
+  background: var(--sidebar-bg, #ddd) !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 问题3：sidebar收起时正文区域扩展 */
+#sidebar.collapsed ~ .container-fluid .row > #core-wrapper,
+#sidebar.collapsed ~ .container-fluid .row > div:not(#sidebar):not(#panel-wrapper) {
+  max-width: 83.333% !important;
+  flex: 1 1 auto !important;
+}
+
+/* 移动端隐藏收起按钮 */
+@media (max-width: 767px) {
+  #sidebar-toggle {
+    display: none !important;
+  }
 }
 </style>
 
-<!-- 自定义JS：左侧导航收起功能 -->
-<script src="{{ '/assets/js/custom.js' | relative_url | append: '?v=2026040313' }}" defer></script>
+<!-- 自定义JS：左侧导航收起功能 & TOC排序 -->
+<script src="/assets/js/custom.js?v=2026040315" defer></script>
