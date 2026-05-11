@@ -1,15 +1,18 @@
 // 博客布局改造：左侧导航收起功能 & TOC优化
-// v=2026040317
+// v=2026040318
 
 (function() {
   'use strict';
 
   // 等待DOM加载完成
   document.addEventListener('DOMContentLoaded', function() {
-    // 问题1：将TOC移到面板最前面
-    reorderTOC();
-    // 问题2&3：修复收起按钮和正文宽度
-    initSidebarToggle();
+    // 延迟执行，确保动态内容已加载
+    setTimeout(function() {
+      // 问题1：将TOC移到面板最前面
+      reorderTOC();
+      // 问题2&3：修复收起按钮和正文宽度
+      initSidebarToggle();
+    }, 500);
   });
 
   // 问题1：将TOC移到panel-wrapper最前面
