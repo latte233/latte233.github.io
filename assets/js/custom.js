@@ -1,14 +1,20 @@
 // 博客布局改造：左侧导航收起功能 & TOC优化
-// v=2026051103
+// v=2026051106
 
 (function() {
   'use strict';
 
-  // 等待DOM加载完成
-  document.addEventListener('DOMContentLoaded', function() {
-    // 使用MutationObserver监听DOM变化，确保toc-wrapper被创建后再移动
+  // defer 脚本执行时 DOM 已完整，直接初始化
+  // （DOMContentLoaded 可能已触发，也可能还没，两种情况都处理）
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      observeTOCAndInit();
+      addThemeBtn();
+    });
+  } else {
     observeTOCAndInit();
-  });
+    addThemeBtn();
+  }
 
   // 使用MutationObserver监听TOC元素出现
   function observeTOCAndInit() {
@@ -229,6 +235,44 @@
     if (panel) panel.style.display = '';
 
     document.body.classList.remove('sidebar-is-collapsed');
+  }
+
+  // 主题切换按钮：插入到 topbar 右侧
+  function addThemeBtn() {
+    if (document.getElementById('topbar-theme-btn')) return;
+    var topbar = document.getElementById('topbar');
+    if (!topbar) return;
+
+    function isDark() {
+      return document.documentElement.getAttribute('data-mode') === 'dark'
+        || (!document.documentElement.hasAttribute('data-mode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+
+    var btn = document.createElement('button');
+    btn.id = 'topbar-theme-btn';
+    btn.title = '切换主题';
+    btn.type = 'button';
+
+    function updateIcon() {
+      btn.innerHTML = isDark() ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    }
+    updateIcon();
+
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (typeof Theme !== 'undefined' && Theme.flip) {
+        Theme.flip();
+      }
+      setTimeout(updateIcon, 80);
+    });
+
+    new MutationObserver(function() { updateIcon(); }).observe(
+      document.documentElement,
+      { attributes: true, attributeFilter: ['data-mode'] }
+    );
+
+    topbar.appendChild(btn);
   }
 
   // TOC滚动高亮优化
