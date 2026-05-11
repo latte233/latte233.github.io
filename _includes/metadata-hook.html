@@ -1,11 +1,16 @@
 <!-- 主题切换按钮：插入到 topbar 右侧，sidebar 收起后仍可见 -->
 <script>
 (function () {
+  var INSERTED = false;
+
   function addThemeBtn() {
-    if (document.getElementById('topbar-theme-btn')) return;
+    if (INSERTED) return;
+    if (document.getElementById('topbar-theme-btn')) { INSERTED = true; return; }
 
     var topbar = document.getElementById('topbar');
     if (!topbar) return;
+
+    INSERTED = true;
 
     function isDark() {
       return document.documentElement.getAttribute('data-mode') === 'dark'
@@ -46,12 +51,27 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(addThemeBtn, 300);
+  // 用 MutationObserver 监听 #topbar 出现，比 setTimeout 更可靠
+  function waitForTopbar() {
+    if (document.getElementById('topbar')) {
+      addThemeBtn();
+      return;
+    }
+    var mo = new MutationObserver(function (mutations, obs) {
+      if (document.getElementById('topbar')) {
+        obs.disconnect();
+        addThemeBtn();
+      }
     });
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+    // 兜底：最多等 5 秒
+    setTimeout(function () { mo.disconnect(); addThemeBtn(); }, 5000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', waitForTopbar);
   } else {
-    setTimeout(addThemeBtn, 300);
+    waitForTopbar();
   }
 })();
 </script>
@@ -139,4 +159,4 @@
 </style>
 
 <!-- 自定义JS：左侧导航收起功能 & TOC排序 -->
-<script src="/assets/js/custom.js?v=2026051103" defer></script>
+<script src="/assets/js/custom.js?v=2026051104" defer></script>
