@@ -1,5 +1,5 @@
 // 博客布局改造：左侧导航收起功能 & TOC优化
-// v=2026051102
+// v=2026051103
 
 (function() {
   'use strict';
@@ -171,35 +171,63 @@
   }
 
   // 问题3：展开正文区域（sidebar收起时）
-  // 层级关系：#main-wrapper（margin-left:260px）> .container（max-width:720/960/1140px）> .row > 正文
-  // 需要同时清除两层限制：① main-wrapper 的 margin-left ② container 的 max-width
+  // 层级关系：#main-wrapper（margin-left:260px）> .container（max-width阶梯）> .row > main（col-xl-9）+ panel（col-xl-3）
+  // 需要同时清除三层限制：① main-wrapper margin-left ② container max-width ③ main 的 col-xl-9 占位
   function expandMainContent() {
     var mainWrapper = document.getElementById('main-wrapper');
-    if (mainWrapper) {
-      mainWrapper.style.marginLeft = '0';
-      // 覆盖 Bootstrap .container 的阶梯式 max-width，让内容区真正变宽
-      var container = mainWrapper.querySelector('.container');
-      if (container) {
-        container.style.maxWidth = '100%';
-        container.style.paddingLeft = '2rem';
-        container.style.paddingRight = '2rem';
-      }
+    if (!mainWrapper) return;
+
+    // ① 清除 main-wrapper 的 margin-left
+    mainWrapper.style.marginLeft = '0';
+
+    // ② 覆盖 Bootstrap .container 的阶梯式 max-width
+    var container = mainWrapper.querySelector('.container');
+    if (container) {
+      container.style.maxWidth = '100%';
+      container.style.paddingLeft = '2rem';
+      container.style.paddingRight = '2rem';
     }
+
+    // ③ 让 main 占满全行（去掉 col-xl-9/col-lg-11，改为 col-12）
+    var mainEl = mainWrapper.querySelector('main');
+    if (mainEl) {
+      mainEl.dataset.origClass = mainEl.className;
+      mainEl.classList.remove('col-xl-9', 'col-lg-11', 'col-lg-9');
+      mainEl.classList.add('col-12');
+    }
+
+    // ④ 隐藏右侧 panel（已经没有内容，但占着 col-xl-3 的宽度）
+    var panel = document.getElementById('panel-wrapper');
+    if (panel) panel.style.display = 'none';
+
     document.body.classList.add('sidebar-is-collapsed');
   }
 
   // 问题3：恢复正文区域
   function collapseMainContent() {
     var mainWrapper = document.getElementById('main-wrapper');
-    if (mainWrapper) {
-      mainWrapper.style.marginLeft = '';
-      var container = mainWrapper.querySelector('.container');
-      if (container) {
-        container.style.maxWidth = '';
-        container.style.paddingLeft = '';
-        container.style.paddingRight = '';
-      }
+    if (!mainWrapper) return;
+
+    mainWrapper.style.marginLeft = '';
+
+    var container = mainWrapper.querySelector('.container');
+    if (container) {
+      container.style.maxWidth = '';
+      container.style.paddingLeft = '';
+      container.style.paddingRight = '';
     }
+
+    // 恢复 main 的原始 class
+    var mainEl = mainWrapper.querySelector('main');
+    if (mainEl && mainEl.dataset.origClass) {
+      mainEl.className = mainEl.dataset.origClass;
+      delete mainEl.dataset.origClass;
+    }
+
+    // 恢复 panel 显示
+    var panel = document.getElementById('panel-wrapper');
+    if (panel) panel.style.display = '';
+
     document.body.classList.remove('sidebar-is-collapsed');
   }
 
