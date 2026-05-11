@@ -1,5 +1,5 @@
 // 博客布局改造：左侧导航收起功能 & TOC优化
-// v=2026051101
+// v=2026051102
 
 (function() {
   'use strict';
@@ -171,13 +171,19 @@
   }
 
   // 问题3：展开正文区域（sidebar收起时）
-  // 根本原因：Chirpy 内置 CSS 在 @media (min-width: 850px) 中给 #main-wrapper 设置了
-  // margin-left: 260px（sidebar 宽度），sidebar 隐藏后这个 margin 不会自动消失
-  // 解决方案：直接将 #main-wrapper 的 margin-left inline style 设为 0 覆盖
+  // 层级关系：#main-wrapper（margin-left:260px）> .container（max-width:720/960/1140px）> .row > 正文
+  // 需要同时清除两层限制：① main-wrapper 的 margin-left ② container 的 max-width
   function expandMainContent() {
     var mainWrapper = document.getElementById('main-wrapper');
     if (mainWrapper) {
       mainWrapper.style.marginLeft = '0';
+      // 覆盖 Bootstrap .container 的阶梯式 max-width，让内容区真正变宽
+      var container = mainWrapper.querySelector('.container');
+      if (container) {
+        container.style.maxWidth = '100%';
+        container.style.paddingLeft = '2rem';
+        container.style.paddingRight = '2rem';
+      }
     }
     document.body.classList.add('sidebar-is-collapsed');
   }
@@ -187,6 +193,12 @@
     var mainWrapper = document.getElementById('main-wrapper');
     if (mainWrapper) {
       mainWrapper.style.marginLeft = '';
+      var container = mainWrapper.querySelector('.container');
+      if (container) {
+        container.style.maxWidth = '';
+        container.style.paddingLeft = '';
+        container.style.paddingRight = '';
+      }
     }
     document.body.classList.remove('sidebar-is-collapsed');
   }
