@@ -1,19 +1,65 @@
 // 博客布局改造：左侧导航收起功能 & TOC优化
-// v=2026040318
+// v=2026040319
 
 (function() {
   'use strict';
 
   // 等待DOM加载完成
   document.addEventListener('DOMContentLoaded', function() {
-    // 延迟执行，确保动态内容已加载
-    setTimeout(function() {
-      // 问题1：将TOC移到面板最前面
-      reorderTOC();
-      // 问题2&3：修复收起按钮和正文宽度
-      initSidebarToggle();
-    }, 500);
+    // 使用MutationObserver监听DOM变化，确保toc-wrapper被创建后再移动
+    observeTOCAndInit();
   });
+
+  // 使用MutationObserver监听TOC元素出现
+  function observeTOCAndInit() {
+    var panelWrapper = document.getElementById('panel-wrapper');
+    var tocWrapper = document.getElementById('toc-wrapper');
+    
+    if (tocWrapper) {
+      // TOC已经存在，直接移动
+      reorderTOC();
+      initSidebarToggle();
+      return;
+    }
+    
+    if (panelWrapper) {
+      // 监听panel-wrapper的子元素变化
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          mutation.addedNodes.forEach(function(node) {
+            if (node.nodeType === 1 && (node.id === 'toc-wrapper' || node.querySelector('#toc-wrapper'))) {
+              var toc = document.getElementById('toc-wrapper');
+              if (toc) {
+                reorderTOC();
+                initSidebarToggle();
+                observer.disconnect();
+              }
+            }
+          });
+        });
+        
+        // 兜底：检查是否已经有toc-wrapper
+        var toc = document.getElementById('toc-wrapper');
+        if (toc) {
+          reorderTOC();
+          initSidebarToggle();
+          observer.disconnect();
+        }
+      });
+      
+      observer.observe(panelWrapper, { childList: true, subtree: true });
+      
+      // 兜底：1秒后强制执行
+      setTimeout(function() {
+        reorderTOC();
+        initSidebarToggle();
+        observer.disconnect();
+      }, 1000);
+    } else {
+      // panel-wrapper不存在，延迟检查
+      setTimeout(observeTOCAndInit, 500);
+    }
+  }
 
   // 问题1：将TOC移到panel-wrapper最前面
   function reorderTOC() {
