@@ -171,26 +171,24 @@
   }
 
   // 问题3：展开正文区域（sidebar收起时）
-  // Chirpy 布局：#main-wrapper > .container-fluid > .row > #content（flex item）
-  // sidebar 收起后，给 #main-wrapper 加 class，CSS 负责把 margin-left 归零
+  // 根本原因：Chirpy 内置 CSS 在 @media (min-width: 850px) 中给 #main-wrapper 设置了
+  // margin-left: 260px（sidebar 宽度），sidebar 隐藏后这个 margin 不会自动消失
+  // 解决方案：直接将 #main-wrapper 的 margin-left inline style 设为 0 覆盖
   function expandMainContent() {
-    document.body.classList.add('sidebar-is-collapsed');
-    // 同时直接操作 #content 的 flex，确保立即生效
-    var contentEl = document.getElementById('content');
-    if (contentEl) {
-      contentEl.style.flex = '1 1 0';
-      contentEl.style.maxWidth = 'none';
+    var mainWrapper = document.getElementById('main-wrapper');
+    if (mainWrapper) {
+      mainWrapper.style.marginLeft = '0';
     }
+    document.body.classList.add('sidebar-is-collapsed');
   }
 
   // 问题3：恢复正文区域
   function collapseMainContent() {
-    document.body.classList.remove('sidebar-is-collapsed');
-    var contentEl = document.getElementById('content');
-    if (contentEl) {
-      contentEl.style.flex = '';
-      contentEl.style.maxWidth = '';
+    var mainWrapper = document.getElementById('main-wrapper');
+    if (mainWrapper) {
+      mainWrapper.style.marginLeft = '';
     }
+    document.body.classList.remove('sidebar-is-collapsed');
   }
 
   // TOC滚动高亮优化
