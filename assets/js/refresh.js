@@ -27,13 +27,13 @@
   }
 })();
 
-/* 头像左上角主题切换代理按钮 */
+/* 主题切换按钮 - 插入到 topbar 右侧，sidebar 收起后仍可见 */
 (function() {
-  function addAvatarThemeBtn() {
-    if (document.getElementById('avatar-theme-btn')) return;
+  function addThemeBtn() {
+    if (document.getElementById('topbar-theme-btn')) return;
 
-    var profileWrapper = document.querySelector('.profile-wrapper');
-    if (!profileWrapper) return;
+    var topbar = document.getElementById('topbar');
+    if (!topbar) return;
 
     // 读取当前主题
     function isDark() {
@@ -42,9 +42,9 @@
         || document.body.classList.contains('dark');
     }
 
-    // 创建代理按钮
+    // 创建按钮
     var btn = document.createElement('button');
-    btn.id = 'avatar-theme-btn';
+    btn.id = 'topbar-theme-btn';
     btn.title = '切换主题';
 
     function updateIcon() {
@@ -67,11 +67,11 @@
         var cur = html.getAttribute('data-mode');
         html.setAttribute('data-mode', cur === 'dark' ? 'light' : 'dark');
       }
-      // 延迟更新图标（等 Chirpy 的 JS 完成切换）
       setTimeout(updateIcon, 100);
     });
 
-    profileWrapper.appendChild(btn);
+    // 插入到 topbar 最右侧
+    topbar.appendChild(btn);
 
     // 监听 data-mode 属性变化，同步更新图标
     var observer = new MutationObserver(updateIcon);
@@ -80,9 +80,9 @@
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(addAvatarThemeBtn, 300);
+      setTimeout(addThemeBtn, 300);
     });
   } else {
-    setTimeout(addAvatarThemeBtn, 300);
+    setTimeout(addThemeBtn, 300);
   }
 })();

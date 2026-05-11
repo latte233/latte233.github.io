@@ -42,36 +42,28 @@
   visibility: hidden !important;
 }
 
-/* 头像容器作为定位参照 */
-#avatar {
-  position: relative !important;
-  display: inline-block !important;
-}
-
-/* 头像左上角的主题切换代理按钮 */
-#avatar-theme-btn {
-  position: absolute !important;
-  top: 2px !important;
-  left: 2px !important;
-  z-index: 20 !important;
-  width: 28px !important;
-  height: 28px !important;
+/* topbar 右侧主题切换按钮（sidebar 收起后仍可见） */
+#topbar-theme-btn {
+  width: 32px !important;
+  height: 32px !important;
   border-radius: 50% !important;
   border: none !important;
-  background: rgba(60, 60, 80, 0.7) !important;
-  backdrop-filter: blur(4px) !important;
-  color: #fff !important;
-  font-size: 13px !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-size: 15px !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   transition: background 0.2s !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin-left: 4px !important;
+  flex-shrink: 0 !important;
+  opacity: 0.75 !important;
 
   &:hover {
-    background: rgba(80, 80, 110, 0.9) !important;
+    background: rgba(128, 128, 128, 0.15) !important;
+    opacity: 1 !important;
   }
 }
 
