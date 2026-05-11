@@ -1,5 +1,5 @@
 // 博客布局改造：左侧导航收起功能 & TOC优化
-// v=2026040319
+// v=2026051101
 
 (function() {
   'use strict';
@@ -152,46 +152,44 @@
 
   // 定位收起按钮
   function positionToggleButton(btn, sidebar, isExpanded) {
+    btn.style.position = 'fixed';
+    btn.style.top = '50%';
+    btn.style.transform = 'translateY(-50%)';
+    btn.style.zIndex = '1001';
+
     if (sidebar.classList.contains('collapsed')) {
-      // 收起状态：按钮贴在屏幕左边缘
-      btn.style.position = 'fixed';
+      // 收起状态：按钮贴在屏幕左边缘（right edge of 0-width sidebar）
       btn.style.left = '0';
-      btn.style.top = '50%';
-      btn.style.transform = 'translateY(-50%)';
       btn.style.borderRadius = '0 8px 8px 0';
     } else {
-      // 展开状态：按钮贴在sidebar左边缘外
-      var rect = sidebar.getBoundingClientRect();
-      btn.style.position = 'fixed';
-      btn.style.left = Math.max(0, rect.left) + 'px';
-      btn.style.top = '50%';
-      btn.style.transform = 'translateY(-50%)';
+      // 展开状态：按钮贴在 sidebar 右边缘
+      // Chirpy sidebar 是 fixed 定位，宽度从 CSS 变量或实际宽度取
+      var sidebarWidth = sidebar.offsetWidth || 260;
+      btn.style.left = sidebarWidth + 'px';
       btn.style.borderRadius = '0 8px 8px 0';
     }
-    btn.style.zIndex = '1001';
   }
 
   // 问题3：展开正文区域（sidebar收起时）
+  // Chirpy 布局：#main-wrapper > .container-fluid > .row > #content（flex item）
+  // sidebar 收起后，给 #main-wrapper 加 class，CSS 负责把 margin-left 归零
   function expandMainContent() {
-    var mainEl = document.querySelector('main');
-    if (mainEl) {
-      // 从col-lg-11变成col-lg-12
-      mainEl.classList.remove('col-lg-11', 'col-xl-9');
-      mainEl.classList.add('col-lg-12', 'col-xl-12');
-      mainEl.style.flex = '0 0 100%';
-      mainEl.style.maxWidth = '100%';
+    document.body.classList.add('sidebar-is-collapsed');
+    // 同时直接操作 #content 的 flex，确保立即生效
+    var contentEl = document.getElementById('content');
+    if (contentEl) {
+      contentEl.style.flex = '1 1 0';
+      contentEl.style.maxWidth = 'none';
     }
   }
 
   // 问题3：恢复正文区域
   function collapseMainContent() {
-    var mainEl = document.querySelector('main');
-    if (mainEl) {
-      // 从col-lg-12恢复成col-lg-11
-      mainEl.classList.remove('col-lg-12', 'col-xl-12');
-      mainEl.classList.add('col-lg-11', 'col-xl-9');
-      mainEl.style.flex = '';
-      mainEl.style.maxWidth = '';
+    document.body.classList.remove('sidebar-is-collapsed');
+    var contentEl = document.getElementById('content');
+    if (contentEl) {
+      contentEl.style.flex = '';
+      contentEl.style.maxWidth = '';
     }
   }
 

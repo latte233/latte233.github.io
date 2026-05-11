@@ -2,7 +2,7 @@
 ---
 
 // Chirpy 主题样式覆盖
-// v=2026040317 用于强制刷新缓存
+// v=2026051101
 
 /* 固定顶部导航栏 - 适配 iPhone */
 #topbar {
@@ -182,16 +182,14 @@
   max-width: 260px !important;
 }
 
-/* ===== 问题1：TOC面板移到最前面 ===== */
-/* 使用CSS order或JS操作，让toc-wrapper显示在最前 */
-#toc-wrapper,
-[id*="toc-wrapper"] {
-  order: -1 !important;
+/* ===== 问题1：TOC 移到右侧面板最上方
+   主要靠 JS（insertBefore）实现，CSS 仅作备用（当 panel-wrapper 是 flex 容器时） ===== */
+#panel-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-/* 直接让右侧面板内的toc相关元素排序 */
-#core-wrapper aside > [id*="toc"],
-#core-wrapper aside > .position-sticky {
+#toc-wrapper {
   order: -1 !important;
 }
 
@@ -200,10 +198,17 @@ main {
   max-width: 1100px !important;
 }
 
-/* 问题3：sidebar收起时main变宽 */
-#sidebar.collapsed ~ .container-fluid main,
-#sidebar.collapsed ~ * main {
-  max-width: 100% !important;
+/* 问题3：sidebar 收起时正文变宽
+   JS 给 body 加 sidebar-is-collapsed class */
+body.sidebar-is-collapsed #main-wrapper {
+  margin-left: 0 !important;
+  padding-left: 0.5rem !important;
+  transition: margin-left 0.25s ease !important;
+}
+
+body.sidebar-is-collapsed #content {
+  flex: 1 1 0 !important;
+  max-width: none !important;
 }
 
 /* ===== 响应式调整 ===== */
