@@ -8,17 +8,17 @@ tagline: 技术分享与生活记录
 description: >-
   latte 的个人技术博客，分享编程、工具与生活。
 
-url: "https://qiushi233.github.io"
+url: "https://latte233.github.io"
 
 github:
-  username: qiushi233
+  username: latte233
 
 author: latte
 social:
   name: latte
   email: ""
   links:
-    - https://github.com/qiushi233
+    - https://github.com/latte233
 
 avatar: /assets/img/avatar.png
 
@@ -41,7 +41,7 @@ pwa:
 paginate: 10
 
 # 版本号（每次更新+1，用于强制刷新缓存）
-build: 2026040306
+build: 2026040307
 
 # ------------ 以下为 Jekyll 基础配置 ------------
 permalink: /posts/:title/
