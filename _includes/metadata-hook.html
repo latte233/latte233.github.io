@@ -1,55 +1,26 @@
-<!-- 头像左上角主题切换代理按钮 -->
+<!-- 主题切换按钮：插入到 topbar 右侧，sidebar 收起后仍可见 -->
 <script>
 (function () {
-  function addAvatarThemeBtn() {
-    if (document.getElementById('avatar-theme-btn')) return;
+  function addThemeBtn() {
+    if (document.getElementById('topbar-theme-btn')) return;
 
-    var avatar = document.getElementById('avatar');
-    if (!avatar) return;
+    var topbar = document.getElementById('topbar');
+    if (!topbar) return;
 
-    // 判断当前是否深色模式
     function isDark() {
       return document.documentElement.getAttribute('data-mode') === 'dark'
         || (!document.documentElement.hasAttribute('data-mode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
 
     var btn = document.createElement('button');
-    btn.id = 'avatar-theme-btn';
+    btn.id = 'topbar-theme-btn';
     btn.title = '切换主题';
     btn.type = 'button';
-
-    // 用 position: fixed，根据头像的实际视口坐标定位，绕过 overflow 和 transform 问题
-    function positionBtn() {
-      var r = avatar.getBoundingClientRect();
-      btn.style.top    = (r.top  - 10) + 'px';
-      btn.style.left   = (r.left - 10) + 'px';
-    }
-
-    btn.style.cssText = [
-      'position: fixed',
-      'z-index: 99999',
-      'width: 28px',
-      'height: 28px',
-      'border-radius: 50%',
-      'border: none',
-      'background: rgba(40,40,60,0.75)',
-      'color: #fff',
-      'font-size: 13px',
-      'cursor: pointer',
-      'display: flex',
-      'align-items: center',
-      'justify-content: center',
-      'padding: 0',
-      'margin: 0',
-      'box-shadow: 0 1px 4px rgba(0,0,0,0.4)',
-      'transition: opacity 0.2s'
-    ].join(';');
 
     function updateIcon() {
       btn.innerHTML = isDark() ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     }
     updateIcon();
-    positionBtn();
 
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -59,43 +30,58 @@
       setTimeout(updateIcon, 80);
     });
 
-    // 监听主题属性变化，同步图标
     var observer = new MutationObserver(function () { updateIcon(); });
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['data-mode']
     });
 
-    // resize 时重新定位
-    window.addEventListener('resize', positionBtn);
+    topbar.appendChild(btn);
 
-    // 挂到 body，fixed 定位不受父元素影响
-    document.body.appendChild(btn);
-
-    // 隐藏底部原始按钮
+    // 隐藏 sidebar 底部原始按钮
     var orig = document.getElementById('mode-toggle');
     if (orig) {
       orig.style.setProperty('display', 'none', 'important');
       orig.style.setProperty('visibility', 'hidden', 'important');
-      var border = orig.nextElementSibling;
-      if (border && border.classList.contains('icon-border')) {
-        border.style.display = 'none';
-      }
     }
   }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(addAvatarThemeBtn, 300);
+      setTimeout(addThemeBtn, 300);
     });
   } else {
-    setTimeout(addAvatarThemeBtn, 300);
+    setTimeout(addThemeBtn, 300);
   }
 })();
 </script>
 
 <!-- 自定义样式：最高优先级覆盖 -->
 <style id="custom-layout-styles">
+/* topbar 右侧主题切换按钮 */
+#topbar-theme-btn {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-size: 15px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin-left: 4px !important;
+  flex-shrink: 0 !important;
+  opacity: 0.75 !important;
+  transition: background 0.2s, opacity 0.2s !important;
+}
+#topbar-theme-btn:hover {
+  background: rgba(128, 128, 128, 0.15) !important;
+  opacity: 1 !important;
+}
+
 /* 问题2：左侧导航收起 */
 #sidebar.collapsed {
   width: 0 !important;
@@ -144,12 +130,6 @@
   order: -1 !important;
 }
 
-/* 问题3：sidebar收起时main变宽 */
-#sidebar.collapsed ~ .container-fluid main,
-#sidebar.collapsed ~ * main {
-  max-width: 100% !important;
-}
-
 /* 移动端隐藏收起按钮 */
 @media (max-width: 767px) {
   #sidebar-toggle {
@@ -159,4 +139,4 @@
 </style>
 
 <!-- 自定义JS：左侧导航收起功能 & TOC排序 -->
-<script src="/assets/js/custom.js?v=2026051101" defer></script>
+<script src="/assets/js/custom.js?v=2026051103" defer></script>
