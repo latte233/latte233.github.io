@@ -1,6 +1,10 @@
-<!-- Footer override: minimal footer without theme credit -->
-<footer class="d-flex w-100 justify-content-center align-items-center">
-  <p class="mb-0 text-muted fs-sm">
-    &copy; {{ 'now' | date: '%Y' }} {{ site.author | default: site.title }}.
-  </p>
+<!-- Footer override: minimal footer -->
+<footer>
+  <div class="container px-lg-5">
+    <div class="d-flex justify-content-center align-items-center text-muted">
+      <p class="mb-0">
+        &copy; {{ 'now' | date: '%Y' }} {{ site.author | default: site.title }}.
+      </p>
+    </div>
+  </div>
 </footer>
