@@ -12,7 +12,7 @@ published: false
 
 性能问题从来不是突然出现的。它往往在业务快速增长、大促流量冲击、或者某次不起眼的代码变更之后，以 TP99 飙升、内存告警、GC 停顿等形式集中爆发。
 
-很多团队的应对方式是"哪里慢优化哪里"，改完这次大促，下次大促前再改一遍。这种方式不是没有效果，但本质上是在救火，而不是治理。
+很多团队的应对方式是“哪里慢优化哪里”，改完这次大促，下次大促前再改一遍。这种方式不是没有效果，但本质上是在救火，而不是治理。
 
 **性能治理和性能优化的核心区别在于：治理是体系化的、可持续的，它要求你建立从发现问题到解决问题再到防止问题复发的完整闭环。**
 
@@ -62,7 +62,7 @@ published: false
 
 性能目标不能拍脑袋定，需要结合两个维度：一是**业务诉求**（大促期间能承载多少倍流量、用户可接受的最大响应时间）；二是**当前基线**（从现状到目标的改进幅度是否合理可达）。
 
-本次治理以"支撑 8 倍大促流量、核心接口 TP99 控制在 200ms 以内"为总目标，拆解如下：
+本次治理以“支撑 8 倍大促流量、核心接口 TP99 控制在 200ms 以内”为总目标，拆解如下：
 
 ### 2.2 接口层指标目标
 
@@ -93,7 +93,7 @@ published: false
 
 **问题一：循环内串行 RPC 调用**
 
-现象：通过链路追踪发现，核心查询接口的耗时分布中，有约 180ms 花在了"批量查询商品信息"这一步。
+现象：通过链路追踪发现，核心查询接口的耗时分布中，有约 180ms 花在了“批量查询商品信息”这一步。
 
 根因：代码中存在 `for` 循环逐个调用下游商品服务的模式，伪代码如下：
 
@@ -175,7 +175,7 @@ WHERE promotion_id = ? AND status = 1 AND sku_id IN (...)
 
 现象：偶发性的接口超时，通过数据库监控发现与锁等待相关，`innodb_row_lock_waits` 在高峰期每分钟约 200 次。
 
-根因：促销状态更新操作将"查询 → 业务计算 → 更新"包在同一个事务中，业务计算耗时约 80ms，导致行锁持有时间过长，并发写入时产生锁竞争。
+根因：促销状态更新操作将“查询 → 业务计算 → 更新”包在同一个事务中，业务计算耗时约 80ms，导致行锁持有时间过长，并发写入时产生锁竞争。
 
 优先级：**P1**
 
@@ -351,7 +351,7 @@ private static final PromotionCacheModel EMPTY_MARKER = new PromotionCacheModel(
 private static final int EMPTY_CACHE_TTL_SECONDS = 30;
 
 public PromotionCacheModel getPromotion(Long promotionId) {
-    String key = "promotion:" + promotionId;
+    String key = “promotion:” + promotionId;
     
     // 查本地缓存
     PromotionCacheModel cached = localCache.getIfPresent(key);
@@ -512,7 +512,7 @@ private void updateInTransaction(Long promotionId, Integer newStatus, List<Long>
 public class ThreadPoolConfig {
 
     // 用于并行 RPC 调用的线程池（IO 密集型，线程数可以多一些）
-    @Bean("bizRpcExecutor")
+    @Bean(“bizRpcExecutor")
     public ThreadPoolExecutor bizRpcExecutor() {
         return new ThreadPoolExecutor(
             20,                                    // 核心线程数
@@ -520,19 +520,19 @@ public class ThreadPoolConfig {
             60, TimeUnit.SECONDS,                  // 空闲线程存活时间
             new LinkedBlockingQueue<>(200),        // 有界队列，防止无限堆积
             new ThreadFactoryBuilder()
-                .setNameFormat("biz-rpc-%d")
+                .setNameFormat(”biz-rpc-%d")
                 .build(),
             new ThreadPoolExecutor.CallerRunsPolicy() // 队列满时调用方线程执行，起到背压作用
         );
     }
 
     // 用于异步写操作的线程池（与读路径隔离）
-    @Bean("asyncWriteExecutor")
+    @Bean(“asyncWriteExecutor")
     public ThreadPoolExecutor asyncWriteExecutor() {
         return new ThreadPoolExecutor(
             5, 10, 60, TimeUnit.SECONDS,
             new LinkedBlockingQueue<>(500),
-            new ThreadFactoryBuilder().setNameFormat("async-write-%d").build(),
+            new ThreadFactoryBuilder().setNameFormat(”async-write-%d").build(),
             new ThreadPoolExecutor.AbortPolicy()   // 写操作满了直接拒绝，不影响读路径
         );
     }
@@ -577,7 +577,7 @@ public class ThreadPoolConfig {
 
 ```java
 // 通过配置中心动态控制
-@Value("${feature.parallel.rpc.enabled:false}")
+@Value(“${feature.parallel.rpc.enabled:false}")
 private boolean parallelRpcEnabled;
 
 public PromotionResult query(QueryRequest request) {
@@ -698,10 +698,10 @@ public PromotionResult query(QueryRequest request) {
 
 本文完整呈现了一套 Java 微服务性能治理方案的制定过程。几个核心要点值得反复强调：
 
-**数据驱动，而非经验驱动**。每一个优化点都应该有监控数据或 Profiling 数据作为支撑，"感觉这里慢"不是优化的理由。
+**数据驱动，而非经验驱动**。每一个优化点都应该有监控数据或 Profiling 数据作为支撑，”感觉这里慢“不是优化的理由。
 
 **分层分析，找到真正的根因**。性能问题往往不是单一原因，需要从代码、缓存、数据库、JVM、架构多个层次系统排查，否则容易治标不治本。
 
-**安全上线，灰度验证**。性能优化的改动往往涉及核心链路，必须有完善的灰度方案和回滚机制，不能因为"优化"引入新的稳定性问题。
+**安全上线，灰度验证**。性能优化的改动往往涉及核心链路，必须有完善的灰度方案和回滚机制，不能因为”优化“引入新的稳定性问题。
 
 **建立长效机制**。性能治理的终点不是这次优化完成，而是建立起基线告警、大促 Review、开发 Checklist 等机制，让性能问题在变严重之前就被发现。

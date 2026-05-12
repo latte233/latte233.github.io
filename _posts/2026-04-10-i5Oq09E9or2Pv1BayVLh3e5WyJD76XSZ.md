@@ -14,8 +14,8 @@ toc: true
 
 如果你正在使用 **Claude Code**（Anthropic 的命令行 AI 编程助手），你可能会遇到以下痛点：
 
-- **"金鱼记忆"**：对话变长或隔天再打开，AI 就忘了项目架构和决策
-- **"随性派"问题**：需要反复强调编码规范，消耗 Token 和耐心
+- **“金鱼记忆”**：对话变长或隔天再打开，AI 就忘了项目架构和决策
+- **“随性派”问题**：需要反复强调编码规范，消耗 Token 和耐心
 - **缺乏工程直觉**：原生 Claude Code 很强，但不懂你的项目习惯
 
 **Everything Claude Code（ECC）** 就是解决这些问题的终极方案。
@@ -78,7 +78,7 @@ Everything Claude Code 包含以下六大核心模块：
 
 ```bash
 # 规划新功能
-/plan "添加用户认证系统，支持 OAuth2"
+/plan “添加用户认证系统，支持 OAuth2”
 
 # 测试驱动开发
 /tdd
@@ -168,18 +168,18 @@ Everything Claude Code 包含以下六大核心模块：
 
 ### 2.5 Hooks（钩子）—— 触发式自动化
 
-基于事件触发的自动化脚本，解决"隐形痛点"：
+基于事件触发的自动化脚本，解决“隐形痛点”：
 
 **典型场景：**
 
 ```json
 {
-  "matcher": "tool == \"Edit\" && tool_input.file_path matches \"\\.(ts|tsx|js|jsx)$\"",
-  "hooks": [{
-    "type": "command",
-    "command": "npx prettier --write \"$file_path\""
+  “matcher”: “tool == \”Edit\“ && tool_input.file_path matches \”\\.(ts|tsx|js|jsx)$\“”,
+  “hooks”: [{
+    “type”: “command”,
+    “command”: “npx prettier --write \”$file_path\“”
   }],
-  "description": "编辑后自动格式化"
+  “description”: “编辑后自动格式化”
 }
 ```
 
@@ -254,7 +254,7 @@ claude
 | Install for collaborators (project scope) | 仅当前项目，推送到 Git | 团队协作 |
 | Install for you (local scope) | 仅当前项目，不共享 | 秘密测试 |
 
-**选择 "Install for you (user scope)"，按回车确认。**
+**选择 “Install for you (user scope)”，按回车确认。**
 
 ### 3.3 安装方式二：手动安装
 
@@ -298,13 +298,13 @@ cp -r skills/* ~/.claude/skills/
 
 ```json
 {
-  "hooks": {
-    "PostToolUse": [
+  “hooks”: {
+    “PostToolUse”: [
       {
-        "matcher": "tool == \"Edit\" && tool_input.file_path matches \"\\.(ts|tsx|js|jsx)$\"",
-        "hooks": [{
-          "type": "command",
-          "command": "npx prettier --write \"$file_path\""
+        “matcher”: “tool == \”Edit\“ && tool_input.file_path matches \”\\.(ts|tsx|js|jsx)$\“”,
+        “hooks”: [{
+          “type”: “command”,
+          “command”: “npx prettier --write \”$file_path\“”
         }]
       }
     ]
@@ -318,16 +318,16 @@ cp -r skills/* ~/.claude/skills/
 
 ```json
 {
-  "mcpServers": {
-    "memory": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"],
-      "description": "持久化记忆（本地运行，无需网络）"
+  “mcpServers”: {
+    “memory”: {
+      “command”: “npx”,
+      “args”: [“-y”, “@modelcontextprotocol/server-memory”],
+      “description”: “持久化记忆（本地运行，无需网络）”
     },
-    "sequential-thinking": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
-      "description": "链式思考推理（本地运行）"
+    “sequential-thinking”: {
+      “command”: “npx”,
+      “args”: [“-y”, “@modelcontextprotocol/server-sequential-thinking”],
+      “description”: “链式思考推理（本地运行）”
     }
   }
 }
@@ -364,10 +364,10 @@ claude
 **第一步：规划**
 
 ```bash
-/plan "使用 HTML5 和原生 JavaScript 写一个贪吃蛇游戏，界面要现代简洁，支持分数记录"
+/plan “使用 HTML5 和原生 JavaScript 写一个贪吃蛇游戏，界面要现代简洁，支持分数记录”
 ```
 
-Claude 会输出一份详细的"项目设计书"，包括：
+Claude 会输出一份详细的“项目设计书”，包括：
 
 - 文件结构
 - 核心功能拆解
@@ -380,7 +380,7 @@ Claude 会输出一份详细的"项目设计书"，包括：
 
 **第三步：一键授权所有编辑**
 
-当 Claude 问是否创建文件时，选择 "Yes, allow all edits during this session"，避免每个文件都要确认。
+当 Claude 问是否创建文件时，选择 “Yes, allow all edits during this session”，避免每个文件都要确认。
 
 ---
 
@@ -403,7 +403,7 @@ Claude 会输出一份详细的"项目设计书"，包括：
 
 ```json
 {
-  "disabledMcpServers": ["supabase", "railway", "vercel"]
+  “disabledMcpServers”: [“supabase”, “railway”, “vercel”]
 }
 ```
 
@@ -413,11 +413,11 @@ Claude 会输出一份详细的"项目设计书"，包括：
 
 ```json
 {
-  "model": "sonnet",
-  "env": {
-    "MAX_THINKING_TOKENS": "10000",
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "haiku"
+  “model”: “sonnet”,
+  “env”: {
+    “MAX_THINKING_TOKENS”: “10000”,
+    “CLAUDE_AUTOCOMPACT_PCT_OVERRIDE”: “50”,
+    “CLAUDE_CODE_SUBAGENT_MODEL”: “haiku”
   }
 }
 ```
@@ -434,7 +434,7 @@ Claude 会输出一份详细的"项目设计书"，包括：
 
 ```bash
 # 1. 规划
-/plan "Add user authentication with OAuth"
+/plan “Add user authentication with OAuth”
 
 # 2. 测试驱动开发
 /tdd
@@ -525,7 +525,7 @@ npx ecc-agentshield scan --opus --stream
 
 ```json
 {
-  "disabledMcpServers": ["supabase", "railway", "vercel"]
+  “disabledMcpServers”: [“supabase”, “railway”, “vercel”]
 }
 ```
 

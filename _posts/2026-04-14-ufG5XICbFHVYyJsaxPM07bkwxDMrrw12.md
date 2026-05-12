@@ -12,11 +12,11 @@ toc: true
 
 ## 前言
 
-在 AI 技术飞速发展的今天，我们见证了无数 AI Agent 的诞生与消亡。大多数 AI Agent 都是"工具箱"式的——你给它什么技能，它就用什么。但 Hermes Agent 不一样。
+在 AI 技术飞速发展的今天，我们见证了无数 AI Agent 的诞生与消亡。大多数 AI Agent 都是“工具箱”式的——你给它什么技能，它就用什么。但 Hermes Agent 不一样。
 
 它是目前全球**唯一一个内置学习闭环**的开源 AI Agent，能够从自己的经验中创建技能、在使用中不断改进，并主动记住重要信息。
 
-**核心理念**："The agent that grows with you"（与你共同成长的 Agent）
+**核心理念**：“The agent that grows with you”（与你共同成长的 Agent）
 
 ---
 
@@ -81,27 +81,27 @@ Hermes Agent 是由 **Nous Research**（知名 AI 研究实验室，曾推出 He
 **实战案例：**
 
 ```
-你："帮我分析这个复杂的项目文档"
+你：“帮我分析这个复杂的项目文档”
 ↓
-Hermes："我将文档分为：架构设计、API 文档、部署指南、最佳实践"
+Hermes：“我将文档分为：架构设计、API 文档、部署指南、最佳实践”
 ↓
-Hermes："正在分析架构设计...发现 3 个核心模块...识别出 5 个关键依赖..."
+Hermes：“正在分析架构设计...发现 3 个核心模块...识别出 5 个关键依赖...”
 ↓
-你："你学会了吗？"
+你：“你学会了吗？”
 ↓
-Hermes："我已经从这个任务中提取了一个技能：'复杂技术文档分析流程'
+Hermes：“我已经从这个任务中提取了一个技能：'复杂技术文档分析流程'
 这个技能包含：
 1. 文档结构识别
 2. 分层分析策略
 3. 关键信息提取
 4. 问题识别和澄清
 5. 综合总结方法
-技能已保存到: ~/.hermes/skills/document_analysis.md"
+技能已保存到: ~/.hermes/skills/document_analysis.md”
 ```
 
 ### 2.2 分层持久记忆系统
 
-Hermes Agent 采用四层记忆架构，解决传统 AI"健忘"的问题：
+Hermes Agent 采用四层记忆架构，解决传统 AI“健忘”的问题：
 
 | 层级 | 文件 | 容量 | 内容 |
 |------|------|------|------|
@@ -248,29 +248,29 @@ source venv/bin/activate
 
 ```bash
 # 完整安装（推荐）
-uv pip install -e ".[all]"
+uv pip install -e “.[all]”
 
 # 或仅安装核心功能
-uv pip install -e "."
+uv pip install -e “.”
 ```
 
 **可选 extras：**
 
 ```bash
 # 语音输入/输出支持
-uv pip install "hermes-agent[voice]"
+uv pip install “hermes-agent[voice]”
 
 # 消息平台集成
-uv pip install "hermes-agent[messaging]"
+uv pip install “hermes-agent[messaging]”
 
 # 浏览器自动化
-uv pip install "hermes-agent[browser]"
+uv pip install “hermes-agent[browser]”
 
 # 向量数据库
-uv pip install "hermes-agent[vector]"
+uv pip install “hermes-agent[vector]”
 
 # 完整功能
-uv pip install "hermes-agent[all]"
+uv pip install “hermes-agent[all]”
 ```
 
 #### 步骤 4：创建配置目录
@@ -338,7 +338,7 @@ docker run -it \
 **Docker Compose 配置：**
 
 ```yaml
-version: "3.9"
+version: “3.9”
 services:
   hermes:
     image: nousresearch/hermes-agent:latest
@@ -441,7 +441,7 @@ hermes config set terminal.backend docker
 terminal:
   backend: docker
   docker:
-    image: "python:3.11-slim"
+    image: “python:3.11-slim”
     timeout: 300
 ```
 
@@ -451,10 +451,10 @@ terminal:
 terminal:
   backend: ssh
   ssh:
-    host: "your-server.com"
-    user: "hermes"
+    host: “your-server.com”
+    user: “hermes”
     port: 22
-    key_path: "~/.ssh/hermes_key"
+    key_path: “~/.ssh/hermes_key”
     timeout: 300
 ```
 
@@ -564,7 +564,7 @@ Hermes 会自动设置通过网关运行的 cron 任务。
 
 ```bash
 # 安装语音支持
-pip install "hermes-agent[voice]"
+pip install “hermes-agent[voice]”
 
 # CLI 中按 Ctrl+B 录音
 /voice on  # 开启语音回复
@@ -578,9 +578,9 @@ pip install "hermes-agent[voice]"
 mcp_servers:
   github:
     command: npx
-    args: ["-y", "@modelcontextprotocol/server-github"]
+    args: [“-y”, “@modelcontextprotocol/server-github”]
     env:
-      GITHUB_PERSONAL_ACCESS_TOKEN: "ghp_xxx"
+      GITHUB_PERSONAL_ACCESS_TOKEN: “ghp_xxx”
 ```
 
 ### 6.6 从 OpenClaw 迁移
@@ -722,7 +722,7 @@ cd ~/hermes-agent
 ./venv/bin/python -m pip install pyyaml python-dotenv
 
 # 安装项目依赖
-./venv/bin/python -m pip install -e ".[all]"
+./venv/bin/python -m pip install -e “.[all]”
 ```
 
 ---
@@ -760,7 +760,7 @@ Hermes 会自动调用 `df`、`find`、`rm` 等命令，将结果整理成 Markd
 **使用方式：**
 
 ```
-你：我之前关于 "Agent 记忆" 的笔记有哪些观点？
+你：我之前关于 “Agent 记忆” 的笔记有哪些观点？
 ```
 
 Hermes 会自动搜索所有相关片段，并生成摘要。
@@ -772,7 +772,7 @@ Hermes 会自动搜索所有相关片段，并生成摘要。
 **Hermes 方案：**
 
 1. 利用 Cron 调度功能
-2. 设置每日 9:00 自动触发"生成日报"任务
+2. 设置每日 9:00 自动触发“生成日报”任务
 3. Agent 自动调用 Python 脚本查询数据库，生成折线图
 4. 通过 Email 或 Discord 频道发送报告
 
@@ -833,7 +833,7 @@ Hermes Agent 是目前开源 Agent 中**自我进化能力最强**的选择。
 - 大型企业/高并发场景
 - 依赖中文文档的用户
 
-如果你想让 AI 成为一个真正"懂你"的数字伙伴，Hermes Agent 是目前最优选择。
+如果你想让 AI 成为一个真正“懂你”的数字伙伴，Hermes Agent 是目前最优选择。
 
 ---
 

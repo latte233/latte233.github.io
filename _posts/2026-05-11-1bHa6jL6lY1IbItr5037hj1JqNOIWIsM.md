@@ -10,7 +10,7 @@ toc: true
 ## 🔥 今日科技资讯（5月11日午间版）
 
 **1️⃣ Anthropic 推出 Claude Design，进军设计工具**
-Anthropic 发布新工具，可将自然语言提示直接转化为原型、高保真UI和营销素材，基于 Claude Opus 4.7 视觉模型。定位直接对标 Figma，主打"对话式设计"概念。
+Anthropic 发布新工具，可将自然语言提示直接转化为原型、高保真UI和营销素材，基于 Claude Opus 4.7 视觉模型。定位直接对标 Figma，主打“对话式设计”概念。
 💡值得关注：AI设计工具赛道正式开打，Claude的视觉理解能力正在从编码向创意工作延伸
 
 **2️⃣ OpenAI 发布 ChatGPT Images 2.0，文字渲染质变**
