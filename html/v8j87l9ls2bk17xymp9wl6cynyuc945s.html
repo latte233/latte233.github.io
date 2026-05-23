@@ -1062,59 +1062,11 @@
       line-height: 1.5;
     }
 
-    .share-tip-banner {
-      position: fixed;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(760px, calc(100vw - 24px));
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(255, 251, 240, 0.78);
-      border: 1px solid rgba(224, 213, 193, 0.6);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
-      z-index: 1990;
-      color: #2c3e50;
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
-
-    .share-tip-banner.hidden {
       display: none;
     }
 
-    .share-tip-text {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .share-tip-close {
-      background: transparent;
-      border: none;
-      color: #7a644e;
-      font-size: 1rem;
-      line-height: 1;
-      padding: 4px;
-      cursor: pointer;
-      border-radius: 10px;
-      flex: 0 0 auto;
-    }
-
-    .share-tip-close:hover {
-      background: rgba(122, 100, 78, 0.12);
-    }
-
     @media (max-width: 480px) {
-      .share-tip-banner {
-        top: 10px;
-        font-size: 0.82rem;
-        padding: 8px 10px;
       }
-    }
 
     .page-text-container {
       width: 100%;
@@ -1655,10 +1607,6 @@
   <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
   </div>
-
-  <div id="shareTipBanner" class="share-tip-banner" role="note" aria-live="polite">
-    <div class="share-tip-text">在完成下单流程前，请谨慎分享该页面；建议完成商品下单积分兑换后，再分享。</div>
-    <button class="share-tip-close" onclick="dismissShareTip()" aria-label="关闭提示">✕</button>
   </div>
 
   <div class="book-container closed" id="book">
@@ -28067,36 +28015,23 @@
         },
         isProminent ? 5000 : 3000
       );
-    }
-
-    const shareTipBanner = document.getElementById("shareTipBanner");
-    function dismissShareTip() {
-      if (!shareTipBanner) return;
-      shareTipBanner.classList.add("hidden");
-      try {
-        localStorage.setItem("share_tip_banner_dismissed", "1");
-      } catch (e) {}
+    }catch (e) {}
     }
 
     function updateShareTipVisibility() {
-      if (!shareTipBanner) return;
       try {
         if (localStorage.getItem("share_tip_banner_dismissed") === "1") {
-          shareTipBanner.classList.add("hidden");
           return;
         }
       } catch (e) {}
 
       if (currentIndex === 0) {
-        shareTipBanner.classList.remove("hidden");
       } else {
-        shareTipBanner.classList.add("hidden");
       }
     }
 
     try {
       if (localStorage.getItem("share_tip_banner_dismissed") === "1") {
-        if (shareTipBanner) shareTipBanner.classList.add("hidden");
       }
     } catch (e) {}
 
