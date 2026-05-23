@@ -101,6 +101,7 @@ exclude:
   - tools
   - README.md
   - CHANGELOG.md
+  - "html/"
   - LICENSE
   - "*.sh"
   - node_modules
