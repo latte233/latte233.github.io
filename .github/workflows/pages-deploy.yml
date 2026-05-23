@@ -48,6 +48,14 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      - name: Copy static HTML files
+        run: |
+          if [ -d "html" ]; then
+            mkdir -p "_site${{ steps.pages.outputs.base_path }}/html"
+            cp -r html/* "_site${{ steps.pages.outputs.base_path }}/html/"
+            echo "✅ Copied html/ to _site/html/"
+          fi
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
