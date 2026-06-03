@@ -1,6 +1,6 @@
 ---
 title: 2026 AI 新概念全景手册：从 MCP 到世界模型，理解智能体时代的技术范式
-date: 2026-06-04T08:00:00+08:00
+date: 2026-06-03T08:00:00+08:00
 categories: [人工智能, 技术白皮书]
 tags: [AI, Agent, MCP, 世界模型, Harness Engineering, 2026]
 ---
