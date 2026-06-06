@@ -662,31 +662,31 @@ Muzic: Music Understanding and Generation with Artificial Intelligence
 
 | 排名 | 项目名 | 周涨幅 | 本周增长 | 总Star |
 |------|--------|--------|----------|--------|
-| 🔥 1 | `wppconnect-team/wppconnect` | **+0.0%** | +0 | 3.3k |
-| 🔥 2 | `Josh-XT/AGiXT` | **+0.0%** | +0 | 3.2k |
-| 🔥 3 | `opengeos/geoai` | **+0.0%** | +0 | 3.1k |
-|  4 | `py-why/EconML` | **+0.0%** | +0 | 4.7k |
-|  5 | `steven2358/awesome-generative-ai` | **+0.0%** | +0 | 12.1k |
-|  6 | `AMAI-GmbH/AI-Expert-Roadmap` | **+0.0%** | +0 | 31.1k |
-|  7 | `feder-cr/Jobs_Applier_AI_Agent_AIHawk` | **+0.0%** | +0 | 29.9k |
-|  8 | `owainlewis/awesome-artificial-intelligence` | **+0.0%** | +0 | 14.0k |
-|  9 | `tangyudi/Ai-Learn` | **+0.0%** | +0 | 13.0k |
-|  10 | `Baiyuetribe/paper2gui` | **+0.0%** | +0 | 10.7k |
+| 🔥 🥇 1 | `wppconnect-team/wppconnect` | **+0.0%** | +0 | 3.3k |
+| 🔥 🥈 2 | `Josh-XT/AGiXT` | **+0.0%** | +0 | 3.2k |
+| 🔥 🥉 3 | `opengeos/geoai` | **+0.0%** | +0 | 3.1k |
+| 4 | `py-why/EconML` | **+0.0%** | +0 | 4.7k |
+| 5 | `steven2358/awesome-generative-ai` | **+0.0%** | +0 | 12.1k |
+| 6 | `AMAI-GmbH/AI-Expert-Roadmap` | **+0.0%** | +0 | 31.1k |
+| 7 | `feder-cr/Jobs_Applier_AI_Agent_AIHawk` | **+0.0%** | +0 | 29.9k |
+| 8 | `owainlewis/awesome-artificial-intelligence` | **+0.0%** | +0 | 14.0k |
+| 9 | `tangyudi/Ai-Learn` | **+0.0%** | +0 | 13.0k |
+| 10 | `Baiyuetribe/paper2gui` | **+0.0%** | +0 | 10.7k |
 
 ### 💪 开发最活跃 Top 10（按本周 Commit 数排序）
 
 | 排名 | 项目名 | 本周Commits | 主要语言 | 综合得分 |
 |------|--------|-------------|----------|----------|
-| 💪 1 | `wppconnect-team/wppconnect` | **5** | TypeScript | 40.0 |
-| 💪 2 | `Josh-XT/AGiXT` | **5** | Python | 40.0 |
-| 💪 3 | `opengeos/geoai` | **5** | Python | 40.0 |
-|  4 | `py-why/EconML` | **2** | Jupyter Notebook | 16.0 |
-|  5 | `steven2358/awesome-generative-ai` | **1** | Unknown | 8.0 |
-|  6 | `AMAI-GmbH/AI-Expert-Roadmap` | **0** | JavaScript | 0.0 |
-|  7 | `feder-cr/Jobs_Applier_AI_Agent_AIHawk` | **0** | Python | 0.0 |
-|  8 | `owainlewis/awesome-artificial-intelligence` | **0** | Unknown | 0.0 |
-|  9 | `tangyudi/Ai-Learn` | **0** | Unknown | 0.0 |
-|  10 | `Baiyuetribe/paper2gui` | **0** | Jupyter Notebook | 0.0 |
+| 💪 🥇 1 | `wppconnect-team/wppconnect` | **5** | TypeScript | 40.0 |
+| 💪 🥈 2 | `Josh-XT/AGiXT` | **5** | Python | 40.0 |
+| 💪 🥉 3 | `opengeos/geoai` | **5** | Python | 40.0 |
+| 4 | `py-why/EconML` | **2** | Jupyter Notebook | 16.0 |
+| 5 | `steven2358/awesome-generative-ai` | **1** | Unknown | 8.0 |
+| 6 | `AMAI-GmbH/AI-Expert-Roadmap` | **0** | JavaScript | 0.0 |
+| 7 | `feder-cr/Jobs_Applier_AI_Agent_AIHawk` | **0** | Python | 0.0 |
+| 8 | `owainlewis/awesome-artificial-intelligence` | **0** | Unknown | 0.0 |
+| 9 | `tangyudi/Ai-Learn` | **0** | Unknown | 0.0 |
+| 10 | `Baiyuetribe/paper2gui` | **0** | Jupyter Notebook | 0.0 |
 
 ### 🆕 新星项目 Top 10（项目年龄 < 1年，按综合得分排序）
 
@@ -738,7 +738,7 @@ Muzic: Music Understanding and Generation with Artificial Intelligence
 
 <div style="text-align: center; color: #656d76; font-size: 0.9em;">
 
-📝 报告自动生成于 2026-06-06 22:50:05  
+📝 报告自动生成于 2026-06-06 22:51:48  
 🔍 数据基于 GitHub API，仅供参考  
 🌐 项目描述由 AI 翻译，如有不准确之处以英文原文为准
 
