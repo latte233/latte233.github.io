@@ -55,7 +55,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 
 ## 🏆 详细榜单（每个项目的完整信息卡片）
 
-### 🥇 🆕 新上榜 [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)
+### 🥇 ➖ 持平 [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -93,7 +93,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>Apache-2.0</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">deep-neural-networks</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">distributed</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">神经网络</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Python</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">神经网络</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">TensorFlow</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Python</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">分布式</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/tensorflow/tensorflow" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -103,7 +103,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### 🥈 🆕 新上榜 [huggingface/transformers](https://github.com/huggingface/transformers)
+### 🥈 ➖ 持平 [huggingface/transformers](https://github.com/huggingface/transformers)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -141,7 +141,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>Apache-2.0</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">audio</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">deepseek</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">gemma</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">glm</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">黑客节</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">大语言模型</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">音频</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">黑客节</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/huggingface/transformers" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -151,7 +151,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### 🥉 🆕 新上榜 [gradio-app/gradio](https://github.com/gradio-app/gradio)
+### 🥉 ➖ 持平 [gradio-app/gradio](https://github.com/gradio-app/gradio)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -159,7 +159,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <img src="https://github.com/gradio-app.png?size=48" alt="gradio-app avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
   <div style="flex: 1;">
     <b style="font-size: 1.1em; color: #1f2328;">📝 在Python中构建和分享令人愉悦的机器学习应用程序</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>🌟STAR支持我们的工作</li></ul></div>
+
 
   </div>
 </div>
@@ -189,7 +189,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>Apache-2.0</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">data-analysis</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">data-visualization</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">deploy</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">gradio</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Gradio</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据分析</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据可视化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">部署</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/gradio-app/gradio" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -199,7 +199,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #4 🆕 新上榜 [lutzroeder/netron](https://github.com/lutzroeder/netron)
+### #4 ➖ 持平 [lutzroeder/netron](https://github.com/lutzroeder/netron)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -237,7 +237,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>MIT</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">coreml</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">deeplearning</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Keras</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Core ML</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Keras</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/lutzroeder/netron" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -247,7 +247,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #5 🆕 新上榜 [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn)
+### #5 ➖ 持平 [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -285,7 +285,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>BSD-3-Clause</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">data-analysis</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Python</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">statistics</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Python</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据分析</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/scikit-learn/scikit-learn" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -295,7 +295,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #6 **↓5** [wppconnect-team/wppconnect](https://github.com/wppconnect-team/wppconnect)
+### #6 ➖ 持平 [wppconnect-team/wppconnect](https://github.com/wppconnect-team/wppconnect)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -303,7 +303,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <img src="https://github.com/wppconnect-team.png?size=48" alt="wppconnect-team avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
   <div style="flex: 1;">
     <b style="font-size: 1.1em; color: #1f2328;">📝 WPPConnect是JavaScript社区开发的开源项目，旨在将函数从WhatsApp Web导出到节点，可用于支持创建任何交互，例如客户服务、媒体发送、基于短语的人工智能识别等，发挥您的想象力</b>
-
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>支持创建任何交互，例如客户服务、媒体发送、基于短语</li></ul></div>
 
   </div>
 </div>
@@ -343,7 +343,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #7 **↓5** [Josh-XT/AGiXT](https://github.com/Josh-XT/AGiXT)
+### #7 ➖ 持平 [Josh-XT/AGiXT](https://github.com/Josh-XT/AGiXT)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -381,7 +381,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>MIT</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Agent-LLM</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">通用人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AGiXT</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">artificial</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自动化</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">通用人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自动化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChromaDB</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/Josh-XT/AGiXT" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -391,7 +391,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #8 **↓5** [opengeos/geoai](https://github.com/opengeos/geoai)
+### #8 ➖ 持平 [opengeos/geoai](https://github.com/opengeos/geoai)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -429,7 +429,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>MIT</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地球观测</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地理空间 AI</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地理 Python</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地球观测</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地理空间 AI</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地理 Python</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/opengeos/geoai" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -439,7 +439,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #9 🆕 新上榜 [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai)
+### #9 ➖ 持平 [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -477,7 +477,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>EUPL-1.2</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">cybersecurity</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自然语言处理</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">osint</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">secops</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自然语言处理</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/taranis-ai/taranis-ai" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -487,7 +487,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #10 **↓6** [py-why/EconML](https://github.com/py-why/EconML)
+### #10 ➖ 持平 [py-why/EconML](https://github.com/py-why/EconML)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -495,7 +495,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <img src="https://github.com/py-why.png?size=48" alt="py-why avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
   <div style="flex: 1;">
     <b style="font-size: 1.1em; color: #1f2328;">📝 ALICE (Automated Learning and Intelligence for Causation and Economics)是微软研究项目，旨在将人工智能概念应用于经济决策</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>ALICE Python SDK （ econml ）实现了正交机器学习算法，例如</li></ul></div>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>ALICE Python SDK （ econml ）实现了正交机器学习算法，例如</li><li style='margin: 4px 0;'>One of its  goals is to build a toolkit that combines state-of-the-art 机器学习 techniques with econometrics in order to bring automation to complex causal inference problems</li><li style='margin: 4px 0;'>the ALICE Python SDK (econml) implements orthogonal 机器学习 algorithms such as the double 机器学习 work of Chernozhukov et al</li></ul></div>
 <div style="margin-top: 10px; color: #656d76; font-size: 0.95em;">💡 其目标之一是构建将最先进的机器学习技术与计量经济学相结合的工具包，以便为复杂的因果推理问题带来自动化</div>
   </div>
 </div>
@@ -525,7 +525,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>NOASSERTION</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">因果推断</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">causality</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">econometrics</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">经济学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">treatment-effects</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">因果推断</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">经济学</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/py-why/EconML" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -535,7 +535,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #11 **↓6** [steven2358/awesome-generative-ai](https://github.com/steven2358/awesome-generative-ai)
+### #11 ➖ 持平 [steven2358/awesome-generative-ai](https://github.com/steven2358/awesome-generative-ai)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -573,7 +573,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>CC0-1.0</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">精选列表</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">生成式 AI</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">generative-art</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">大语言模型</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">大语言模型</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">生成式 AI</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">精选列表</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/steven2358/awesome-generative-ai" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -583,7 +583,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #12 🆕 新上榜 [josephmisiti/awesome-machine-learning](https://github.com/josephmisiti/awesome-machine-learning)
+### #12 ➖ 持平 [josephmisiti/awesome-machine-learning](https://github.com/josephmisiti/awesome-machine-learning)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -631,7 +631,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #13 **↓7** [AMAI-GmbH/AI-Expert-Roadmap](https://github.com/AMAI-GmbH/AI-Expert-Roadmap)
+### #13 ➖ 持平 [AMAI-GmbH/AI-Expert-Roadmap](https://github.com/AMAI-GmbH/AI-Expert-Roadmap)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -669,7 +669,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>MIT</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ai-roadmap</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">data-analysis</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">神经网络</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据分析</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/AMAI-GmbH/AI-Expert-Roadmap" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -679,7 +679,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #14 **↓7** [feder-cr/Jobs_Applier_AI_Agent_AIHawk](https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk)
+### #14 ➖ 持平 [feder-cr/Jobs_Applier_AI_Agent_AIHawk](https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -687,7 +687,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <img src="https://github.com/feder-cr.png?size=48" alt="feder-cr avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
   <div style="flex: 1;">
     <b style="font-size: 1.1em; color: #1f2328;">📝 AIHawk旨在通过自动化求职流程来简化求职流程</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>利用人工智能，它使用户能够以量身定制的方式申请多个工作</li></ul></div>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>利用人工智能，它使用户能够以量身定制的方式申请多个工作</li><li style='margin: 4px 0;'>Utilizing 人工智能</li></ul></div>
 
   </div>
 </div>
@@ -717,7 +717,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>AGPL-3.0</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">application-resume</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自动化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器人</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自动化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器人</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -727,7 +727,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #15 **↓7** [owainlewis/awesome-artificial-intelligence](https://github.com/owainlewis/awesome-artificial-intelligence)
+### #15 ➖ 持平 [owainlewis/awesome-artificial-intelligence](https://github.com/owainlewis/awesome-artificial-intelligence)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -765,7 +765,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>MIT</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">intelligent-machines</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">intelligent-systems</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">machine-intelligence</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">神经网络</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/owainlewis/awesome-artificial-intelligence" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -775,7 +775,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #16 **↓7** [tangyudi/Ai-Learn](https://github.com/tangyudi/Ai-Learn)
+### #16 ➖ 持平 [tangyudi/Ai-Learn](https://github.com/tangyudi/Ai-Learn)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -813,7 +813,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>Unknown</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">algorithm</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">caffe</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">计算机视觉</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">data-analysis</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">data-mining</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">计算机视觉</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据分析</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Caffe</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/tangyudi/Ai-Learn" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -823,7 +823,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #17 **↓7** [Baiyuetribe/paper2gui](https://github.com/Baiyuetribe/paper2gui)
+### #17 ➖ 持平 [Baiyuetribe/paper2gui](https://github.com/Baiyuetribe/paper2gui)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -831,7 +831,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <img src="https://github.com/Baiyuetribe.png?size=48" alt="Baiyuetribe avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
   <div style="flex: 1;">
     <b style="font-size: 1.1em; color: #1f2328;">📝 将AI论文转换为GUI ，让每个人都能轻松方便地使用人工智能技术</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>让每个人都简单方便的使用前沿人工智能技术</li></ul></div>
+
 <div style="margin-top: 10px; color: #656d76; font-size: 0.95em;">💡 让每个人都简单方便的使用前沿人工智能技术</div>
   </div>
 </div>
@@ -861,7 +861,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>MIT</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">animegan2</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">codeformer-gui</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">dain</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">dain-gui</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">gfpgan</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">huoshan-tts</span></div>
+
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/Baiyuetribe/paper2gui" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -871,7 +871,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #18 **↓7** [olistic/warriorjs](https://github.com/olistic/warriorjs)
+### #18 ➖ 持平 [olistic/warriorjs](https://github.com/olistic/warriorjs)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -909,7 +909,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   <span>📄 开源协议：<b>MIT</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">battle</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">epic</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">game</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">JavaScript</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">js</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">JavaScript</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
   <a href="https://github.com/olistic/warriorjs" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
@@ -919,7 +919,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #19 **↓7** [aimacode/aima-python](https://github.com/aimacode/aima-python)
+### #19 ➖ 持平 [aimacode/aima-python](https://github.com/aimacode/aima-python)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -967,7 +967,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 
-### #20 **↓7** [norvig/paip-lisp](https://github.com/norvig/paip-lisp)
+### #20 ➖ 持平 [norvig/paip-lisp](https://github.com/norvig/paip-lisp)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
@@ -1065,15 +1065,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 - **数据科学**：5 个项目上榜
 - **神经网络**：4 个项目上榜
 - **PyTorch**：4 个项目上榜
-- **data-analysis**：4 个项目上榜
-
-### 🚀 本周新上榜项目
-
-- **[tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)** - 面向所有人的开源机器学习框架
-- **[huggingface/transformers](https://github.com/huggingface/transformers)** - 🤗 Transformers ：用于推理和训练的文本、视觉、音频和多模态模型中最...
-- **[gradio-app/gradio](https://github.com/gradio-app/gradio)** - 在Python中构建和分享令人愉悦的机器学习应用程序。🌟STAR支持我们的工作！
-- **[lutzroeder/netron](https://github.com/lutzroeder/netron)** - 神经网络、深度学习和机器学习模型的可视化工具
-- **[scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn)** - Scikit-learn: Machine learning in Python...
+- **数据分析**：4 个项目上榜
 
 ### ⚡ 增长速度之最
 
@@ -1098,7 +1090,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 
 <div style="text-align: center; color: #656d76; font-size: 0.9em;">
 
-📝 报告自动生成于 2026-06-06 23:08:52  
+📝 报告自动生成于 2026-06-06 23:13:41  
 🔍 数据基于 GitHub API，仅供参考  
 🌐 项目描述由 AI 翻译，如有不准确之处以英文原文为准
 
