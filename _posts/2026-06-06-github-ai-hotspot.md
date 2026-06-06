@@ -36,7 +36,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 | 4 | `py-why/EconML` | ALICE (Automated Learning and Intel... | 4.7k | +0 | +0.0% | 2 | 16.0 |
 | 5 | `steven2358/awesome-generative-ai` | 现代生成人工智能项目和服务的精选列表 | 12.1k | +0 | +0.0% | 1 | 8.0 |
 | 6 | `AMAI-GmbH/AI-Expert-Roadmap` | 2022年成为人工智能专家的路线图 | 31.1k | +0 | +0.0% | 0 | 0.0 |
-| 7 | `feder-cr/Jobs_Applier_AI_Agent_AIHawk` | AIHawk aims to easy job hunt proces... | 29.9k | +0 | +0.0% | 0 | 0.0 |
+| 7 | `feder-cr/Jobs_Applier_AI_Agent_AIHawk` | AIHawk旨在通过自动化求职流程来简化求职流程。利用人工智能，它使用... | 29.9k | +0 | +0.0% | 0 | 0.0 |
 | 8 | `owainlewis/awesome-artificial-intelligence` | 人工智能（ AI ）课程、书籍、视频讲座和论文的精选列表。 | 14.0k | +0 | +0.0% | 0 | 0.0 |
 | 9 | `tangyudi/Ai-Learn` | 人工智能学习路线图PyTorch整理近 tensorflow个实战案例... | 13.0k | +0 | +0.0% | 0 | 0.0 |
 | 10 | `Baiyuetribe/paper2gui` | 将AI论文转换为GUI ，让每个人都能轻松方便地使用人工智能技术。让每... | 10.7k | +0 | +0.0% | 0 | 0.0 |
@@ -145,7 +145,7 @@ GeoAI: Artificial Intelligence for Geospatial Data
 </div>
 
 
-###  #4 **↓2** py-why/EconML
+### #4 **↓2** py-why/EconML
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -175,7 +175,7 @@ ALICE (Automated Learning and Intelligence for Causation and Economics) is a Mic
 </div>
 
 
-###  #5 **↓2** steven2358/awesome-generative-ai
+### #5 **↓2** steven2358/awesome-generative-ai
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -205,7 +205,7 @@ A curated list of modern Generative Artificial Intelligence projects and service
 </div>
 
 
-###  #6 **↓2** AMAI-GmbH/AI-Expert-Roadmap
+### #6 **↓2** AMAI-GmbH/AI-Expert-Roadmap
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -235,11 +235,11 @@ Roadmap to becoming an Artificial Intelligence Expert in 2022
 </div>
 
 
-###  #7 **↓2** feder-cr/Jobs_Applier_AI_Agent_AIHawk
+### #7 **↓2** feder-cr/Jobs_Applier_AI_Agent_AIHawk
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
-**📝 中文描述**：AIHawk aims to easy job hunt process by automating the job application process. Utilizing 人工智能, it enables users to apply for multiple jobs in a tailored way.
+**📝 中文描述**：AIHawk旨在通过自动化求职流程来简化求职流程。利用人工智能，它使用户能够以量身定制的方式申请多个工作。
 
 <details>
 <summary>查看英文原文</summary>
@@ -265,7 +265,7 @@ AIHawk aims to easy job hunt process by automating the job application process. 
 </div>
 
 
-###  #8 **↓2** owainlewis/awesome-artificial-intelligence
+### #8 **↓2** owainlewis/awesome-artificial-intelligence
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -295,7 +295,7 @@ A curated list of Artificial Intelligence (AI) courses, books, video lectures an
 </div>
 
 
-###  #9 **↓2** tangyudi/Ai-Learn
+### #9 **↓2** tangyudi/Ai-Learn
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -325,7 +325,7 @@ A curated list of Artificial Intelligence (AI) courses, books, video lectures an
 </div>
 
 
-###  #10 **↓2** Baiyuetribe/paper2gui
+### #10 **↓2** Baiyuetribe/paper2gui
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -355,7 +355,7 @@ Convert AI papers to GUI，Make it easy and convenient for everyone to use artif
 </div>
 
 
-###  #11 **↓2** olistic/warriorjs
+### #11 **↓2** olistic/warriorjs
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -385,7 +385,7 @@ Convert AI papers to GUI，Make it easy and convenient for everyone to use artif
 </div>
 
 
-###  #12 **↓2** aimacode/aima-python
+### #12 **↓2** aimacode/aima-python
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -415,7 +415,7 @@ Python implementation of algorithms from Russell And Norvig's "Artificial Intell
 </div>
 
 
-###  #13 **↓2** norvig/paip-lisp
+### #13 **↓2** norvig/paip-lisp
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -445,7 +445,7 @@ Lisp code for the textbook "Paradigms of Artificial Intelligence Programming"
 </div>
 
 
-###  #14 **↓2** MycroftAI/mycroft-core
+### #14 **↓2** MycroftAI/mycroft-core
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -475,7 +475,7 @@ Mycroft Core, the Mycroft Artificial Intelligence platform.
 </div>
 
 
-###  #15 **↓2** SkalskiP/courses
+### #15 **↓2** SkalskiP/courses
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -505,7 +505,7 @@ This repository is a curated collection of links to various courses and resource
 </div>
 
 
-###  #16 🆕 新上榜 sindresorhus/awesome-chatgpt
+### #16 🆕 新上榜 sindresorhus/awesome-chatgpt
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -535,7 +535,7 @@ This repository is a curated collection of links to various courses and resource
 </div>
 
 
-###  #17 🆕 新上榜 KalyanM45/AI-Project-Gallery
+### #17 🆕 新上榜 KalyanM45/AI-Project-Gallery
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -565,7 +565,7 @@ This Repository Contain All the Artificial Intelligence Projects such as Machine
 </div>
 
 
-###  #18 🆕 新上榜 mahseema/awesome-ai-tools
+### #18 🆕 新上榜 mahseema/awesome-ai-tools
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -595,7 +595,7 @@ A curated list of Artificial Intelligence Top Tools
 </div>
 
 
-###  #19 🆕 新上榜 louisfb01/start-machine-learning
+### #19 🆕 新上榜 louisfb01/start-machine-learning
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -625,7 +625,7 @@ A complete guide to start and improve in machine learning (ML), artificial intel
 </div>
 
 
-###  #20 🆕 新上榜 microsoft/muzic
+### #20 🆕 新上榜 microsoft/muzic
 
 <div style="background: #f6f8fa; padding: 16px; border-radius: 8px; margin: 12px 0; border-left: 4px solid #2ea043;">
 
@@ -738,7 +738,7 @@ Muzic: Music Understanding and Generation with Artificial Intelligence
 
 <div style="text-align: center; color: #656d76; font-size: 0.9em;">
 
-📝 报告自动生成于 2026-06-06 22:48:45  
+📝 报告自动生成于 2026-06-06 22:50:05  
 🔍 数据基于 GitHub API，仅供参考  
 🌐 项目描述由 AI 翻译，如有不准确之处以英文原文为准
 
