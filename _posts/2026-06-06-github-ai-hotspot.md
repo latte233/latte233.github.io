@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "GitHub AI 项目综合热度榜 - 2026-06-06"
+title: "GitHub AI Agent 项目综合热度榜 - 2026-06-06"
 date: 2026-06-06
 categories: [AI, GitHub, 开源]
 tags: [AI, 开源项目, 热度榜]
 excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增长速度和开发活跃度排名"
 ---
 
-# 📊 GitHub AI 项目综合热度榜
+# 📊 GitHub AI Agent 项目综合热度榜
 
 > 📅 统计周期：2026-05-30 ~ 2026-06-06  
 > 🎯 追踪维度：Star 增长速度 (60%) + Commit 活跃度 (40%)  
@@ -30,96 +30,48 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 
 | 排名 | 项目名 | 中文简介 | 总Star | 本周增长 | 周涨幅 | 本周Commits | 综合得分 |
 |------|--------|----------|--------|----------|--------|-------------|----------|
-| 🥇 1 | [feder-cr/Jobs_Applier_AI_Agent_AIHawk](https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk) | AIHawk旨在通过自动化求职流程来简化求职流程。利用人工智能，它使用... | **29.9k** | +1 | +0.0% | 0 | **60.0** |
-| 🥈 2 | [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) | 面向所有人的开源机器学习框架 | **195.6k** | +0 | +0.0% | 319 | **40.0** |
-| 🥉 3 | [huggingface/transformers](https://github.com/huggingface/transformers) | 🤗 Transformers ：用于推理和训练的文本、视觉、音频和多模... | **161.3k** | +0 | +0.0% | 67 | **8.4** |
-| 4 | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 在Python中构建和分享令人愉悦的机器学习应用程序。🌟STAR支持我... | **42.8k** | +0 | +0.0% | 27 | **3.39** |
-| 5 | [lutzroeder/netron](https://github.com/lutzroeder/netron) | 神经网络、深度学习和机器学习模型的可视化工具 | **33.0k** | +0 | +0.0% | 23 | **2.88** |
-| 6 | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | Scikit-learn: Machine learning in P... | **66.3k** | +0 | +0.0% | 20 | **2.51** |
-| 7 | [wppconnect-team/wppconnect](https://github.com/wppconnect-team/wppconnect) | WPPConnect是JavaScript社区开发的开源项目，旨在将函... | **3.3k** | +0 | +0.0% | 5 | **0.63** |
-| 8 | [Josh-XT/AGiXT](https://github.com/Josh-XT/AGiXT) | AGiXT是动态人工智能代理自动化平台，可无缝协调不同人工智能提供商的... | **3.2k** | +0 | +0.0% | 5 | **0.63** |
-| 9 | [opengeos/geoai](https://github.com/opengeos/geoai) | GeoAI ：地理空间数据的人工智能 | **3.1k** | +0 | +0.0% | 5 | **0.63** |
-| 10 | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | Taranis AI是一种先进的开源智能(OSINT)工具，利用人工智... | **1.1k** | +0 | +0.0% | 5 | **0.63** |
-| 11 | [py-why/EconML](https://github.com/py-why/EconML) | ALICE (Automated Learning and Intel... | **4.7k** | +0 | +0.0% | 2 | **0.25** |
-| 12 | [steven2358/awesome-generative-ai](https://github.com/steven2358/awesome-generative-ai) | 现代生成人工智能项目和服务的精选列表 | **12.1k** | +0 | +0.0% | 1 | **0.13** |
-| 13 | [josephmisiti/awesome-machine-learning](https://github.com/josephmisiti/awesome-machine-learning) | 精心策划的优秀机器学习框架、库和软件列表。 | **72.7k** | +0 | +0.0% | 1 | **0.13** |
-| 14 | [AMAI-GmbH/AI-Expert-Roadmap](https://github.com/AMAI-GmbH/AI-Expert-Roadmap) | 2022年成为人工智能专家的路线图 | **31.1k** | +0 | +0.0% | 0 | **0.0** |
-| 15 | [owainlewis/awesome-artificial-intelligence](https://github.com/owainlewis/awesome-artificial-intelligence) | 人工智能（ AI ）课程、书籍、视频讲座和论文的精选列表。 | **14.0k** | +0 | +0.0% | 0 | **0.0** |
-| 16 | [tangyudi/Ai-Learn](https://github.com/tangyudi/Ai-Learn) | 人工智能学习路线图PyTorch整理近 tensorflow个实战案例... | **13.0k** | +0 | +0.0% | 0 | **0.0** |
-| 17 | [Baiyuetribe/paper2gui](https://github.com/Baiyuetribe/paper2gui) | 将AI论文转换为GUI ，让每个人都能轻松方便地使用人工智能技术。让每... | **10.7k** | +0 | +0.0% | 0 | **0.0** |
-| 18 | [olistic/warriorjs](https://github.com/olistic/warriorjs) | 🏰 一款令人兴奋的编程和人工智能游戏 | **9.5k** | +0 | +0.0% | 0 | **0.0** |
-| 19 | [aimacode/aima-python](https://github.com/aimacode/aima-python) | 来自Russell和Norvig的“人工智能-现代方法”的算法的Pyt... | **8.7k** | +0 | +0.0% | 0 | **0.0** |
-| 20 | [norvig/paip-lisp](https://github.com/norvig/paip-lisp) | 教科书《人工智能编程范式》的LISP代码 | **7.5k** | +0 | +0.0% | 0 | **0.0** |
+| 🥇 1 | [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | omo/lazycodex ；用于复杂代码库的唯一代理线束。用于复杂软... | **61.2k** | +0 | +0.0% | 1063 | **40.0** |
+| 🥈 2 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 与您一起成长的客服代表 | **184.4k** | +0 | +0.0% | 661 | **24.87** |
+| 🥉 3 | [langgenius/dify](https://github.com/langgenius/dify) | 用于代理工作流程开发的生产就绪平台。 | **144.1k** | +0 | +0.0% | 118 | **4.44** |
+| 4 | [infiniflow/ragflow](https://github.com/infiniflow/ragflow) | RAGFlow是领先的开源Retrieval-Augmented Ge... | **82.0k** | +0 | +0.0% | 116 | **4.37** |
+| 5 | [lobehub/lobehub](https://github.com/lobehub/lobehub) | 🤯 LobeHub是您的首席代理运营商，通过招聘、安排和报告您的整个人... | **78.3k** | +0 | +0.0% | 104 | **3.91** |
+| 6 | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | 适用于工具、聊天和工作流程的轻量级开源AI代理。 | **43.8k** | +0 | +0.0% | 101 | **3.8** |
+| 7 | [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | 从氛围编码到代理工程-实践使克劳德完美 | **56.6k** | +0 | +0.0% | 98 | **3.69** |
+| 8 | [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet) | ToolJet是ToolJet AI的开源基础， ToolJet AI... | **38.0k** | +0 | +0.0% | 81 | **3.05** |
+| 9 | [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) | 增强的ChatGPT克隆：功能Agent、MCP、Skills、Dee... | **38.3k** | +0 | +0.0% | 78 | **2.94** |
+| 10 | [earendil-works/pi](https://github.com/earendil-works/pi) | AI代理工具包：编码代理CLI、统一LLM API、TUI和Web U... | **60.3k** | +0 | +0.0% | 58 | **2.18** |
+| 11 | [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) | 配备智能聊天、自主代理和300多名助手的AI生产力工作室。统一访问FR... | **47.0k** | +0 | +0.0% | 51 | **1.92** |
+| 12 | [zhayujie/CowAgent](https://github.com/zhayujie/CowAgent) | 开源超级人工智能助手和代理线束。规划任务，运行工具和技能，凭借记忆和知... | **45.1k** | +0 | +0.0% | 51 | **1.92** |
+| 13 | [pingcap/tidb](https://github.com/pingcap/tidb) | TiDB专为不可预测增长的代理工作负载而构建，为交易、分析和矢量搜索提... | **40.1k** | +0 | +0.0% | 43 | **1.62** |
+| 14 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | The agent engineering platform. | **138.7k** | +0 | +0.0% | 36 | **1.35** |
+| 15 | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 完整的人工智能机构，触手可及--从前端向导到Reddit社区忍者，从奇... | **107.9k** | +0 | +0.0% | 35 | **1.32** |
+| 16 | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | Claude🌊 的主要特工meta-harness。部署智能多智能体群... | **58.2k** | +0 | +0.0% | 35 | **1.32** |
+| 17 | [agno-agi/agno](https://github.com/agno-agi/agno) | 构建、运行和管理代理平台。 | **40.5k** | +0 | +0.0% | 35 | **1.32** |
+| 18 | [aaif-goose/goose](https://github.com/aaif-goose/goose) | 开源、可扩展的AI代理，超越代码建议-使用任何LLM安装、执行、编辑和... | **46.9k** | +0 | +0.0% | 34 | **1.28** |
+| 19 | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 用于编排角色扮演、自主人工智能代理的框架。通过培养协作智能， Crew... | **52.9k** | +0 | +0.0% | 32 | **1.2** |
+| 20 | [1Panel-dev/1Panel](https://github.com/1Panel-dev/1Panel) | 🔥 1Panel是一款现代化的开源VPS控制面板，也是唯一支持原生AI... | **35.8k** | +0 | +0.0% | 27 | **1.02** |
 
 ---
 
 ## 🏆 详细榜单（每个项目的完整信息卡片）
 
-### 🥇 **↑13** [feder-cr/Jobs_Applier_AI_Agent_AIHawk](https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk)
+### 🥇 🆕 新上榜 [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
 <div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/feder-cr.png?size=48" alt="feder-cr avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <img src="https://github.com/code-yeongyu.png?size=48" alt="code-yeongyu avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
   <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 AIHawk旨在通过自动化求职流程来简化求职流程</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>利用人工智能，它使用户能够以量身定制的方式申请多个工作</li></ul></div>
-
+    <b style="font-size: 1.1em; color: #1f2328;">📝 omo/lazycodex</b>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>用于复杂软件工程的镐</li></ul></div>
+<div style="margin-top: 10px; color: #656d76; font-size: 0.95em;">💡 用于复杂代码库的唯一代理线束</div>
   </div>
 </div>
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">29,863</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span style="color: #2ea043; font-weight: bold; font-size: 1.1em;">+1 (+0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">0</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">60.0</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Python</b></span>
-  <span>📅 项目年龄：<b>1年10个月</b></span>
-  <span>📄 开源协议：<b>AGPL-3.0</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自动化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器人</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  
-</div>
-
-</div>
-
-
-### 🥈 **↓1** [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/tensorflow.png?size=48" alt="tensorflow avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 面向所有人的开源机器学习框架</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">195,568</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">61,237</div>
   </div>
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
@@ -127,7 +79,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   </div>
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">319</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">1063</div>
   </div>
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
@@ -136,29 +88,29 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>C++</b></span>
-  <span>📅 项目年龄：<b>10年7个月</b></span>
-  <span>📄 开源协议：<b>Apache-2.0</b></span>
+  <span>🔧 主要语言：<b>TypeScript</b></span>
+  <span>📅 项目年龄：<b>6个月</b></span>
+  <span>📄 开源协议：<b>NOASSERTION</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">神经网络</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">TensorFlow</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Python</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">分布式</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Claude</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/tensorflow/tensorflow" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://tensorflow.org)
+  <a href="https://github.com/code-yeongyu/oh-my-openagent" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://omo.dev)
 </div>
 
 </div>
 
 
-### 🥉 **↓1** [huggingface/transformers](https://github.com/huggingface/transformers)
+### 🥈 🆕 新上榜 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
 <div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/huggingface.png?size=48" alt="huggingface avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <img src="https://github.com/NousResearch.png?size=48" alt="NousResearch avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
   <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 🤗 Transformers ：用于推理和训练的文本、视觉、音频和多模态模型中最先进的机器学习模型的模型定义框架</b>
+    <b style="font-size: 1.1em; color: #1f2328;">📝 与您一起成长的客服代表</b>
 
 
   </div>
@@ -167,7 +119,7 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">161,346</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">184,415</div>
   </div>
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
@@ -175,38 +127,38 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   </div>
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">67</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">661</div>
   </div>
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">8.4</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">24.87</div>
   </div>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
   <span>🔧 主要语言：<b>Python</b></span>
-  <span>📅 项目年龄：<b>7年7个月</b></span>
-  <span>📄 开源协议：<b>Apache-2.0</b></span>
+  <span>📅 项目年龄：<b>10个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">大语言模型</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">音频</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">黑客节</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Claude</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/huggingface/transformers" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://huggingface.co/transformers)
+  <a href="https://github.com/NousResearch/hermes-agent" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://hermes-agent.nousresearch.com)
 </div>
 
 </div>
 
 
-### #4 **↓1** [gradio-app/gradio](https://github.com/gradio-app/gradio)
+### 🥉 🆕 新上榜 [langgenius/dify](https://github.com/langgenius/dify)
 
 <div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
 
 <div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/gradio-app.png?size=48" alt="gradio-app avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <img src="https://github.com/langgenius.png?size=48" alt="langgenius avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
   <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 在Python中构建和分享令人愉悦的机器学习应用程序</b>
+    <b style="font-size: 1.1em; color: #1f2328;">📝 用于代理工作流程开发的生产就绪平台</b>
 
 
   </div>
@@ -215,7 +167,823 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">42,828</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">144,134</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">118</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">4.44</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>TypeScript</b></span>
+  <span>📅 项目年龄：<b>3年1个月</b></span>
+  <span>📄 开源协议：<b>NOASSERTION</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">生成式 AI</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自动化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Gemini</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/langgenius/dify" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://dify.ai)
+</div>
+
+</div>
+
+
+### #4 🆕 新上榜 [infiniflow/ragflow](https://github.com/infiniflow/ragflow)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/infiniflow.png?size=48" alt="infiniflow avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 RAGFlow是领先的开源Retrieval-Augmented Generation (RAG)引擎，将尖端的RAG与Agent功能融合在一起，为LLM创建出色的上下文层</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">82,031</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">116</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">4.37</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Python</b></span>
+  <span>📅 项目年龄：<b>2年5个月</b></span>
+  <span>📄 开源协议：<b>Apache-2.0</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/infiniflow/ragflow" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://ragflow.io)
+</div>
+
+</div>
+
+
+### #5 🆕 新上榜 [lobehub/lobehub](https://github.com/lobehub/lobehub)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/lobehub.png?size=48" alt="lobehub avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 🤯 LobeHub是您的首席代理运营商，通过招聘、安排和报告您的整个人工智能团队，将您的代理组织成全天候运营</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">78,273</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">104</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">3.91</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>TypeScript</b></span>
+  <span>📅 项目年龄：<b>3年0个月</b></span>
+  <span>📄 开源协议：<b>NOASSERTION</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Claude</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/lobehub/lobehub" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://lobehub.com)
+</div>
+
+</div>
+
+
+### #6 🆕 新上榜 [HKUDS/nanobot](https://github.com/HKUDS/nanobot)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/HKUDS.png?size=48" alt="HKUDS avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 适用于工具、聊天和工作流程的轻量级开源AI代理</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">43,781</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">101</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">3.8</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Python</b></span>
+  <span>📅 项目年龄：<b>4个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Claude</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/HKUDS/nanobot" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://nanobot.wiki)
+</div>
+
+</div>
+
+
+### #7 🆕 新上榜 [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/shanraisshan.png?size=48" alt="shanraisshan avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 从氛围编码到代理工程-实践使克劳德完美</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">56,636</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">98</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">3.69</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>HTML</b></span>
+  <span>📅 项目年龄：<b>7个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/shanraisshan/claude-code-best-practice" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://linkedin.com/in/shanraisshan)
+</div>
+
+</div>
+
+
+### #8 🆕 新上榜 [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/ToolJet.png?size=48" alt="ToolJet avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 ToolJet是ToolJet AI的开源基础</b>
+
+<div style="margin-top: 10px; color: #656d76; font-size: 0.95em;">💡 ToolJet AI是用于构建内部工具、仪表板、业务应用程序、工作流程和AI代理的企业应用程序生成平台 🚀</div>
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">37,985</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">81</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">3.05</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>JavaScript</b></span>
+  <span>📅 项目年龄：<b>5年2个月</b></span>
+  <span>📄 开源协议：<b>AGPL-3.0</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">JavaScript</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">黑客节</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/ToolJet/ToolJet" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://tooljet.com)
+</div>
+
+</div>
+
+
+### #9 🆕 新上榜 [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/danny-avila.png?size=48" alt="danny-avila avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 增强的ChatGPT克隆：功能Agent、MCP、Skills、DeepSeek、Anthropic、AWS、OpenAI、Responses API、Azure、Groq、o1、GPT-5、Mistral、OpenRouter、Vertex AI、Gemini、Artifacts、AI模型切换、消息搜索、Code Interpreter、langchain、DALL-E-3、OpenAPI Actions、Functions、Secure Multi-User Auth、Presets、开源自托管</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">38,286</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">78</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">2.94</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>TypeScript</b></span>
+  <span>📅 项目年龄：<b>3年3个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Claude</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/danny-avila/LibreChat" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://librechat.ai/)
+</div>
+
+</div>
+
+
+### #10 🆕 新上榜 [earendil-works/pi](https://github.com/earendil-works/pi)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/earendil-works.png?size=48" alt="earendil-works avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 AI代理工具包：编码代理CLI、统一LLM API、TUI和Web UI库、Slack bot、vLLM pods</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">60,309</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">58</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">2.18</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>TypeScript</b></span>
+  <span>📅 项目年龄：<b>10个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/earendil-works/pi" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  
+</div>
+
+</div>
+
+
+### #11 🆕 新上榜 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/CherryHQ.png?size=48" alt="CherryHQ avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 配备智能聊天、自主代理和300多名助手的AI生产力工作室</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">46,968</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">51</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.92</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>TypeScript</b></span>
+  <span>📅 项目年龄：<b>2年0个月</b></span>
+  <span>📄 开源协议：<b>AGPL-3.0</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/CherryHQ/cherry-studio" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://cherryai.com)
+</div>
+
+</div>
+
+
+### #12 🆕 新上榜 [zhayujie/CowAgent](https://github.com/zhayujie/CowAgent)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/zhayujie.png?size=48" alt="zhayujie avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 开源超级人工智能助手和代理线束</b>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>规划任务，运行工具和技能，凭借记忆和知识自主成长</li><li style='margin: 4px 0;'>多机型，多渠道，轻量化，可扩展，单线安装</li></ul></div>
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">45,090</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">51</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.92</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Python</b></span>
+  <span>📅 项目年龄：<b>3年10个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Claude</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/zhayujie/CowAgent" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://cowagent.ai)
+</div>
+
+</div>
+
+
+### #13 🆕 新上榜 [pingcap/tidb](https://github.com/pingcap/tidb)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/pingcap.png?size=48" alt="pingcap avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 TiDB专为不可预测增长的代理工作负载而构建，为交易、分析和矢量搜索提供ACID保证和本机支持</b>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>支持。没有数据孤岛。没有嘈杂</li><li style='margin: 4px 0;'>支持ACID保证和本机支持。没有数据孤岛。没有嘈杂</li></ul></div>
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">40,138</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">43</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.62</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Go</b></span>
+  <span>📅 项目年龄：<b>10年9个月</b></span>
+  <span>📄 开源协议：<b>Apache-2.0</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据库</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/pingcap/tidb" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://www.tidb.io/)
+</div>
+
+</div>
+
+
+### #14 🆕 新上榜 [langchain-ai/langchain](https://github.com/langchain-ai/langchain)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/langchain-ai.png?size=48" alt="langchain-ai avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 The agent engineering platform.</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">138,661</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">36</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.35</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Python</b></span>
+  <span>📅 项目年龄：<b>3年7个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChatGPT</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">框架</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/langchain-ai/langchain" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://docs.langchain.com/langchain/)
+</div>
+
+</div>
+
+
+### #15 🆕 新上榜 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/msitarzewski.png?size=48" alt="msitarzewski avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 完整的人工智能机构，触手可及--从前端向导到Reddit社区忍者，从奇思妙想的注入者到现实检查者</b>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>每位客服代表都是具有个性、流程和经过验证的交付成果的专家</li></ul></div>
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">107,889</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">35</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.32</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Shell</b></span>
+  <span>📅 项目年龄：<b>7个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/msitarzewski/agency-agents" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  
+</div>
+
+</div>
+
+
+### #16 🆕 新上榜 [ruvnet/ruflo](https://github.com/ruvnet/ruflo)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/ruvnet.png?size=48" alt="ruvnet avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 Claude🌊 的主要特工meta-harness</b>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>部署智能多智能体群，协调自主工作流程，构建对话式人工智能系统</li><li style='margin: 4px 0;'>具有自适应记忆、自学习群体智能、RAG集成和本地Claude Code/Codex集成</li></ul></div>
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">58,164</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">35</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.32</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>TypeScript</b></span>
+  <span>📅 项目年龄：<b>1年0个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/ruvnet/ruflo" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://Cognitum.One)
+</div>
+
+</div>
+
+
+### #17 🆕 新上榜 [agno-agi/agno](https://github.com/agno-agi/agno)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/agno-agi.png?size=48" alt="agno-agi avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 构建、运行和管理代理平台</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">40,544</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">35</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.32</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Python</b></span>
+  <span>📅 项目年龄：<b>4年1个月</b></span>
+  <span>📄 开源协议：<b>Apache-2.0</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Python</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">开发工具</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/agno-agi/agno" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://docs.agno.com)
+</div>
+
+</div>
+
+
+### #18 🆕 新上榜 [aaif-goose/goose](https://github.com/aaif-goose/goose)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/aaif-goose.png?size=48" alt="aaif-goose avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 开源、可扩展的AI代理，超越代码建议-使用任何LLM安装、执行、编辑和测试</b>
+
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">46,897</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">34</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.28</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Rust</b></span>
+  <span>📅 项目年龄：<b>1年9个月</b></span>
+  <span>📄 开源协议：<b>Apache-2.0</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/aaif-goose/goose" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://goose-docs.ai/)
+</div>
+
+</div>
+
+
+### #19 🆕 新上榜 [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/crewAIInc.png?size=48" alt="crewAIInc avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 用于编排角色扮演、自主人工智能代理的框架</b>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>通过培养协作智能</li><li style='margin: 4px 0;'>CrewAI使代理能够无缝协作，处理复杂的任务</li></ul></div>
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">52,932</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
+    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">32</div>
+  </div>
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.2</div>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
+  <span>🔧 主要语言：<b>Python</b></span>
+  <span>📅 项目年龄：<b>2年7个月</b></span>
+  <span>📄 开源协议：<b>MIT</b></span>
+</div>
+
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">大语言模型</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">AI 智能体</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span></div>
+
+<div style="margin-top: 14px; display: flex; gap: 12px;">
+  <a href="https://github.com/crewAIInc/crewAI" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://crewai.com)
+</div>
+
+</div>
+
+
+### #20 🆕 新上榜 [1Panel-dev/1Panel](https://github.com/1Panel-dev/1Panel)
+
+<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
+
+<div style="display: flex; align-items: flex-start; gap: 16px;">
+  <img src="https://github.com/1Panel-dev.png?size=48" alt="1Panel-dev avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
+  <div style="flex: 1;">
+    <b style="font-size: 1.1em; color: #1f2328;">📝 🔥 1Panel是一款现代化的开源VPS控制面板，也是唯一支持原生AI代理的控制面板</b>
+<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>运行Ollama模型，部署OpenClaw代理，并从干净的Web界面管理整个服务器堆栈</li></ul></div>
+
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
+  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">35,772</div>
   </div>
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
@@ -227,789 +995,21 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
   </div>
   <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
     <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">3.39</div>
+    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">1.02</div>
   </div>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Python</b></span>
-  <span>📅 项目年龄：<b>7年5个月</b></span>
-  <span>📄 开源协议：<b>Apache-2.0</b></span>
+  <span>🔧 主要语言：<b>Go</b></span>
+  <span>📅 项目年龄：<b>3年10个月</b></span>
+  <span>📄 开源协议：<b>GPL-3.0</b></span>
 </div>
 
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Gradio</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据分析</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据可视化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">部署</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/gradio-app/gradio" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](http://www.gradio.app)
-</div>
-
-</div>
-
-
-### #5 **↓1** [lutzroeder/netron](https://github.com/lutzroeder/netron)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/lutzroeder.png?size=48" alt="lutzroeder avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 神经网络、深度学习和机器学习模型的可视化工具</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>深度学习 and 机器学习 models</li></ul></div>
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">33,037</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">23</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">2.88</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>JavaScript</b></span>
-  <span>📅 项目年龄：<b>15年5个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Core ML</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Keras</span></div>
+<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">智能体</span></div>
 
 <div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/lutzroeder/netron" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://netron.app)
-</div>
-
-</div>
-
-
-### #6 **↓1** [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/scikit-learn.png?size=48" alt="scikit-learn avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 Scikit-learn: Machine learning in Python.</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">66,263</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">20</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">2.51</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Python</b></span>
-  <span>📅 项目年龄：<b>15年9个月</b></span>
-  <span>📄 开源协议：<b>BSD-3-Clause</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Python</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据分析</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/scikit-learn/scikit-learn" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://scikit-learn.org)
-</div>
-
-</div>
-
-
-### #7 **↓1** [wppconnect-team/wppconnect](https://github.com/wppconnect-team/wppconnect)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/wppconnect-team.png?size=48" alt="wppconnect-team avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 WPPConnect是JavaScript社区开发的开源项目，旨在将函数从WhatsApp Web导出到节点，可用于支持创建任何交互，例如客户服务、媒体发送、基于短语的人工智能识别等，发挥您的想象力</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>支持创建任何交互，例如客户服务、媒体发送、基于短语</li></ul></div>
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">3,334</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">5</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.63</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>TypeScript</b></span>
-  <span>📅 项目年龄：<b>5年4个月</b></span>
-  <span>📄 开源协议：<b>NOASSERTION</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">API</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自动化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器人</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">聊天</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">聊天机器人</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/wppconnect-team/wppconnect" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://wppconnect.io)
-</div>
-
-</div>
-
-
-### #8 **↓1** [Josh-XT/AGiXT](https://github.com/Josh-XT/AGiXT)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/Josh-XT.png?size=48" alt="Josh-XT avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 AGiXT是动态人工智能代理自动化平台，可无缝协调不同人工智能提供商的指令管理和复杂任务执行</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>AGiXT结合自适应内存、智能功能和多功能插件系统，提供高效、全面的人工智能解决方案</li></ul></div>
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">3,194</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">5</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.63</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Python</b></span>
-  <span>📅 项目年龄：<b>3年1个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">通用人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自动化</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">ChromaDB</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/Josh-XT/AGiXT" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://AGiXT.com)
-</div>
-
-</div>
-
-
-### #9 **↓1** [opengeos/geoai](https://github.com/opengeos/geoai)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/opengeos.png?size=48" alt="opengeos avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 GeoAI ：地理空间数据的人工智能</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">3,091</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">5</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.63</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Python</b></span>
-  <span>📅 项目年龄：<b>2年9个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地球观测</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地理空间 AI</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">地理 Python</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/opengeos/geoai" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://opengeoai.org)
-</div>
-
-</div>
-
-
-### #10 **↓1** [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/taranis-ai.png?size=48" alt="taranis-ai avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 Taranis AI是一种先进的开源智能(OSINT)工具，利用人工智能彻底改变信息收集和情境分析</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">1,136</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">5</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.63</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Python</b></span>
-  <span>📅 项目年龄：<b>2年8个月</b></span>
-  <span>📄 开源协议：<b>EUPL-1.2</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">自然语言处理</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/taranis-ai/taranis-ai" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://taranis.ai/)
-</div>
-
-</div>
-
-
-### #11 **↓1** [py-why/EconML](https://github.com/py-why/EconML)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/py-why.png?size=48" alt="py-why avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 ALICE (Automated Learning and Intelligence for Causation and Economics)是微软研究项目，旨在将人工智能概念应用于经济决策</b>
-<div style="margin-top: 12px;"><b>🎯 核心功能</b><ul style="margin: 8px 0 0 20px; padding: 0;"><li style='margin: 4px 0;'>ALICE Python SDK （ econml ）实现了正交机器学习算法，例如</li></ul></div>
-<div style="margin-top: 10px; color: #656d76; font-size: 0.95em;">💡 其目标之一是构建将最先进的机器学习技术与计量经济学相结合的工具包，以便为复杂的因果推理问题带来自动化</div>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">4,658</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">2</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.25</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Jupyter Notebook</b></span>
-  <span>📅 项目年龄：<b>8年1个月</b></span>
-  <span>📄 开源协议：<b>NOASSERTION</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">因果推断</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">经济学</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/py-why/EconML" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://www.microsoft.com/en-us/research/project/alice/)
-</div>
-
-</div>
-
-
-### #12 **↓1** [steven2358/awesome-generative-ai](https://github.com/steven2358/awesome-generative-ai)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/steven2358.png?size=48" alt="steven2358 avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 现代生成人工智能项目和服务的精选列表</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">12,116</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">1</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.13</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Unknown</b></span>
-  <span>📅 项目年龄：<b>3年7个月</b></span>
-  <span>📄 开源协议：<b>CC0-1.0</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">大语言模型</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">生成式 AI</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">精选列表</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/steven2358/awesome-generative-ai" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  
-</div>
-
-</div>
-
-
-### #13 **↓1** [josephmisiti/awesome-machine-learning](https://github.com/josephmisiti/awesome-machine-learning)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/josephmisiti.png?size=48" alt="josephmisiti avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 精心策划的优秀机器学习框架、库和软件列表</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">72,701</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">1</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.13</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Python</b></span>
-  <span>📅 项目年龄：<b>11年10个月</b></span>
-  <span>📄 开源协议：<b>NOASSERTION</b></span>
-</div>
-
-
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/josephmisiti/awesome-machine-learning" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  
-</div>
-
-</div>
-
-
-### #14 **↓1** [AMAI-GmbH/AI-Expert-Roadmap](https://github.com/AMAI-GmbH/AI-Expert-Roadmap)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/AMAI-GmbH.png?size=48" alt="AMAI-GmbH avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 2022年成为人工智能专家的路线图</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">31,065</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">0</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.0</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>JavaScript</b></span>
-  <span>📅 项目年龄：<b>5年7个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">神经网络</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据分析</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/AMAI-GmbH/AI-Expert-Roadmap" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://i.am.ai/roadmap)
-</div>
-
-</div>
-
-
-### #15 ➖ 持平 [owainlewis/awesome-artificial-intelligence](https://github.com/owainlewis/awesome-artificial-intelligence)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/owainlewis.png?size=48" alt="owainlewis avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 人工智能（ AI ）课程、书籍、视频讲座和论文的精选列表</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">14,023</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">0</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.0</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Unknown</b></span>
-  <span>📅 项目年龄：<b>11年4个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">机器学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">神经网络</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/owainlewis/awesome-artificial-intelligence" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  
-</div>
-
-</div>
-
-
-### #16 ➖ 持平 [tangyudi/Ai-Learn](https://github.com/tangyudi/Ai-Learn)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/tangyudi.png?size=48" alt="tangyudi avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 人工智能学习路线图PyTorch整理近 tensorflow个实战案例与项目机免费提供配套教材器就业实战学习零基础入门包括，深度数学学习机器学习数据数据分析深度学习分析数计算机视觉据自然语言处理挖掘数学数据科学人工智能python tensorflow tensorflow2 caffe keras pytorch algorithm numpy pandas matplotlib seaborn nlp cv等热门领域</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">13,032</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">0</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.0</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Unknown</b></span>
-  <span>📅 项目年龄：<b>6年4个月</b></span>
-  <span>📄 开源协议：<b>Unknown</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">深度学习</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">计算机视觉</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据科学</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">数据分析</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">Caffe</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/tangyudi/Ai-Learn" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  
-</div>
-
-</div>
-
-
-### #17 ➖ 持平 [Baiyuetribe/paper2gui](https://github.com/Baiyuetribe/paper2gui)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/Baiyuetribe.png?size=48" alt="Baiyuetribe avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 将AI论文转换为GUI ，让每个人都能轻松方便地使用人工智能技术</b>
-
-<div style="margin-top: 10px; color: #656d76; font-size: 0.95em;">💡 让每个人都简单方便的使用前沿人工智能技术</div>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">10,725</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">0</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.0</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Jupyter Notebook</b></span>
-  <span>📅 项目年龄：<b>4年8个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/Baiyuetribe/paper2gui" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://xiaobaituai.com)
-</div>
-
-</div>
-
-
-### #18 ➖ 持平 [olistic/warriorjs](https://github.com/olistic/warriorjs)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/olistic.png?size=48" alt="olistic avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 🏰 一款令人兴奋的编程和人工智能游戏</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">9,521</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">0</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.0</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>TypeScript</b></span>
-  <span>📅 项目年龄：<b>11年1个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-<div style="margin-top: 12px;"><b>🏷️ 标签</b>：<span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">人工智能</span> <span style="background: #ddf4ff; color: #0969da; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin: 2px; display: inline-block;">JavaScript</span></div>
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/olistic/warriorjs" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  📖 [官方网站](https://warriorjs.com)
-</div>
-
-</div>
-
-
-### #19 ➖ 持平 [aimacode/aima-python](https://github.com/aimacode/aima-python)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/aimacode.png?size=48" alt="aimacode avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 来自Russell和Norvig的“人工智能-现代方法”的算法的Python实现</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">8,746</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">0</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.0</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Jupyter Notebook</b></span>
-  <span>📅 项目年龄：<b>10年4个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/aimacode/aima-python" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  
-</div>
-
-</div>
-
-
-### #20 ➖ 持平 [norvig/paip-lisp](https://github.com/norvig/paip-lisp)
-
-<div style="background: #f6f8fa; padding: 20px; border-radius: 10px; margin: 12px 0; border-left: 5px solid #2ea043;">
-
-<div style="display: flex; align-items: flex-start; gap: 16px;">
-  <img src="https://github.com/norvig.png?size=48" alt="norvig avatar" style="width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;" />
-  <div style="flex: 1;">
-    <b style="font-size: 1.1em; color: #1f2328;">📝 教科书《人工智能编程范式》的LISP代码</b>
-
-
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d1d9e0;">
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">⭐ 总 Star</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">7,461</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">📈 本周新增</div>
-    <div style="font-size: 1.2em; font-weight: bold;"><span>0 (0.0%)</span></div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">💻 本周 Commits</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #1f2328;">0</div>
-  </div>
-  <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
-    <div style="font-size: 0.85em; color: #656d76; margin-bottom: 4px;">🏆 综合得分</div>
-    <div style="font-size: 1.4em; font-weight: bold; color: #8250df;">0.0</div>
-  </div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.9em; color: #656d76;">
-  <span>🔧 主要语言：<b>Common Lisp</b></span>
-  <span>📅 项目年龄：<b>8年4个月</b></span>
-  <span>📄 开源协议：<b>MIT</b></span>
-</div>
-
-
-
-<div style="margin-top: 14px; display: flex; gap: 12px;">
-  <a href="https://github.com/norvig/paip-lisp" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
-  
+  <a href="https://github.com/1Panel-dev/1Panel" style="background: #2ea043; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; display: inline-block;">🔗 访问 GitHub</a>
+  📖 [官方网站](https://1panel.pro)
 </div>
 
 </div>
@@ -1022,35 +1022,46 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 
 | 排名 | 项目名 | 周涨幅 | 本周增长 | 总Star |
 |------|--------|--------|----------|--------|
-| 🔥 🥇 1 | [feder-cr/Jobs_Applier_AI_Agent_AIHawk](https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk) | **+0.0%** | +1 | **29.9k** |
-| 🔥 🥈 2 | [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) | **+0.0%** | +0 | **195.6k** |
-| 🔥 🥉 3 | [huggingface/transformers](https://github.com/huggingface/transformers) | **+0.0%** | +0 | **161.3k** |
-| 4 | [gradio-app/gradio](https://github.com/gradio-app/gradio) | **+0.0%** | +0 | **42.8k** |
-| 5 | [lutzroeder/netron](https://github.com/lutzroeder/netron) | **+0.0%** | +0 | **33.0k** |
-| 6 | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | **+0.0%** | +0 | **66.3k** |
-| 7 | [wppconnect-team/wppconnect](https://github.com/wppconnect-team/wppconnect) | **+0.0%** | +0 | **3.3k** |
-| 8 | [Josh-XT/AGiXT](https://github.com/Josh-XT/AGiXT) | **+0.0%** | +0 | **3.2k** |
-| 9 | [opengeos/geoai](https://github.com/opengeos/geoai) | **+0.0%** | +0 | **3.1k** |
-| 10 | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | **+0.0%** | +0 | **1.1k** |
+| 🔥 🥇 1 | [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | **+0.0%** | +0 | **61.2k** |
+| 🔥 🥈 2 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | **+0.0%** | +0 | **184.4k** |
+| 🔥 🥉 3 | [langgenius/dify](https://github.com/langgenius/dify) | **+0.0%** | +0 | **144.1k** |
+| 4 | [infiniflow/ragflow](https://github.com/infiniflow/ragflow) | **+0.0%** | +0 | **82.0k** |
+| 5 | [lobehub/lobehub](https://github.com/lobehub/lobehub) | **+0.0%** | +0 | **78.3k** |
+| 6 | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | **+0.0%** | +0 | **43.8k** |
+| 7 | [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | **+0.0%** | +0 | **56.6k** |
+| 8 | [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet) | **+0.0%** | +0 | **38.0k** |
+| 9 | [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) | **+0.0%** | +0 | **38.3k** |
+| 10 | [earendil-works/pi](https://github.com/earendil-works/pi) | **+0.0%** | +0 | **60.3k** |
 
 ### 💪 开发最活跃 Top 10（按本周 Commit 数排序）
 
 | 排名 | 项目名 | 本周Commits | 主要语言 | 综合得分 |
 |------|--------|-------------|----------|----------|
-| 💪 🥇 1 | [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) | **319** | C++ | **40.0** |
-| 💪 🥈 2 | [huggingface/transformers](https://github.com/huggingface/transformers) | **67** | Python | **8.4** |
-| 💪 🥉 3 | [gradio-app/gradio](https://github.com/gradio-app/gradio) | **27** | Python | **3.39** |
-| 4 | [lutzroeder/netron](https://github.com/lutzroeder/netron) | **23** | JavaScript | **2.88** |
-| 5 | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | **20** | Python | **2.51** |
-| 6 | [wppconnect-team/wppconnect](https://github.com/wppconnect-team/wppconnect) | **5** | TypeScript | **0.63** |
-| 7 | [Josh-XT/AGiXT](https://github.com/Josh-XT/AGiXT) | **5** | Python | **0.63** |
-| 8 | [opengeos/geoai](https://github.com/opengeos/geoai) | **5** | Python | **0.63** |
-| 9 | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | **5** | Python | **0.63** |
-| 10 | [py-why/EconML](https://github.com/py-why/EconML) | **2** | Jupyter Notebook | **0.25** |
+| 💪 🥇 1 | [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | **1063** | TypeScript | **40.0** |
+| 💪 🥈 2 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | **661** | Python | **24.87** |
+| 💪 🥉 3 | [langgenius/dify](https://github.com/langgenius/dify) | **118** | TypeScript | **4.44** |
+| 4 | [infiniflow/ragflow](https://github.com/infiniflow/ragflow) | **116** | Python | **4.37** |
+| 5 | [lobehub/lobehub](https://github.com/lobehub/lobehub) | **104** | TypeScript | **3.91** |
+| 6 | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | **101** | Python | **3.8** |
+| 7 | [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | **98** | HTML | **3.69** |
+| 8 | [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet) | **81** | JavaScript | **3.05** |
+| 9 | [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) | **78** | TypeScript | **2.94** |
+| 10 | [earendil-works/pi](https://github.com/earendil-works/pi) | **58** | TypeScript | **2.18** |
 
 ### 🆕 新星项目 Top 10（项目年龄 < 1年，按综合得分排序）
 
-> 暂无项目年龄小于1年的新星项目
+| 排名 | 项目名 | 项目年龄 | 总Star | 本周增长 | 综合得分 |
+|------|--------|----------|--------|----------|----------|
+| ⭐ 🥇 1 | [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | 6个月 | **61.2k** | +0 | **40.0** |
+| ⭐ 🥈 2 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 10个月 | **184.4k** | +0 | **24.87** |
+| ⭐ 🥉 3 | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | 4个月 | **43.8k** | +0 | **3.8** |
+| 4 | [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | 7个月 | **56.6k** | +0 | **3.69** |
+| 5 | [earendil-works/pi](https://github.com/earendil-works/pi) | 10个月 | **60.3k** | +0 | **2.18** |
+| 6 | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 7个月 | **107.9k** | +0 | **1.32** |
+| 7 | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | 4个月 | **35.4k** | +0 | **0.15** |
+| 8 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 3个月 | **48.6k** | +0 | **0.04** |
+| 9 | [karpathy/autoresearch](https://github.com/karpathy/autoresearch) | 3个月 | **85.4k** | +0 | **0.0** |
+| 10 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | 9个月 | **80.9k** | +0 | **0.0** |
 
 ---
 
@@ -1058,39 +1069,47 @@ excerpt: "每日追踪 GitHub 上最热门的 AI 开源项目，综合 Star 增�
 
 ### 🔥 热门技术标签
 
-- **人工智能**：11 个项目上榜
-- **机器学习**：9 个项目上榜
-- **Python**：8 个项目上榜
-- **深度学习**：8 个项目上榜
-- **数据科学**：5 个项目上榜
-- **神经网络**：4 个项目上榜
-- **PyTorch**：4 个项目上榜
-- **数据分析**：4 个项目上榜
+- **人工智能**：14 个项目上榜
+- **AI 智能体**：12 个项目上榜
+- **智能体**：8 个项目上榜
+- **Claude**：7 个项目上榜
+- **ChatGPT**：6 个项目上榜
+- **大语言模型**：6 个项目上榜
+- **Gemini**：5 个项目上榜
+- **检索增强生成**：3 个项目上榜
+
+### 🚀 本周新上榜项目
+
+- **[code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent)** - omo/lazycodex ；用于复杂代码库的唯一代理线束。用于复杂软件工程的镐...
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)** - 与您一起成长的客服代表
+- **[langgenius/dify](https://github.com/langgenius/dify)** - 用于代理工作流程开发的生产就绪平台。
+- **[infiniflow/ragflow](https://github.com/infiniflow/ragflow)** - RAGFlow是领先的开源Retrieval-Augmented Generat...
+- **[lobehub/lobehub](https://github.com/lobehub/lobehub)** - 🤯 LobeHub是您的首席代理运营商，通过招聘、安排和报告您的整个人工智能团队...
 
 ### ⚡ 增长速度之最
 
-- **[feder-cr/Jobs_Applier_AI_Agent_AIHawk](https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk)**：+0.0% 周涨幅，新增 1 Star
-- **[tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)**：+0.0% 周涨幅，新增 0 Star
-- **[huggingface/transformers](https://github.com/huggingface/transformers)**：+0.0% 周涨幅，新增 0 Star
+- **[code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent)**：+0.0% 周涨幅，新增 0 Star
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)**：+0.0% 周涨幅，新增 0 Star
+- **[langgenius/dify](https://github.com/langgenius/dify)**：+0.0% 周涨幅，新增 0 Star
 
 ### 💪 开发活跃度之最
 
-- **[tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)**：本周 319 次 Commits
-- **[huggingface/transformers](https://github.com/huggingface/transformers)**：本周 67 次 Commits
-- **[gradio-app/gradio](https://github.com/gradio-app/gradio)**：本周 27 次 Commits
+- **[code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent)**：本周 1063 次 Commits
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)**：本周 661 次 Commits
+- **[langgenius/dify](https://github.com/langgenius/dify)**：本周 118 次 Commits
 
 ### 📈 本周数据概览
 
-- Top 20 项目总 Star 数：**723,708**
-- Top 20 项目本周新增 Star：**+1**
-- Top 20 项目本周总 Commits：**480** 次
+- Top 20 项目总 Star 数：**1,400,142**
+- Top 20 项目本周新增 Star：**+0**
+- Top 20 项目本周总 Commits：**2857** 次
 
 
 ---
 
 <div style="text-align: center; color: #656d76; font-size: 0.9em;">
 
-📝 报告自动生成于 2026-06-06 23:17:12  
+📝 报告自动生成于 2026-06-06 23:31:04  
 🔍 数据基于 GitHub API，仅供参考  
 🌐 项目描述由 AI 翻译，如有不准确之处以英文原文为准
 
