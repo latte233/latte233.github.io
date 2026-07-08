@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 全域雷达图 · 2026-07-08</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/build-your-own-radar@0.2.0/dist/radar.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #eee; }
+#radar { width: 100%; height: 100vh; }
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,26,46,0.95); padding: 12px 24px; border-bottom: 1px solid #333; }
+.header h1 { font-size: 18px; font-weight: 600; }
+.header .meta { font-size: 12px; color: #888; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>AI 全域雷达图 · 2026-07-08</h1>
+<div class="meta">全量扫描 | 16/16 信号源 | 15 条信号 | Adopt 3 · Trial 2 · Assess 8 · Watch 2</div>
+</div>
+<div id="radar"></div>
+<script>
+// CSV data embedded as JavaScript
+const csvData = `name,ring,quadrant,isNew,description
+MCP 2026-07-28 规范,Adopt,Frameworks & Infrastructure,FALSE,协议史上最大重构 7月28日正式发布
+anthropics/skills,Adopt,Tools & Products,FALSE,Agent Skills 开放标准 159K Star
+Ruflo,Adopt,Tools & Products,FALSE,多Agent编排框架 63K Star持续增长
+LongCat-2.0,Trial,Models & Research,TRUE,1.6T MIT开源模型 超越GPT-5.5 国产芯片训练
+CodeGraph,Trial,Frameworks & Infrastructure,FALSE,代码知识图谱工具 58K Star
+GPT-5.6 Sol,Assess,Models & Research,TRUE,三档模型仍受限预览 Terminal-Bench 91.9%
+DeepSeek V4 正式版,Assess,Models & Research,TRUE,7月中旬正式上线 引入峰谷定价
+Microsoft Agent Framework,Assess,Frameworks & Infrastructure,FALSE,11.9K Star 100+贡献者
+SWE-Together 基准,Assess,Practices & Ecosystem,TRUE,多轮Agent编码基准 Claude领先
+SpaceX 收购 Cursor,Assess,Practices & Ecosystem,TRUE,600亿美元全股票交易 Q3完成
+Together AI C轮,Assess,Practices & Ecosystem,TRUE,8亿美元融资 83亿估值
+Claude Fable 5 恢复,Assess,Models & Research,TRUE,出口管制解除后全球恢复
+Claude Code Dynamic Workflows,Assess,Tools & Products,TRUE,GA发布 单会话编排数百子Agent
+ByteDance PAR,Watch,Models & Research,TRUE,字节开源蛋白质模型 ICML Oral
+ICML 2026 奖项,Watch,Practices & Ecosystem,TRUE,扩散模型获奖 LLM审稿违规`;
+
+// Render radar using build-your-own-radar
+if (typeof radar !== 'undefined') {
+  radar({
+    svg_id: "radar",
+    width: 1450,
+    height: 1050,
+    colors: {
+      background: "#1a1a2e",
+      grid: "#333355",
+      inactive: "#444"
+    },
+    quadrants: [
+      { name: "Models & Research" },
+      { name: "Frameworks & Infrastructure" },
+      { name: "Tools & Products" },
+      { name: "Practices & Ecosystem" }
+    ],
+    rings: [
+      { name: "Adopt", color: "#5ba300" },
+      { name: "Trial", color: "#c7ba00" },
+      { name: "Assess", color: "#e8890c" },
+      { name: "Watch", color: "#ff5151" }
+    ],
+    print_layout: false,
+    entries: csvData.trim().split('\n').slice(1).map(line => {
+      const parts = line.split(',');
+      return {
+        label: parts[0],
+        ring: parts[1],
+        quadrant: parts[2],
+        isNew: parts[3] === 'TRUE',
+        description: parts[4]
+      };
+    })
+  });
+} else {
+  // Fallback: simple HTML display
+  document.getElementById('radar').innerHTML = '<div style="padding:80px 24px;"><h2>雷达图数据</h2><table style="width:100%;border-collapse:collapse;margin-top:20px;"><tr style="background:#333;"><th style="padding:8px;border:1px solid #555;text-align:left;">信号</th><th style="padding:8px;border:1px solid #555;">环位</th><th style="padding:8px;border:1px solid #555;">象限</th><th style="padding:8px;border:1px solid #555;">新增</th></tr>' + 
+  csvData.trim().split('\n').slice(1).map(line => {
+    const parts = line.split(',');
+    return `<tr><td style="padding:8px;border:1px solid #555;">${parts[0]}</td><td style="padding:8px;border:1px solid #555;">${parts[1]}</td><td style="padding:8px;border:1px solid #555;">${parts[2]}</td><td style="padding:8px;border:1px solid #555;">${parts[3]}</td></tr>`;
+  }).join('') + '</table></div>';
+}
+</script>
+</body>
+</html>
