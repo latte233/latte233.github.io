@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 全域雷达图 · 2026-07-09</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://unpkg.com/build-your-own-radar@0.5.1/dist/radar.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fafafa; }
+        .header { text-align: center; padding: 20px; background: #1a1a2e; color: white; }
+        .header h1 { margin: 0; font-size: 24px; }
+        .header p { margin: 5px 0 0; font-size: 14px; opacity: 0.7; }
+        #radar { width: 100%; height: 800px; }
+        .loading { text-align: center; padding: 100px; font-size: 18px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AI 全域雷达图 · 2026-07-09</h1>
+        <p>扫描周期：2026-07-02 — 2026-07-09 | 全量扫描 | 19 条信号</p>
+    </div>
+    <div id="radar"><div class="loading">加载雷达图中...</div></div>
+
+    <script>
+    // Signal data in CSV-like format
+    const radarData = [
+        // Adopt
+        {name: "MCP 2026-07-28 规范", ring: "Adopt", quadrant: "Frameworks & Infrastructure", isNew: "FALSE", description: "协议史上最大修订，去状态化，7月28日发布"},
+        {name: "anthropics/skills", ring: "Adopt", quadrant: "Tools & Products", isNew: "FALSE", description: "Agent Skills 开放标准，159K Star"},
+        {name: "Ruflo", ring: "Adopt", quadrant: "Tools & Products", isNew: "FALSE", description: "多Agent编排框架，63K Star，MIT"},
+        // Trial
+        {name: "GPT-5.6 公开发布", ring: "Trial", quadrant: "Models & Research", isNew: "FALSE", description: "Sol/Terra/Luna全球公开，Terminal-Bench 91.9%"},
+        {name: "LongCat-2.0", ring: "Trial", quadrant: "Models & Research", isNew: "FALSE", description: "美团1.6T MoE模型，MIT，SWE-bench Pro 59.5%"},
+        {name: "OpenClaw", ring: "Trial", quadrant: "Tools & Products", isNew: "TRUE", description: "本地优先AI助手，382K Star，100+ contributors"},
+        // Assess
+        {name: "Claude Sonnet 5", ring: "Assess", quadrant: "Models & Research", isNew: "TRUE", description: "最Agent化Sonnet，性能接近Opus 4.8，$2/$10"},
+        {name: "GPT-Live 语音模型", ring: "Assess", quadrant: "Models & Research", isNew: "TRUE", description: "全双工语音模型，支持同时听说"},
+        {name: "Claude Fable 5 恢复", ring: "Assess", quadrant: "Models & Research", isNew: "FALSE", description: "出口管制解除，全球恢复，SWE-bench Pro 80.3%"},
+        {name: "DeepSeek V4", ring: "Assess", quadrant: "Models & Research", isNew: "FALSE", description: "7月中旬上线，峰谷定价2x，1M上下文"},
+        {name: "GLM-5.2 / ZCode", ring: "Assess", quadrant: "Models & Research", isNew: "TRUE", description: "1M上下文MIT开源，登HN头版"},
+        {name: "GitHub Copilot 全开放", ring: "Assess", quadrant: "Tools & Products", isNew: "TRUE", description: "桌面App开放至所有计划含Free"},
+        {name: "Claude Code Workflows", ring: "Assess", quadrant: "Tools & Products", isNew: "FALSE", description: "单会话编排数百并行子Agent"},
+        {name: "SpaceX收购Cursor", ring: "Assess", quadrant: "Practices & Ecosystem", isNew: "FALSE", description: "$60B全股票收购，Q3完成"},
+        {name: "CodeGraph", ring: "Assess", quadrant: "Frameworks & Infrastructure", isNew: "FALSE", description: "58K Star代码知识图谱"},
+        // Watch
+        {name: "MS Agent Framework", ring: "Watch", quadrant: "Frameworks & Infrastructure", isNew: "FALSE", description: "11.9K Star，社区热度下降"},
+        {name: "MiMo-Code", ring: "Watch", quadrant: "Tools & Products", isNew: "TRUE", description: "小米AI Coding工具，11.6K Star"},
+        {name: "WAIC 2026", ring: "Watch", quadrant: "Practices & Ecosystem", isNew: "TRUE", description: "7月17-20日上海"},
+        {name: "Envirotech-Azio合并", ring: "Watch", quadrant: "Practices & Ecosystem", isNew: "TRUE", description: "AI数据中心转型，500MW"}
+    ];
+
+    // Initialize radar
+    function initRadar() {
+        if (typeof radar === 'undefined' || typeof d3 === 'undefined') {
+            setTimeout(initRadar, 500);
+            return;
+        }
+
+        const rings = [
+            { name: "Adopt", color: "#5ba300" },
+            { name: "Trial", color: "#00a3e0" },
+            { name: "Assess", color: "#f9a825" },
+            { name: "Watch", color: "#e45353" }
+        ];
+
+        const quadrants = [
+            { name: "Models & Research" },
+            { name: "Frameworks & Infrastructure" },
+            { name: "Tools & Products" },
+            { name: "Practices & Ecosystem" }
+        ];
+
+        try {
+            radar({
+                rings: rings,
+                quadrants: quadrants,
+                data: radarData,
+                // Configuration
+                maxRings: 4,
+                chartWidth: 1024,
+                chartHeight: 768,
+                entryRadius: 8,
+                arcWidth: 1,
+                arcOpacity: 0.3,
+                colorOpacity: 0.6,
+                // Colors for new vs existing
+                colors: {
+                    new: "#ff6b6b",
+                    existing: "#4ecdc4"
+                },
+                // Callbacks
+                onBlipClick: function(blip) {
+                    window.open(blip.url || '#', '_blank');
+                }
+            });
+
+            document.querySelector('.loading').style.display = 'none';
+        } catch(e) {
+            console.error('Radar init error:', e);
+            document.querySelector('.loading').textContent = '雷达图加载失败: ' + e.message;
+        }
+    }
+
+    // Custom radar visualization using D3 directly
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof d3 === 'undefined') {
+            setTimeout(arguments.callee, 500);
+            return;
+        }
+
+        // Clear loading
+        document.getElementById('radar').innerHTML = '';
+
+        // Custom D3 radar chart
+        const width = 1024;
+        const height = 800;
+        const radius = 340;
+        const cx = width / 2;
+        const cy = height / 2;
+
+        const svg = d3.select('#radar')
+            .append('svg')
+            .attr('width', '100%')
+            .attr('height', height)
+            .attr('viewBox', `0 0 ${width} ${height}`)
+            .style('display', 'block')
+            .style('margin', '0 auto');
+
+        // Define ring colors
+        const ringColors = {
+            'Adopt': '#5ba300',
+            'Trial': '#00a3e0',
+            'Assess': '#f9a825',
+            'Watch': '#e45353'
+        };
+
+        const ringRadius = {
+            'Adopt': radius * 0.25,
+            'Trial': radius * 0.5,
+            'Assess': radius * 0.75,
+            'Watch': radius * 1.0
+        };
+
+        // Draw rings
+        const ringNames = ['Adopt', 'Trial', 'Assess', 'Watch'];
+        ringNames.forEach((ring, i) => {
+            svg.append('circle')
+                .attr('cx', cx)
+                .attr('cy', cy)
+                .attr('r', ringRadius[ring])
+                .attr('fill', ringColors[ring])
+                .attr('fill-opacity', 0.06 + (3-i)*0.02)
+                .attr('stroke', ringColors[ring])
+                .attr('stroke-width', 1)
+                .attr('stroke-opacity', 0.3);
+
+            // Ring label
+            svg.append('text')
+                .attr('x', cx)
+                .attr('y', cy - ringRadius[ring] + 15)
+                .attr('text-anchor', 'middle')
+                .attr('fill', ringColors[ring])
+                .attr('font-size', '12px')
+                .attr('font-weight', 'bold')
+                .attr('opacity', 0.7)
+                .text(ring);
+        });
+
+        // Draw quadrant dividers
+        const angles = [-Math.PI/4, Math.PI/4, 3*Math.PI/4, -3*Math.PI/4];
+        angles.forEach(a => {
+            svg.append('line')
+                .attr('x1', cx)
+                .attr('y1', cy)
+                .attr('x2', cx + Math.cos(a) * radius)
+                .attr('y2', cy + Math.sin(a) * radius)
+                .attr('stroke', '#ddd')
+                .attr('stroke-width', 1);
+        });
+
+        // Quadrant labels
+        const quadLabels = [
+            { name: 'Models & Research', angle: -Math.PI/2 },
+            { name: 'Frameworks & Infrastructure', angle: 0 },
+            { name: 'Tools & Products', angle: Math.PI/2 },
+            { name: 'Practices & Ecosystem', angle: Math.PI }
+        ];
+        quadLabels.forEach(q => {
+            svg.append('text')
+                .attr('x', cx + Math.cos(q.angle) * (radius + 30))
+                .attr('y', cy + Math.sin(q.angle) * (radius + 30))
+                .attr('text-anchor', 'middle')
+                .attr('dominant-baseline', 'middle')
+                .attr('fill', '#333')
+                .attr('font-size', '14px')
+                .attr('font-weight', 'bold')
+                .text(q.name);
+        });
+
+        // Place blips
+        const quadIndex = {
+            'Models & Research': 0,
+            'Frameworks & Infrastructure': 1,
+            'Tools & Products': 2,
+            'Practices & Ecosystem': 3
+        };
+
+        // Group data by quadrant and ring
+        const grouped = {};
+        radarData.forEach(d => {
+            const key = d.quadrant + '|' + d.ring;
+            if (!grouped[key]) grouped[key] = [];
+            grouped[key].push(d);
+        });
+
+        Object.keys(grouped).forEach(key => {
+            const items = grouped[key];
+            const [quadrant, ring] = key.split('|');
+            const qi = quadIndex[quadrant];
+            const ri = ringNames.indexOf(ring);
+
+            const startAngle = qi * (Math.PI/2) - Math.PI/2 - Math.PI/4;
+            const endAngle = startAngle + Math.PI/2;
+            const innerR = ri === 0 ? 0 : ringRadius[ringNames[ri-1]];
+            const outerR = ringRadius[ring];
+            const midR = (innerR + outerR) / 2;
+
+            items.forEach((item, i) => {
+                const angleStep = (endAngle - startAngle) / (items.length + 1);
+                const angle = startAngle + angleStep * (i + 1);
+                const x = cx + Math.cos(angle) * midR;
+                const y = cy + Math.sin(angle) * midR;
+
+                // Blip circle
+                const g = svg.append('g')
+                    .attr('transform', `translate(${x},${y})`)
+                    .style('cursor', 'pointer');
+
+                g.append('circle')
+                    .attr('r', 7)
+                    .attr('fill', item.isNew === 'TRUE' ? '#ff6b6b' : ringColors[ring])
+                    .attr('stroke', 'white')
+                    .attr('stroke-width', 1.5)
+                    .attr('opacity', 0.85);
+
+                // Tooltip
+                g.append('title')
+                    .text(`${item.name} [${ring}] — ${item.description}`);
+
+                // Label
+                const labelAngle = angle;
+                const labelOffset = 12;
+                const labelX = Math.cos(labelAngle) * labelOffset;
+                const labelY = Math.sin(labelAngle) * labelOffset;
+
+                g.append('text')
+                    .attr('x', labelX)
+                    .attr('y', labelY)
+                    .attr('text-anchor', Math.cos(labelAngle) > 0.1 ? 'start' : (Math.cos(labelAngle) < -0.1 ? 'end' : 'middle'))
+                    .attr('dominant-baseline', 'middle')
+                    .attr('font-size', '10px')
+                    .attr('fill', '#333')
+                    .text(item.name.length > 20 ? item.name.substring(0, 18) + '...' : item.name);
+            });
+        });
+
+        // Legend
+        const legendData = [
+            { label: 'Adopt（采用）', color: '#5ba300' },
+            { label: 'Trial（试验）', color: '#00a3e0' },
+            { label: 'Assess（评估）', color: '#f9a825' },
+            { label: 'Watch（观察）', color: '#e45353' },
+            { label: '🆕 新信号', color: '#ff6b6b' },
+            { label: '已有信号', color: '#4ecdc4' }
+        ];
+
+        const legend = svg.append('g')
+            .attr('transform', `translate(20, ${height - 100})`);
+
+        legendData.forEach((d, i) => {
+            const lx = i < 3 ? i * 130 : (i - 3) * 130;
+            const ly = i < 3 ? 0 : 25;
+            legend.append('circle')
+                .attr('cx', lx)
+                .attr('cy', ly)
+                .attr('r', 6)
+                .attr('fill', d.color)
+                .attr('opacity', 0.85);
+            legend.append('text')
+                .attr('x', lx + 12)
+                .attr('y', ly + 1)
+                .attr('dominant-baseline', 'middle')
+                .attr('font-size', '11px')
+                .attr('fill', '#666')
+                .text(d.label);
+        });
+    });
+    </script>
+</body>
+</html>
