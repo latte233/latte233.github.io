@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 全域雷达图 · 2026-07-10</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 { color: #e94560; margin-bottom: 5px; font-size: 1.5em; }
+        .subtitle { color: #888; font-size: 0.85em; margin-bottom: 20px; }
+        .radar-container {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            max-width: 90vw;
+            max-height: 90vw;
+        }
+        svg { width: 100%; height: 100%; }
+        .quadrant-label {
+            font-size: 13px;
+            font-weight: 600;
+            fill: #e94560;
+            text-anchor: middle;
+        }
+        .ring-label {
+            font-size: 11px;
+            fill: #666;
+            text-anchor: middle;
+        }
+        .blip {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .blip:hover { transform: scale(1.3); }
+        .blip-circle {
+            stroke: #fff;
+            stroke-width: 1.5;
+        }
+        .blip-new { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid #e94560;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-size: 12px;
+            max-width: 250px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+        }
+        .tooltip strong { color: #e94560; }
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1.5px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI 全域雷达图 · 2026-07-10</h1>
+    <p class="subtitle">全量扫描 | 20 条信号 | 16/16 信号源</p>
+    <div class="radar-container">
+        <svg viewBox="0 0 800 800" id="radar">
+            <!-- Background circles -->
+            <circle cx="400" cy="400" r="350" fill="none" stroke="#333" stroke-width="1"/>
+            <circle cx="400" cy="400" r="262" fill="none" stroke="#333" stroke-width="1"/>
+            <circle cx="400" cy="400" r="175" fill="none" stroke="#333" stroke-width="1"/>
+            <circle cx="400" cy="400" r="87" fill="none" stroke="#333" stroke-width="1"/>
+
+            <!-- Ring fills (semi-transparent) -->
+            <circle cx="400" cy="400" r="87" fill="rgba(0, 255, 136, 0.05)"/>
+            <circle cx="400" cy="400" r="175" fill="rgba(0, 136, 255, 0.03)"/>
+            <circle cx="400" cy="400" r="262" fill="rgba(255, 200, 0, 0.03)"/>
+            <circle cx="400" cy="400" r="350" fill="rgba(255, 100, 100, 0.03)"/>
+
+            <!-- Quadrant dividers -->
+            <line x1="400" y1="50" x2="400" y2="750" stroke="#444" stroke-width="1"/>
+            <line x1="50" y1="400" x2="750" y2="400" stroke="#444" stroke-width="1"/>
+
+            <!-- Ring labels -->
+            <text x="400" y="345" class="ring-label">Adopt</text>
+            <text x="400" y="265" class="ring-label">Trial</text>
+            <text x="400" y="185" class="ring-label">Assess</text>
+            <text x="400" y="105" class="ring-label">Watch</text>
+
+            <!-- Quadrant labels -->
+            <text x="225" y="40" class="quadrant-label">Models &amp; Research</text>
+            <text x="575" y="40" class="quadrant-label">Frameworks &amp; Infrastructure</text>
+            <text x="225" y="770" class="quadrant-label">Tools &amp; Products</text>
+            <text x="575" y="770" class="quadrant-label">Practices &amp; Ecosystem</text>
+        </svg>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+    <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#00ff88"></div>Adopt</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#0088ff"></div>Trial</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ffc800"></div>Assess</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff6464"></div>Watch</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#fff;border:2px solid #e94560"></div>🆕 新信号</div>
+    </div>
+
+    <script>
+        // Signal data: [name, ring(0-3), quadrant(0-3), isNew, description, url]
+        // ring: 0=Adopt, 1=Trial, 2=Assess, 3=Watch
+        // quadrant: 0=Models(top-left), 1=Frameworks(top-right), 2=Tools(bottom-left), 3=Practices(bottom-right)
+        const signals = [
+            ["MCP 2026-07-28 规范", 0, 1, false, "MCP 协议史上最大修订，去状态化+OAuth 2.1，18天后发布", "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/"],
+            ["anthropics/skills", 0, 2, false, "Agent Skills 开放标准，159K Star", "https://github.com/anthropics/skills"],
+            ["Ruflo", 0, 2, false, "多 Agent 编排框架，63K Star，MIT", "https://github.com/ruvnet/ruflo"],
+            ["GPT-5.6 系列", 1, 0, false, "Sol/Terra/Luna 全球公开发布，Terminal-Bench 91.9%", "https://openai.com/index/preview"],
+            ["LongCat-2.0", 1, 0, false, "美团 1.6T MoE 开源模型，MIT", "https://longcat.chat/blog/longcat-2.0/"],
+            ["OpenClaw", 1, 2, false, "382K Star 本地优先 AI 助手，100 commits/7d", "https://github.com/openclaw/openclaw"],
+            ["Claude Sonnet 5", 2, 0, false, "最 Agent 化 Sonnet，$2/$10，Cursor 默认", "https://www.anthropic.com/news/claude-sonnet-5"],
+            ["GPT-Live 语音模型", 2, 0, false, "全双工语音模型，同时听说+实时翻译", "https://techcrunch.com/2026/07/08/openai-releases-new-voice-models-for-more-natural-live-conversations/"],
+            ["DeepSeek V4 正式版", 2, 0, false, "7月中旬上线，峰谷定价2x，1M上下文", "https://www.deepseek.com/"],
+            ["ICML 2026 大奖", 2, 0, true, "扩散模型成最大赢家，A3C获时间检验奖", "https://blog.icml.cc/2026/07/05/announcing-the-icml-2026-awards/"],
+            ["Apple Safari MCP", 2, 1, true, "首个原生支持MCP的浏览器，17个工具", "https://www.macrumors.com/2026/07/01/apple-releases-safari-technology-preview-247/"],
+            ["CodeGraph", 2, 1, false, "58K Star 代码知识图谱，33 commits/7d", "https://github.com/colbymchenry/codegraph"],
+            ["obra/superpowers", 2, 2, true, "250K Star Agent技能框架与开发方法论", "https://github.com/obra/superpowers"],
+            ["bytedance/deer-flow", 2, 2, true, "字节跳动76K Star长周期SuperAgent", "https://github.com/bytedance/deer-flow"],
+            ["SambaNova $1B", 2, 3, true, "AI推理芯片公司$1B融资，$11B估值", "https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/"],
+            ["SpaceX-Cursor收购", 2, 3, false, "$60B收购Anysphere，Q3 2026完成", "https://techstartups.com/2026/06/16/spacex-to-acquire-cursor-in-60-billion-deal-sec-filing-shows/"],
+            ["GLM-5.3", 3, 0, true, "唐杰公开征集功能意见，社区齐呼加视觉", "https://www.qbitai.com/2026/06/440478.html"],
+            ["MS Agent Framework", 3, 1, false, "12K Star，64 commits/7d，社区热度下降", "https://github.com/microsoft/agent-framework"],
+            ["MiMo-Code", 3, 2, false, "小米AI Coding工具，11.7K Star", "https://github.com/XiaomiMiMo/MiMo-Code"],
+            ["WAIC 2026", 3, 3, false, "7月17-20日上海，「智能伙伴 共创未来」", "https://www.worldaic.com.cn/"]
+        ];
+
+        const ringColors = ['#00ff88', '#0088ff', '#ffc800', '#ff6464'];
+        const ringRadii = [87, 175, 262, 350];
+        const quadrantAngles = [
+            [Math.PI, 1.5 * Math.PI],       // Q0: top-left (Models)
+            [1.5 * Math.PI, 2 * Math.PI],   // Q1: top-right (Frameworks)
+            [0.5 * Math.PI, Math.PI],       // Q2: bottom-left (Tools)
+            [0, 0.5 * Math.PI]              // Q3: bottom-right (Practices)
+        ];
+
+        const svg = document.getElementById('radar');
+        const tooltip = document.getElementById('tooltip');
+
+        // Place blips
+        const quadrantBlipCount = [0, 0, 0, 0];
+
+        signals.forEach((signal, i) => {
+            const [name, ring, quadrant, isNew, desc, url] = signal;
+            
+            // Calculate position within quadrant
+            const ringRadius = ringRadii[ring];
+            const innerRadius = ring === 0 ? 0 : ringRadii[ring - 1];
+            const midRadius = (ringRadius + innerRadius) / 2 + (ringRadius - innerRadius) * 0.2;
+            
+            const [startAngle, endAngle] = quadrantAngles[quadrant];
+            const angleSpan = endAngle - startAngle;
+            const blipsInQuadrant = signals.filter(s => s[2] === quadrant && s[1] === ring).length;
+            const blipIndex = quadrantBlipCount[quadrant]++;
+            const angleOffset = blipsInQuadrant > 1 ? (blipIndex / (blipsInQuadrant - 1) - 0.5) * angleSpan * 0.7 : 0;
+            const angle = (startAngle + endAngle) / 2 + angleOffset;
+
+            const x = 400 + midRadius * Math.cos(angle);
+            const y = 400 + midRadius * Math.sin(angle);
+
+            // Create group
+            const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            g.classList.add('blip');
+            if (isNew) g.classList.add('blip-new');
+
+            // Circle
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', x);
+            circle.setAttribute('cy', y);
+            circle.setAttribute('r', isNew ? 8 : 6);
+            circle.setAttribute('fill', ringColors[ring]);
+            circle.classList.add('blip-circle');
+            if (isNew) {
+                circle.setAttribute('stroke', '#e94560');
+                circle.setAttribute('stroke-width', '2.5');
+            }
+            g.appendChild(circle);
+
+            // Label
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', x);
+            text.setAttribute('y', y - 12);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('font-size', '9');
+            text.setAttribute('fill', '#ccc');
+            text.textContent = name.length > 15 ? name.substring(0, 13) + '…' : name;
+            g.appendChild(text);
+
+            // Tooltip events
+            g.addEventListener('mouseenter', (e) => {
+                tooltip.innerHTML = `<strong>${name}</strong><br>${desc}<br><span style="color:#888">${isNew ? '🆕 新信号 | ' : ''}Ring: ${['Adopt','Trial','Assess','Watch'][ring]}</span>`;
+                tooltip.style.opacity = 1;
+            });
+            g.addEventListener('mousemove', (e) => {
+                const rect = svg.getBoundingClientRect();
+                tooltip.style.left = (e.clientX - rect.left + 10) + 'px';
+                tooltip.style.top = (e.clientY - rect.top + 10) + 'px';
+            });
+            g.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+            g.addEventListener('click', () => {
+                window.open(url, '_blank');
+            });
+
+            svg.appendChild(g);
+        });
+    </script>
+</body>
+</html>
