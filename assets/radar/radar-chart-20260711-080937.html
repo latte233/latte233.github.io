@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 全域雷达图 · 2026-07-11</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #eee; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+h1 { color: #e94560; margin-bottom: 5px; font-size: 24px; }
+.subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+#radar-container { position: relative; width: 900px; height: 900px; max-width: 95vw; max-height: 95vw; }
+svg { width: 100%; height: 100%; }
+.ring-label { font-size: 12px; fill: #888; text-anchor: middle; }
+.quadrant-label { font-size: 14px; font-weight: bold; text-anchor: middle; }
+.blip { cursor: pointer; transition: all 0.3s; }
+.blip:hover { transform: scale(1.5); }
+.blip-text { font-size: 10px; fill: #ddd; pointer-events: none; }
+.legend { display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; justify-content: center; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+.tooltip { position: absolute; background: #16213e; border: 1px solid #e94560; border-radius: 8px; padding: 10px 14px; font-size: 12px; max-width: 280px; pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+.tooltip strong { color: #e94560; }
+.tooltip .desc { color: #aaa; margin-top: 4px; }
+</style>
+</head>
+<body>
+<h1>AI 全域雷达图 · 2026-07-11</h1>
+<p class="subtitle">扫描周期：2026-07-04 — 2026-07-11 | 全量扫描 | 23 条信号</p>
+<div id="radar-container">
+<svg viewBox="0 0 900 900" id="radar-svg"></svg>
+<div class="tooltip" id="tooltip"></div>
+</div>
+<div class="legend">
+<div class="legend-item"><div class="legend-dot" style="background:#e94560"></div>Adopt（采用）</div>
+<div class="legend-item"><div class="legend-dot" style="background:#0f3460"></div>Trial（试验）</div>
+<div class="legend-item"><div class="legend-dot" style="background:#533483"></div>Assess（评估）</div>
+<div class="legend-item"><div class="legend-dot" style="background:#1a1a4e"></div>Watch（观察）</div>
+<div class="legend-item"><div class="legend-dot" style="background:#e94560;border:2px solid #fff;"></div>🆕 新信号</div>
+</div>
+
+<script>
+const signals = [
+{name:"MCP 2026-07-28 规范",ring:"Adopt",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"MCP 最大修订正式版 17 天倒计时"},
+{name:"anthropics/skills",ring:"Adopt",quadrant:"Tools & Products",isNew:false,desc:"Agent Skills 开放标准，160K Star"},
+{name:"Ruflo",ring:"Adopt",quadrant:"Tools & Products",isNew:false,desc:"多 Agent 编排框架，64K Star，MIT"},
+{name:"GPT-5.6 系列",ring:"Trial",quadrant:"Models & Research",isNew:false,desc:"Sol/Terra/Luna 公开发布，91.9% Terminal-Bench"},
+{name:"LongCat-2.0",ring:"Trial",quadrant:"Models & Research",isNew:false,desc:"美团 1.6T MoE 开源模型，MIT"},
+{name:"OpenClaw",ring:"Trial",quadrant:"Tools & Products",isNew:false,desc:"382K Star 本地 AI 助手框架"},
+{name:"Grok 4.5",ring:"Assess",quadrant:"Models & Research",isNew:true,desc:"SpaceXAI+Cursor 联合训练，4.2x token 效率"},
+{name:"ChatGPT Work",ring:"Assess",quadrant:"Tools & Products",isNew:true,desc:"OpenAI Agent 工作空间，Codex+GPT-5.6"},
+{name:"Claude Sonnet 5",ring:"Assess",quadrant:"Models & Research",isNew:false,desc:"最 Agent 化 Sonnet，$2/$10"},
+{name:"GPT-Live 语音模型",ring:"Assess",quadrant:"Models & Research",isNew:false,desc:"全双工语音，实时翻译"},
+{name:"DeepSeek V4",ring:"Assess",quadrant:"Models & Research",isNew:false,desc:"7月中旬上线，峰谷定价，1M上下文"},
+{name:"Apple Safari MCP",ring:"Assess",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"首个原生 MCP 浏览器"},
+{name:"CodeGraph",ring:"Assess",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"59K Star 代码知识图谱"},
+{name:"bytedance/deer-flow",ring:"Assess",quadrant:"Tools & Products",isNew:false,desc:"76K Star 长周期 SuperAgent"},
+{name:"obra/superpowers",ring:"Assess",quadrant:"Tools & Products",isNew:false,desc:"251K Star Agent 技能框架"},
+{name:"JADEPUFFER AI 勒索",ring:"Assess",quadrant:"Practices & Ecosystem",isNew:true,desc:"首例 AI Agent 自主勒索攻击"},
+{name:"阿里禁用 Claude Code",ring:"Assess",quadrant:"Practices & Ecosystem",isNew:true,desc:"中美 AI 双向封锁"},
+{name:"Anthropic Claude Science",ring:"Watch",quadrant:"Tools & Products",isNew:true,desc:"AI 科研工作台，60+ 工具"},
+{name:"Apple 起诉 OpenAI",ring:"Watch",quadrant:"Practices & Ecosystem",isNew:true,desc:"商业机密诉讼，Siri 转 Gemini"},
+{name:"SK Hynix IPO",ring:"Watch",quadrant:"Practices & Ecosystem",isNew:true,desc:"$1.27T AI 内存 IPO"},
+{name:"WAIC 2026",ring:"Watch",quadrant:"Practices & Ecosystem",isNew:false,desc:"7月17-20日上海"},
+{name:"MS Agent Framework",ring:"Watch",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"12K Star，热度下降"},
+{name:"MiMo-Code",ring:"Watch",quadrant:"Tools & Products",isNew:false,desc:"小米 AI Coding，11.7K Star"}
+];
+
+const ringColors = {Adopt:"#e94560",Trial:"#0f3460",Assess:"#533483",Watch:"#1a1a4e"};
+const ringRadii = {Adopt:150,Trial:250,Assess:350,Watch:420};
+const quadrantAngles = {
+"Models & Research":{start:Math.PI,end:1.5*Math.PI,label:"Models & Research"},
+"Frameworks & Infrastructure":{start:1.5*Math.PI,end:2*Math.PI,label:"Frameworks & Infrastructure"},
+"Tools & Products":{start:0,start2:0,end:0.5*Math.PI,label:"Tools & Products"},
+"Practices & Ecosystem":{start:0.5*Math.PI,end:Math.PI,label:"Practices & Ecosystem"}
+};
+
+const cx=450, cy=450;
+const svg = document.getElementById('radar-svg');
+const tooltip = document.getElementById('tooltip');
+
+// Draw quadrants
+const quadrantInfo = [
+{name:"Models & Research",start:Math.PI,end:1.5*Math.PI,color:"#1a1a3e"},
+{name:"Frameworks & Infrastructure",start:1.5*Math.PI,end:2*Math.PI,color:"#1a2a4e"},
+{name:"Tools & Products",start:0,end:0.5*Math.PI,color:"#2a1a3e"},
+{name:"Practices & Ecosystem",start:0.5*Math.PI,end:Math.PI,color:"#1a3a3e"}
+];
+
+// Draw quadrant backgrounds
+quadrantInfo.forEach(q=>{
+const path = `M ${cx} ${cy} L ${cx+420*Math.cos(q.start)} ${cy+420*Math.sin(q.start)} A 420 420 0 0 1 ${cx+420*Math.cos(q.end)} ${cy+420*Math.sin(q.end)} Z`;
+const el = document.createElementNS("http://www.w3.org/2000/svg","path");
+el.setAttribute("d",path);
+el.setAttribute("fill",q.color);
+el.setAttribute("opacity","0.3");
+el.setAttribute("stroke","#333");
+el.setAttribute("stroke-width","1");
+svg.appendChild(el);
+});
+
+// Draw rings
+Object.entries(ringRadii).forEach(([ring,r])=>{
+const circle = document.createElementNS("http://www.w3.org/2000/svg","circle");
+circle.setAttribute("cx",cx);
+circle.setAttribute("cy",cy);
+circle.setAttribute("r",r);
+circle.setAttribute("fill","none");
+circle.setAttribute("stroke","#444");
+circle.setAttribute("stroke-width","1");
+circle.setAttribute("stroke-dasharray","4 4");
+svg.appendChild(circle);
+
+const label = document.createElementNS("http://www.w3.org/2000/svg","text");
+label.setAttribute("x",cx+5);
+label.setAttribute("y",cy-r+12);
+label.setAttribute("class","ring-label");
+label.setAttribute("fill",ringColors[ring]);
+label.textContent = ring;
+svg.appendChild(label);
+});
+
+// Draw quadrant labels
+const quadLabels = [
+{text:"Models & Research",x:cx-210,y:cy-430},
+{text:"Frameworks & Infrastructure",x:cx+210,y:cy-430},
+{text:"Tools & Products",x:cx+210,y:cy+445},
+{text:"Practices & Ecosystem",x:cx-210,y:cy+445}
+];
+quadLabels.forEach(l=>{
+const el = document.createElementNS("http://www.w3.org/2000/svg","text");
+el.setAttribute("x",l.x);
+el.setAttribute("y",l.y);
+el.setAttribute("class","quadrant-label");
+el.setAttribute("fill","#e94560");
+el.setAttribute("text-anchor","middle");
+el.textContent = l.text;
+svg.appendChild(el);
+});
+
+// Draw axis lines
+[0,0.5*Math.PI,Math.PI,1.5*Math.PI].forEach(a=>{
+const line = document.createElementNS("http://www.w3.org/2000/svg","line");
+line.setAttribute("x1",cx);
+line.setAttribute("y1",cy);
+line.setAttribute("x2",cx+420*Math.cos(a));
+line.setAttribute("y2",cy+420*Math.sin(a));
+line.setAttribute("stroke","#444");
+line.setAttribute("stroke-width","1");
+svg.appendChild(line);
+});
+
+// Place blips
+const quadrantRanges = {
+"Models & Research":[Math.PI,1.5*Math.PI],
+"Frameworks & Infrastructure":[1.5*Math.PI,2*Math.PI],
+"Tools & Products":[0,0.5*Math.PI],
+"Practices & Ecosystem":[0.5*Math.PI,Math.PI]
+};
+
+const placedPositions = {};
+signals.forEach((s,i)=>{
+const [qs,qe] = quadrantRanges[s.quadrant];
+const ringR = ringRadii[s.ring];
+const ringInner = s.ring==="Adopt"?0:ringRadii[s.ring==="Trial"?"Adopt":s.ring==="Assess"?"Trial":"Assess"];
+const midR = (ringR + ringInner) / 2;
+const angleSpread = qe - qs;
+const baseAngle = qs + angleSpread * (0.2 + 0.6 * ((i * 0.618) % 1));
+const r = midR + (Math.sin(i*7.3)*30);
+const angle = baseAngle + (Math.cos(i*3.1)*0.15);
+const x = cx + r * Math.cos(angle);
+const y = cy + r * Math.sin(angle);
+
+const g = document.createElementNS("http://www.w3.org/2000/svg","g");
+g.setAttribute("class","blip");
+
+const circle = document.createElementNS("http://www.w3.org/2000/svg","circle");
+circle.setAttribute("cx",x);
+circle.setAttribute("cy",y);
+circle.setAttribute("r",s.isNew?7:5);
+circle.setAttribute("fill",ringColors[s.ring]);
+circle.setAttribute("stroke",s.isNew?"#fff":"none");
+circle.setAttribute("stroke-width",s.isNew?"2":"0");
+g.appendChild(circle);
+
+const text = document.createElementNS("http://www.w3.org/2000/svg","text");
+text.setAttribute("x",x+8);
+text.setAttribute("y",y+3);
+text.setAttribute("class","blip-text");
+text.textContent = s.name.length>20?s.name.substring(0,18)+"..":s.name;
+g.appendChild(text);
+
+g.addEventListener('mouseenter',(e)=>{
+tooltip.style.opacity = 1;
+tooltip.innerHTML = `<strong>${s.name}</strong><div class="desc">${s.desc}</div><div style="margin-top:4px;color:#666">环位: ${s.ring} | 象限: ${s.quadrant}${s.isNew?' | 🆕 新信号':''}</div>`;
+const rect = document.getElementById('radar-container').getBoundingClientRect();
+tooltip.style.left = (e.clientX - rect.left + 15) + 'px';
+tooltip.style.top = (e.clientY - rect.top + 15) + 'px';
+});
+g.addEventListener('mouseleave',()=>{tooltip.style.opacity=0;});
+
+svg.appendChild(g);
+});
+</script>
+</body>
+</html>
