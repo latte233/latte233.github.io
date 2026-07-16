@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex /goal 深度分析</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --color-bg: #0a0e17;
+      --color-bg-elevated: #111827;
+      --color-bg-card: #1a2332;
+      --color-bg-card-hover: #1f2b3d;
+      --color-surface: #0f1623;
+      --color-primary: #3b82f6;
+      --color-primary-dim: #2563eb;
+      --color-primary-glow: rgba(59, 130, 246, 0.15);
+      --color-accent-green: #10b981;
+      --color-accent-green-glow: rgba(16, 185, 129, 0.15);
+      --color-accent-red: #ef4444;
+      --color-accent-red-glow: rgba(239, 68, 68, 0.15);
+      --color-accent-amber: #f59e0b;
+      --color-accent-amber-glow: rgba(245, 158, 11, 0.15);
+      --color-accent-purple: #8b5cf6;
+      --color-accent-purple-glow: rgba(139, 92, 246, 0.15);
+      --color-accent-cyan: #06b6d4;
+      --color-accent-cyan-glow: rgba(6, 182, 212, 0.15);
+      --color-text: #f1f5f9;
+      --color-text-secondary: #94a3b8;
+      --color-text-muted: #64748b;
+      --color-border: #1e293b;
+      --color-border-light: #334155;
+      --font-heading: 'Exo', sans-serif;
+      --font-mono: 'Roboto Mono', monospace;
+      --font-body: 'Exo', system-ui, sans-serif;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.08);
+      --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* === NAV === */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10, 14, 23, 0.85);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-heading); font-weight: 700; font-size: 18px;
+      color: var(--color-primary);
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none;
+    }
+    .nav-logo svg { width: 24px; height: 24px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--color-text-secondary); text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--color-text); }
+
+    /* === HERO === */
+    .hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139, 92, 246, 0.08), transparent);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--color-primary-glow);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: 13px; color: var(--color-primary);
+      font-family: var(--font-mono); font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--color-accent-green);
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero h1 {
+      font-family: var(--font-heading); font-weight: 700;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.15;
+      background: linear-gradient(135deg, #f1f5f9 0%, #94a3b8 50%, #3b82f6 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      max-width: 800px; margin: 0 auto 20px;
+    }
+    .hero p {
+      font-size: 18px; color: var(--color-text-secondary);
+      max-width: 640px; margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 48px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-value {
+      font-family: var(--font-heading); font-weight: 700;
+      font-size: 32px; color: var(--color-primary);
+      display: block;
+    }
+    .stat-label {
+      font-size: 13px; color: var(--color-text-muted);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* === SECTIONS === */
+    .section {
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-header {
+      text-align: center; margin-bottom: 56px;
+    }
+    .section-tag {
+      font-family: var(--font-mono); font-size: 13px;
+      color: var(--color-primary); font-weight: 500;
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-heading); font-weight: 700;
+      font-size: clamp(28px, 4vw, 40px);
+      color: var(--color-text); margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px; color: var(--color-text-secondary);
+      max-width: 600px; margin: 0 auto;
+    }
+
+    /* === ARCHITECTURE FLOW === */
+    .arch-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      position: relative;
+    }
+    .arch-step {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      position: relative;
+      transition: all var(--transition);
+    }
+    .arch-step:hover {
+      background: var(--color-bg-card-hover);
+      border-color: var(--color-border-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+    .arch-step-num {
+      font-family: var(--font-mono); font-size: 12px;
+      color: var(--color-primary); font-weight: 700;
+      background: var(--color-primary-glow);
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .arch-step h3 {
+      font-family: var(--font-heading); font-weight: 600;
+      font-size: 16px; color: var(--color-text);
+      margin-bottom: 8px;
+    }
+    .arch-step p {
+      font-size: 14px; color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* === STATE MACHINE === */
+    .state-machine {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 48px;
+    }
+    .state-machine h3 {
+      font-family: var(--font-heading); font-weight: 600;
+      font-size: 20px; margin-bottom: 32px;
+      text-align: center;
+    }
+    .state-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .state-node {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: var(--radius-sm);
+      font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+      border: 1px solid;
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .state-node:hover { transform: scale(1.05); }
+    .state-active {
+      background: var(--color-accent-green-glow);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: var(--color-accent-green);
+    }
+    .state-paused {
+      background: var(--color-accent-amber-glow);
+      border-color: rgba(245, 158, 11, 0.3);
+      color: var(--color-accent-amber);
+    }
+    .state-completed {
+      background: var(--color-primary-glow);
+      border-color: rgba(59, 130, 246, 0.3);
+      color: var(--color-primary);
+    }
+    .state-blocked {
+      background: var(--color-accent-red-glow);
+      border-color: rgba(239, 68, 68, 0.3);
+      color: var(--color-accent-red);
+    }
+    .state-budget {
+      background: var(--color-accent-purple-glow);
+      border-color: rgba(139, 92, 246, 0.3);
+      color: var(--color-accent-purple);
+    }
+    .state-arrow {
+      color: var(--color-text-muted);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* === TABS === */
+    .tabs {
+      display: flex; gap: 4px;
+      background: var(--color-bg-card);
+      border-radius: var(--radius-sm);
+      padding: 4px;
+      border: 1px solid var(--color-border);
+      margin-bottom: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 14px; font-weight: 500;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none; background: none;
+      font-family: var(--font-body);
+    }
+    .tab:hover { color: var(--color-text); background: rgba(255,255,255,0.04); }
+    .tab.active {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* === PROS / CONS === */
+    .pros-cons-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) { .pros-cons-grid { grid-template-columns: 1fr; } }
+
+    .pros-card, .cons-card {
+      border-radius: var(--radius);
+      padding: 32px;
+      border: 1px solid;
+    }
+    .pros-card {
+      background: var(--color-accent-green-glow);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+    .cons-card {
+      background: var(--color-accent-red-glow);
+      border-color: rgba(239, 68, 68, 0.2);
+    }
+    .pros-card h3, .cons-card h3 {
+      font-family: var(--font-heading); font-weight: 600;
+      font-size: 18px; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .pros-card h3 { color: var(--color-accent-green); }
+    .cons-card h3 { color: var(--color-accent-red); }
+
+    .pc-item {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .pc-item:last-child { border-bottom: none; }
+    .pc-item-title {
+      font-weight: 600; font-size: 15px;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+    .pc-item-desc {
+      font-size: 14px; color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* === CODE BLOCK === */
+    .code-block {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 24px 0;
+    }
+    .code-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 20px;
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .code-header-dots {
+      display: flex; gap: 6px;
+    }
+    .code-header-dots span {
+      width: 10px; height: 10px; border-radius: 50%;
+    }
+    .code-header-dots span:nth-child(1) { background: #ef4444; }
+    .code-header-dots span:nth-child(2) { background: #f59e0b; }
+    .code-header-dots span:nth-child(3) { background: #10b981; }
+    .code-header-title {
+      font-family: var(--font-mono); font-size: 12px;
+      color: var(--color-text-muted);
+    }
+    .code-body {
+      padding: 20px; overflow-x: auto;
+    }
+    .code-body pre {
+      font-family: var(--font-mono); font-size: 13px;
+      line-height: 1.8; color: var(--color-text-secondary);
+      white-space: pre;
+    }
+    .code-body .keyword { color: #c084fc; }
+    .code-body .string { color: #86efac; }
+    .code-body .comment { color: #475569; font-style: italic; }
+    .code-body .fn { color: #60a5fa; }
+    .code-body .type { color: #f59e0b; }
+    .code-body .num { color: #f472b6; }
+
+    /* === COMPARISON TABLE === */
+    .comparison-table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+    }
+    .comparison-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 14px;
+    }
+    .comparison-table th {
+      background: var(--color-bg-card);
+      padding: 16px 20px;
+      text-align: left;
+      font-family: var(--font-heading); font-weight: 600;
+      color: var(--color-text);
+      border-bottom: 1px solid var(--color-border);
+      white-space: nowrap;
+    }
+    .comparison-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      vertical-align: top;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .check { color: var(--color-accent-green); }
+    .cross { color: var(--color-accent-red); }
+
+    /* === BEST PRACTICES === */
+    .bp-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .bp-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: all var(--transition);
+    }
+    .bp-card:hover {
+      border-color: var(--color-border-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+    .bp-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+    .bp-card h4 {
+      font-family: var(--font-heading); font-weight: 600;
+      font-size: 16px; margin-bottom: 8px;
+    }
+    .bp-card p {
+      font-size: 14px; color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* === TIMELINE === */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 15px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--color-primary), var(--color-accent-purple), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: -33px; top: 4px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 3px solid var(--color-bg);
+      box-shadow: 0 0 0 3px var(--color-primary-glow);
+    }
+    .timeline-date {
+      font-family: var(--font-mono); font-size: 12px;
+      color: var(--color-primary); font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .timeline-title {
+      font-family: var(--font-heading); font-weight: 600;
+      font-size: 16px; margin-bottom: 6px;
+    }
+    .timeline-desc {
+      font-size: 14px; color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      border-top: 1px solid var(--color-border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 13px; color: var(--color-text-muted);
+    }
+    .footer a { color: var(--color-primary); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* === DIVIDER === */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 120px 20px 60px; }
+      .hero-stats { gap: 24px; }
+      .section { padding: 60px 20px; }
+      .state-machine { padding: 24px; }
+      .state-row { gap: 8px; }
+      .state-node { padding: 8px 14px; font-size: 12px; }
+      .arch-flow { grid-template-columns: 1fr; }
+      .bp-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* === SCROLL ANIMATION === */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+      Codex /goal
+    </a>
+    <ul class="nav-links">
+      <li><a href="#principle">原理</a></li>
+      <li><a href="#architecture">架构</a></li>
+      <li><a href="#analysis">优劣分析</a></li>
+      <li><a href="#comparison">对比</a></li>
+      <li><a href="#practice">最佳实践</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Codex CLI v0.128.0+ · 实验性功能
+  </div>
+  <h1>深度剖析 Codex /goal 持久化目标系统</h1>
+  <p>从状态机设计、Token 预算会计到自动续跑机制，全面解读让 AI 编码 Agent 从"短跑选手"进化为"马拉松选手"的核心技术。</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-value">5</span>
+      <span class="stat-label">生命周期状态</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">4</span>
+      <span class="stat-label">核心层</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">21h+</span>
+      <span class="stat-label">最长连续运行</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">9亿</span>
+      <span class="stat-label">最大 Token 消耗</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: 核心原理 -->
+<section class="section" id="principle">
+  <div class="section-header fade-in">
+    <div class="section-tag">Core Principle</div>
+    <h2 class="section-title">什么是 /goal？它解决了什么问题？</h2>
+    <p class="section-desc">不是更长的 Prompt，而是一套完整的目标生命周期管理系统</p>
+  </div>
+
+  <div class="code-block fade-in">
+    <div class="code-header">
+      <div class="code-header-dots"><span></span><span></span><span></span></div>
+      <span class="code-header-title">terminal — codex CLI</span>
+    </div>
+    <div class="code-body">
+<pre><span class="comment"># 1. 在 ~/.codex/config.toml 中启用 goal 功能</span>
+[<span class="type">features</span>]
+<span class="fn">goals</span> = <span class="keyword">true</span>
+
+<span class="comment"># 2. 设定一个持久化目标</span>
+<span class="fn">/goal</span> <span class="string">将认证模块从 Session 迁移到 OAuth2，确保所有 42 个测试通过</span>
+
+<span class="comment"># 3. Codex 开始自主循环执行，直到：</span>
+<span class="comment">#    ✓ 目标达成（有客观证据）</span>
+<span class="comment">#    ✓ Token 预算耗尽</span>
+<span class="comment">#    ✓ 遇到无法自主解决的阻塞</span>
+<span class="comment">#    ✓ 用户手动暂停 /goal pause</span>
+
+<span class="comment"># 查看当前目标状态</span>
+<span class="fn">/goal</span>          <span class="comment"># 显示当前活跃目标</span>
+<span class="fn">/goal pause</span>   <span class="comment"># 暂停目标</span>
+<span class="fn">/goal resume</span>  <span class="comment"># 恢复目标</span>
+<span class="fn">/goal clear</span>   <span class="comment"># 清除目标</span></pre>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <h3 style="font-family: var(--font-heading); font-weight: 600; font-size: 18px; margin-bottom: 24px; text-align: center;" class="fade-in">
+      普通 Prompt vs /goal 的根本区别
+    </h3>
+    <div class="comparison-table-wrapper fade-in">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>普通 Prompt</th>
+            <th>/goal 目标</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 600; color: var(--color-text);">存储方式</td>
+            <td>进入对话历史，随 /compact 压缩可能丢失</td>
+            <td>持久化到线程状态数据库，独立于对话历史</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--color-text);">执行模式</td>
+            <td>一次输入 → 一次回答，等待下一条指令</td>
+            <td>自动循环执行，一轮接一轮推进</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--color-text);">跨轮持续</td>
+            <td><span class="cross">&#10007;</span> 每轮独立，无连贯性保证</td>
+            <td><span class="check">&#10003;</span> 跨轮追踪，Runtime 自动注入目标上下文</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--color-text);">中断恢复</td>
+            <td><span class="cross">&#10007;</span> 关闭终端后目标丢失</td>
+            <td><span class="check">&#10003;</span> codex resume 可恢复，目标不丢</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--color-text);">完成判定</td>
+            <td>模型自行判断，可能过早结束</td>
+            <td>需要客观证据（测试结果、文件变更、基准数据等）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: 架构设计 -->
+<section class="section" id="architecture">
+  <div class="section-header fade-in">
+    <div class="section-tag">Architecture</div>
+    <h2 class="section-title">四层架构设计</h2>
+    <p class="section-desc">/goal 由四个核心层面共同构成，缺一不可</p>
+  </div>
+
+  <div class="arch-flow fade-in">
+    <div class="arch-step">
+      <div class="arch-step-num">01</div>
+      <h3>持久化存储层</h3>
+      <p>目标作为独立状态存储在线程状态数据库中（state-db），与对话历史解耦。/compact 压缩对话不影响目标存在，关闭终端后 codex resume 仍可续接。</p>
+    </div>
+    <div class="arch-step">
+      <div class="arch-step-num">02</div>
+      <h3>App-Server API</h3>
+      <p>提供同步、通知和断线重连能力。Server 端维护目标的权威状态，支持多端查询和操作，确保分布式场景下的一致性。</p>
+    </div>
+    <div class="arch-step">
+      <div class="arch-step-num">03</div>
+      <h3>Model Tools</h3>
+      <p>Agent 获得专属工具函数（如 goal_achieved），可以看到目标、标记完成和报告阻塞。但权限严格受控——不能随意修改目标本身。</p>
+    </div>
+    <div class="arch-step">
+      <div class="arch-step-num">04</div>
+      <h3>Runtime Continuation</h3>
+      <p>核心的自动续跑引擎。每轮结束后 Runtime 检查是否存在 Active Goal，若空闲且无用户输入，自动注入 &lt;goal_context&gt; 启动下一轮。</p>
+    </div>
+  </div>
+
+  <!-- State Machine -->
+  <div class="state-machine fade-in">
+    <h3>目标状态机 · 生命周期流转</h3>
+    <div class="state-row">
+      <div class="state-node state-active">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Active（执行中）
+      </div>
+      <span class="state-arrow">→</span>
+      <div class="state-node state-paused">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+        Paused（暂停）
+      </div>
+      <span class="state-arrow">→</span>
+      <div class="state-node state-active">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Active（恢复）
+      </div>
+    </div>
+    <div class="state-row">
+      <div class="state-node state-active">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Active
+      </div>
+      <span class="state-arrow">→</span>
+      <div class="state-node state-completed">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Achieved（达成）
+      </div>
+    </div>
+    <div class="state-row">
+      <div class="state-node state-active">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Active
+      </div>
+      <span class="state-arrow">→</span>
+      <div class="state-node state-blocked">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+        Blocked（阻塞）
+      </div>
+    </div>
+    <div class="state-row">
+      <div class="state-node state-active">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Active
+      </div>
+      <span class="state-arrow">→</span>
+      <div class="state-node state-budget">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        Budget-Limited（预算耗尽）
+      </div>
+    </div>
+    <p style="text-align: center; font-size: 13px; color: var(--color-text-muted); margin-top: 16px;">
+      连续无 Tool 调用的空转回合会自动抑制续跑 · 中断回合自动转 Paused
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: Steering Prompt 注入机制 -->
+<section class="section">
+  <div class="section-header fade-in">
+    <div class="section-tag">Runtime Mechanism</div>
+    <h2 class="section-title">Steering Prompt 注入与自动续跑</h2>
+    <p class="section-desc">每一轮 Turn 结束后，Runtime 如何让模型"记住"并推进目标</p>
+  </div>
+
+  <div class="code-block fade-in">
+    <div class="code-header">
+      <div class="code-header-dots"><span></span><span></span><span></span></div>
+      <span class="code-header-title">goal_context — 每轮注入的隐藏上下文</span>
+    </div>
+    <div class="code-body">
+<pre><span class="comment">// Runtime 在每轮 Turn 开始前自动注入</span>
+&lt;<span class="keyword">goal_context</span>&gt;
+  &lt;<span class="type">objective</span>&gt;
+    <span class="string">将认证模块从 Session 迁移到 OAuth2，确保所有 42 个测试通过</span>
+  &lt;/<span class="type">objective</span>&gt;
+
+  &lt;<span class="type">status</span>&gt;<span class="fn">pursuing</span>&lt;/<span class="type">status</span>&gt;
+
+  &lt;<span class="type">budget</span>&gt;
+    <span class="fn">used_tokens</span>: <span class="num">145_832</span>
+    <span class="fn">budget_limit</span>: <span class="num">500_000</span>
+    <span class="fn">elapsed_time</span>: <span class="string">"00:23:15"</span>
+  &lt;/<span class="type">budget</span>&gt;
+
+  &lt;<span class="type">instructions</span>&gt;
+    <span class="string">继续推进目标。使用 goal_achieved 工具报告完成，</span>
+    <span class="string">需附带客观证据（测试结果、文件变更等）。</span>
+    <span class="string">如遇无法自主解决的阻塞，使用 goal_blocked 报告。</span>
+  &lt;/<span class="type">instructions</span>&gt;
+&lt;/<span class="keyword">goal_context</span>&gt;</pre>
+    </div>
+  </div>
+
+  <div class="timeline fade-in" style="margin-top: 48px;">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Step 1 · 目标创建</div>
+      <div class="timeline-title">用户输入 /goal "目标描述"</div>
+      <div class="timeline-desc">目标被写入线程的持久化状态数据库，生成唯一 goal_id，状态初始化为 Active。此时目标独立于对话历史存在。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Step 2 · 首轮执行</div>
+      <div class="timeline-title">Runtime 注入 &lt;goal_context&gt;</div>
+      <div class="timeline-desc">Runtime 将目标描述、当前状态、已消耗预算等信息打包为 &lt;goal_context&gt; XML，作为隐藏的 System Message 注入到对话最前端，确保模型每轮都能看到目标。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Step 3 · 模型自然停止</div>
+      <div class="timeline-title">一轮 Turn 结束，模型输出 stop</div>
+      <div class="timeline-desc">模型完成一轮工作后自然停止（如修改了几个文件、运行了测试）。此时 Runtime 接管决策——检查当前线程是否仍有 Active Goal。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Step 4 · 自动续跑</div>
+      <div class="timeline-title">Hidden Continuation Turn</div>
+      <div class="timeline-desc">如果目标仍为 Active、预算未耗尽、无用户排队输入，Runtime 自动启动一个隐藏的 Continuation Turn，注入更新后的 &lt;goal_context&gt;（含最新的 token 消耗、时间等），模型继续推进。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Step 5 · 完成或终止</div>
+      <div class="timeline-title">Agent 调用 goal_achieved / goal_blocked</div>
+      <div class="timeline-desc">当 Agent 判断目标达成，调用 goal_achieved 并附带客观证据（测试截图、基准数据）。Runtime 验证后将状态转为 Achieved，自动续跑停止。若预算耗尽则进入 Budget-Limited 状态。</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: 优劣分析 -->
+<section class="section" id="analysis">
+  <div class="section-header fade-in">
+    <div class="section-tag">Analysis</div>
+    <h2 class="section-title">优势与局限</h2>
+    <p class="section-desc">任何技术都有适用边界，客观看待 /goal 的能力圈</p>
+  </div>
+
+  <div class="pros-cons-grid fade-in">
+    <div class="pros-card">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        核心优势
+      </h3>
+      <div class="pc-item">
+        <div class="pc-item-title">无人值守的长时任务执行</div>
+        <div class="pc-item-desc">设定目标后可以离开去做别的事，Agent 自主一轮接一轮推进。社区已有连续运行 21 小时的记录。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">目标不随上下文压缩丢失</div>
+        <div class="pc-item-desc">目标独立于对话历史持久化存储，/compact 压缩或终端关闭都不会破坏目标。这是与普通 Prompt 最本质的区别。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">基于证据的完成判定</div>
+        <div class="pc-item-desc">不允许模型"觉得差不多了"就宣称完成，必须提供客观证据（测试通过、文件变更、基准数据），避免"自欺欺人"。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">内置 Token 预算管控</div>
+        <div class="pc-item-desc">可设定 Token 消耗上限。预算耗尽自动进入 Budget-Limited 状态，总结已完成工作和阻塞点，不会无限烧钱。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">灵活的生命周期控制</div>
+        <div class="pc-item-desc">支持 pause/resume/clear 操作，可以随时暂停审查进度、恢复执行或放弃目标。用户始终保有控制权。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">Ralph Loop 的官方实现</div>
+        <div class="pc-item-desc">Greg Brockman 称之为"built-in Ralph Loop++"。将社区自建的循环执行模式内建到 Runtime 层，更稳定、更可控。</div>
+      </div>
+    </div>
+
+    <div class="cons-card">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+        已知局限
+      </h3>
+      <div class="pc-item">
+        <div class="pc-item-title">高昂的 Token 消耗成本</div>
+        <div class="pc-item-desc">长时运行意味着巨大的 Token 消耗。极端案例中消耗达 9 亿 Token。即使有预算控制，复杂任务的成本仍然可观。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">目标漂移（Goal Drift）</div>
+        <div class="pc-item-desc">长任务中 Agent 可能逐渐偏离原始目标——把目标缩小、将局部进展说成完成、把预算耗尽说成胜利。需要精心撰写可验证的目标来缓解。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">不是记忆系统</div>
+        <div class="pc-item-desc">只保存目标本身和状态信息，不会自动保存每步的中途决策、用户约束、文件修改细节和未完成清单。上下文被压缩后中间过程可能丢失。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">不适合简单任务</div>
+        <div class="pc-item-desc">对于"改个变量名"、"修个 CSS 样式"这类一两轮就能完成的任务，使用 /goal 反而增加不必要的开销和复杂度。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">空转风险</div>
+        <div class="pc-item-desc">当 Agent 陷入困境但未显式报告阻塞时，可能连续多轮空转（无实质 Tool 调用），消耗预算却没有实际进展。虽有空转抑制机制，但仍需警惕。</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-item-title">仅限 CLI 环境</div>
+        <div class="pc-item-desc">目前 /goal 是 Codex CLI 独有功能，Codex Desktop 不支持。且需手动开启 feature flag，配置门槛存在。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: 对比 -->
+<section class="section" id="comparison">
+  <div class="section-header fade-in">
+    <div class="section-tag">Comparison</div>
+    <h2 class="section-title">与竞品的对比</h2>
+    <p class="section-desc">Codex /goal vs Claude Code /goal vs Ralph Loop</p>
+  </div>
+
+  <div class="comparison-table-wrapper fade-in">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>对比维度</th>
+          <th style="color: var(--color-primary);">Codex /goal</th>
+          <th style="color: var(--color-accent-purple);">Claude Code /goal</th>
+          <th style="color: var(--color-accent-amber);">Ralph Loop</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">实现层级</td>
+          <td>Runtime 内建，状态机 + 状态数据库</td>
+          <td>CLI 内建，类似的持久化目标追踪</td>
+          <td>外部脚本，手动循环重启 Agent</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">目标持久化</td>
+          <td><span class="check">&#10003;</span> 线程级持久化，独立于对话</td>
+          <td><span class="check">&#10003;</span> 会话级持久化</td>
+          <td><span class="cross">&#10007;</span> 依赖外部脚本维护</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">完成判定</td>
+          <td>goal_achieved 工具 + 客观证据</td>
+          <td>基于条件的自动评估</td>
+          <td>脚本中的退出条件检查</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">预算控制</td>
+          <td><span class="check">&#10003;</span> 内建 Token 预算会计</td>
+          <td><span class="check">&#10003;</span> Token 使用上限</td>
+          <td>需自行实现计数逻辑</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">暂停/恢复</td>
+          <td><span class="check">&#10003;</span> TUI 原生支持</td>
+          <td><span class="check">&#10003;</span> CLI 原生支持</td>
+          <td><span class="cross">&#10007;</span> 需 kill/restart 进程</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">多 Agent 并行</td>
+          <td><span class="check">&#10003;</span> 支持最多 8 个 subagent</td>
+          <td><span class="check">&#10003;</span> 支持 agent teams + 消息传递</td>
+          <td>需外部编排工具</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">上下文窗口</td>
+          <td>受模型限制 + compaction</td>
+          <td>1M token 上下文</td>
+          <td>每轮全新上下文</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">适合场景</td>
+          <td>终端工作流、长期重构、性能调优</td>
+          <td>大型跨文件编辑、代码迁移</td>
+          <td>自定义流水线、多模型协作</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: 最佳实践 -->
+<section class="section" id="practice">
+  <div class="section-header fade-in">
+    <div class="section-tag">Best Practices</div>
+    <h2 class="section-title">如何写好一个 /goal</h2>
+    <p class="section-desc">强 Goal 需要六大要素，弱 Goal 注定跑偏</p>
+  </div>
+
+  <div class="bp-grid fade-in">
+    <div class="bp-card">
+      <div class="bp-icon" style="background: var(--color-accent-green-glow); color: var(--color-accent-green);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </div>
+      <h4>明确的结果定义</h4>
+      <p>告诉 Agent "做到什么样"而不是"做什么"。用可度量的指标描述预期结果，如"p95 延迟低于 120ms"而非"优化性能"。</p>
+    </div>
+    <div class="bp-card">
+      <div class="bp-icon" style="background: var(--color-primary-glow); color: var(--color-primary);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+      </div>
+      <h4>可验证的完成条件</h4>
+      <p>"确保所有 42 个测试通过"比"代码能跑"清晰得多。提供具体的验证命令（如 npm test、benchmark.sh），让 Agent 自行验证。</p>
+    </div>
+    <div class="bp-card">
+      <div class="bp-icon" style="background: var(--color-accent-amber-glow); color: var(--color-accent-amber);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+      </div>
+      <h4>限定工作范围</h4>
+      <p>"只修改 checkout service 目录下的代码"可以防止 Agent 大范围修改不相关的文件。明确边界减少意外副作用。</p>
+    </div>
+    <div class="bp-card">
+      <div class="bp-icon" style="background: var(--color-accent-purple-glow); color: var(--color-accent-purple);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+      </div>
+      <h4>设置合理预算</h4>
+      <p>根据任务复杂度预估 Token 消耗量。建议首次使用较低预算试跑，观察实际消耗后再调整。避免不设上限导致费用失控。</p>
+    </div>
+    <div class="bp-card">
+      <div class="bp-icon" style="background: var(--color-accent-cyan-glow); color: var(--color-accent-cyan);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+      </div>
+      <h4>用 GOAL.md 代替一句话</h4>
+      <p>复杂目标建议写成独立的 GOAL.md 文件，包含背景、约束、验证步骤等详细信息。然后 /goal 引用该文件，确保目标描述充分且不丢失。</p>
+    </div>
+    <div class="bp-card">
+      <div class="bp-icon" style="background: var(--color-accent-red-glow); color: var(--color-accent-red);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      </div>
+      <h4>避免模糊表述</h4>
+      <p>避免"优化一下这个项目"、"让代码更好"这类模糊目标。模糊目标 = Agent 自由发挥 = 不可预期的结果 + 浪费的 Token。</p>
+    </div>
+  </div>
+
+  <div class="code-block fade-in" style="margin-top: 40px;">
+    <div class="code-header">
+      <div class="code-header-dots"><span></span><span></span><span></span></div>
+      <span class="code-header-title">强 Goal 示例 vs 弱 Goal 示例</span>
+    </div>
+    <div class="code-body">
+<pre><span class="comment">// ✗ 弱 Goal — 模糊、不可验证、无边界</span>
+<span class="fn">/goal</span> <span class="string">优化项目性能</span>
+
+<span class="comment">// ✓ 强 Goal — 明确结果、可验证、有边界、有约束</span>
+<span class="fn">/goal</span> <span class="string">将 checkout service 的 p95 延迟降低到 120ms 以下，</span>
+<span class="string">      由 benchmark/checkout_bench.sh 验证，</span>
+<span class="string">      同时保持 tests/ 下所有 correctness 测试全部通过。</span>
+<span class="string">      仅修改 src/checkout/ 和 benchmark/ 目录下的文件。</span>
+
+<span class="comment">// ✓ 引用 GOAL.md 的方式</span>
+<span class="fn">/goal</span> <span class="string">按照 GOAL.md 中的描述完成认证模块的 OAuth2 迁移</span></pre>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: 适用场景 -->
+<section class="section">
+  <div class="section-header fade-in">
+    <div class="section-tag">When to Use</div>
+    <h2 class="section-title">什么时候该用 /goal</h2>
+    <p class="section-desc">选对场景才能发挥最大价值</p>
+  </div>
+
+  <div class="comparison-table-wrapper fade-in">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>场景</th>
+          <th>推荐方式</th>
+          <th>原因</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">大规模代码重构</td>
+          <td><span class="check">&#10003;</span> /goal</td>
+          <td>需要跨多文件、多轮持续推进，中间不需要人工干预</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">性能调优（有基准）</td>
+          <td><span class="check">&#10003;</span> /goal</td>
+          <td>有明确的数值目标和验证命令，完美匹配证据驱动的完成判定</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">测试补全</td>
+          <td><span class="check">&#10003;</span> /goal</td>
+          <td>"覆盖率从 45% 提升到 80%"是可量化目标，适合长时间自主执行</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">框架/库版本迁移</td>
+          <td><span class="check">&#10003;</span> /goal</td>
+          <td>迁移步骤多、涉及文件广，适合设定目标后让 Agent 自主完成</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">修复一个小 Bug</td>
+          <td><span class="cross">&#10007;</span> 普通 Prompt</td>
+          <td>一两轮就能完成，使用 /goal 增加不必要的开销</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">探索性开发</td>
+          <td><span class="cross">&#10007;</span> Plan + 交互</td>
+          <td>需求不明确时不适合设定 /goal，先用 Plan 模式讨论方案</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: var(--color-text);">需要频繁确认的任务</td>
+          <td><span class="cross">&#10007;</span> 普通交互</td>
+          <td>每步都需要人工审核和确认的任务，/goal 的自主执行反而不适用</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>基于 OpenAI Codex CLI v0.128.0+ 源码分析 · 数据来自多个技术社区的深度解读</p>
+  <p style="margin-top: 8px;">
+    参考资料：<a href="https://60ke.github.io/posts/openai-codex-goal-implementation/" target="_blank">源码级剖析</a> ·
+    <a href="https://codex.danielvaughan.com/2026/05/03/codex-cli-goal-mode-persistent-objectives-token-budgets-agentic-loops/" target="_blank">Goal Mode Analysis</a> ·
+    <a href="https://zhuanlan.zhihu.com/p/2044785399596373315" target="_blank">实现原理解读</a>
+  </p>
+</footer>
+
+<script>
+  // Scroll fade-in animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Tab switching
+  document.querySelectorAll('.tabs').forEach(tabGroup => {
+    tabGroup.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        const parent = tabGroup.parentElement;
+        tabGroup.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        parent.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const panel = parent.querySelector(`[data-panel="${target}"]`);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  });
+
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
