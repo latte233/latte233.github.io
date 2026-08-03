@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 全域雷达 · 2026-08-03</title>
+  <style>
+    :root { --bg:#0b1020; --card:#161d33; --text:#edf2ff; --muted:#aeb9d7; --adopt:#16a34a; --trial:#2563eb; --assess:#d97706; --watch:#7c3aed; }
+    * { box-sizing:border-box; } body { margin:0; font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--text); background:var(--bg); }
+    header { padding:32px max(24px,calc((100% - 1180px)/2)); background:linear-gradient(120deg,#18264b,#0b1020); } h1 { margin:0 0 6px; font-size:28px; } p { margin:0; color:var(--muted); }
+    main { max-width:1180px; margin:0 auto; padding:24px; } .legend { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:20px; } .tag { padding:4px 10px; border-radius:999px; color:white; font-weight:700; } .adopt{background:var(--adopt)} .trial{background:var(--trial)} .assess{background:var(--assess)} .watch{background:var(--watch)}
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(220px,1fr)); gap:16px; } .quad { background:var(--card); border:1px solid #273253; border-radius:12px; overflow:hidden; } .quad h2 { font-size:16px; margin:0; padding:16px; border-bottom:1px solid #273253; } section { padding:14px 16px; border-bottom:1px solid #273253; } section:last-child { border-bottom:0; } h3 { margin:0 0 9px; font-size:13px; } ul { margin:0; padding-left:18px; } li { margin:7px 0; } a { color:#b9d4ff; text-decoration:none; } a:hover { text-decoration:underline; } .desc { color:var(--muted); font-size:12px; display:block; } .new { color:#7dd3fc; font-size:11px; font-weight:700; } footer { max-width:1180px; margin:0 auto; padding:0 24px 32px; color:var(--muted); font-size:12px; }
+    @media (max-width:960px) {.grid{grid-template-columns:repeat(2,minmax(220px,1fr));}} @media (max-width:560px){.grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<header><h1>AI 全域雷达 · 2026-08-03</h1><p>扫描周期：2026-07-27 — 2026-08-03 · 30 条信号 · 16 个信号源全量扫描 · 环位分布 Adopt 6 / Trial 4 / Assess 13 / Watch 7</p></header>
+<main>
+  <div class="legend"><span class="tag adopt">Adopt：积极引入</span><span class="tag trial">Trial：安排验证</span><span class="tag assess">Assess：值得评估</span><span class="tag watch">Watch：持续观察</span></div>
+  <div class="grid">
+    <article class="quad"><h2>Models &amp; Research</h2>
+      <section><h3>Adopt</h3><ul><li><a href="https://www.anthropic.com/">Claude Opus 5</a><span class="desc">Anthropic 旗舰模型，HN 有 Karpathy 实测讨论。</span></li></ul></section>
+      <section><h3>Trial</h3><ul><li><span class="desc">本期该象限无 Trial 级信号。</span></li></ul></section>
+      <section><h3>Assess</h3><ul><li><a href="https://huggingface.co/moonshotai">Kimi K3 开放权重</a><span class="desc">⬇️ Trial → Assess，本期无新动态。</span></li><li><a href="https://huggingface.co/zai-org">GLM-5.2</a><span class="desc">开源智能指数 51 分领先。</span></li><li><a href="https://huggingface.co/Qwen">Qwen 3.8 Preview</a></li><li><a href="https://www.deepseek.com/">DeepSeek V4</a><span class="desc">价格优势显著。</span></li></ul></section>
+      <section><h3>Watch</h3><ul><li><a href="https://lmarena.ai/">LMArena 八月榜单</a><span class="desc">363 个模型 Elo 快照。</span></li><li><a href="https://arxiv.org/list/cs.AI/recent">ByteDance Seed PAR</a></li></ul></section>
+    </article>
+    <article class="quad"><h2>Frameworks &amp; Infrastructure</h2>
+      <section><h3>Adopt</h3><ul><li><a href="https://modelcontextprotocol.io/">MCP 2026-07-28 规范</a></li><li><a href="https://github.com/affaan-m/ECC">ECC</a><span class="desc">237,058 Star，发布 v2.1.0，✅ 恢复活跃。</span></li></ul></section>
+      <section><h3>Trial</h3><ul><li><a href="https://github.com/yc-software/qm">qm</a> <span class="new">🆕 NEW</span><span class="desc">YC 开源多人协作 Agent Harness，7,164 Star，🔥 Star 爆发。</span></li><li><a href="https://github.com/langchain-ai/openwiki">OpenWiki</a> <span class="new">🆕 NEW</span><span class="desc">LangChain 出品，为 Agent 写代码库文档，13,938 Star。</span></li></ul></section>
+      <section><h3>Assess</h3><ul><li><a href="https://github.com/microsoft/SkillOpt">SkillOpt</a> <span class="new">🆕 NEW</span><span class="desc">微软，Skill 即可训练参数，52 评测格全最优。</span></li><li><a href="https://github.com/diegosouzapw/OmniRoute">OmniRoute</a> <span class="new">🆕 NEW</span><span class="desc">37,876 Star 免费 AI 网关。</span></li><li><a href="https://github.com/omnigent-ai/omnigent">Omnigent</a> <span class="new">🆕 NEW</span><span class="desc">元 Harness 编排框架。</span></li><li><a href="https://github.com/jlowin/fastmcp">FastMCP</a><span class="desc">⬇️ Trial → Assess。</span></li></ul></section>
+      <section><h3>Watch</h3><ul><li><a href="https://github.com/unicity-aos/aos-ce">AOS Community Edition</a><span class="desc">8,576 Star 但仅 2 贡献者，活跃度背离。</span></li><li><a href="https://github.com/makecindy/cindy">cindy</a></li><li><a href="https://pypistats.org/">AI/ML 包下载趋势</a></li></ul></section>
+    </article>
+    <article class="quad"><h2>Tools &amp; Products</h2>
+      <section><h3>Adopt</h3><ul><li><a href="https://github.com/anthropics/claude-code">Claude Code</a><span class="desc">140,023 Star。</span></li><li><a href="https://github.com/openai/codex">OpenAI Codex</a><span class="desc">103,336 Star。</span></li></ul></section>
+      <section><h3>Trial</h3><ul><li><a href="https://github.com/alibaba/open-code-review">Open Code Review</a> <span class="new">🆕 NEW</span><span class="desc">阿里两年生产验证后开源，17,871 Star，📈 持续走高。</span></li></ul></section>
+      <section><h3>Assess</h3><ul><li><a href="https://github.com/superset-sh/superset">Superset</a> <span class="new">🆕 NEW</span><span class="desc">Agent 军团管理编辑器，12,743 Star。</span></li><li><a href="https://github.com/XiaomiMiMo/MiMo-Code">MiMo-Code</a> <span class="new">🆕 NEW</span><span class="desc">小米开源，12,602 Star。</span></li><li><a href="https://github.com/xai-org/grok-build">Grok Build</a><span class="desc">⬇️ Trial → Assess，仅 1 贡献者。</span></li></ul></section>
+      <section><h3>Watch</h3><ul><li><a href="https://github.com/DietrichGebert/ponytail">ponytail</a><span class="desc">94,044 Star 但近 7 天 0 commit，⚠️ 需复查。</span></li><li><a href="https://github.com/MoonshotAI/kimi-code">kimi-code</a></li><li><a href="https://github.com/petergyang/no-ai-slop">no-ai-slop</a></li><li><a href="https://www.producthunt.com/leaderboard/monthly/2026/7">Product Hunt AI 榜单</a></li></ul></section>
+    </article>
+    <article class="quad"><h2>Practices &amp; Ecosystem</h2>
+      <section><h3>Adopt</h3><ul><li><a href="https://artificialintelligenceact.eu/">EU AI Act GPAI 执法生效</a><span class="desc">⬆️ Trial → Adopt，8/2 起可罚营业额 3%。</span></li></ul></section>
+      <section><h3>Trial</h3><ul><li><a href="https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/">Open Weights 公开信</a> <span class="new">🆕 NEW</span><span class="desc">230+ 家联署，OpenAI 与 Anthropic 缺席。</span></li></ul></section>
+      <section><h3>Assess</h3><ul><li><a href="https://www.cursor.com/">SpaceX 收购 Cursor</a><span class="desc">⬇️ 600 亿美元全股票，尚未交割。</span></li><li><a href="https://aifunding.me/deals">AI 融资超级周期</a><span class="desc">2026 年 1,298 轮 / 7,660 亿美元。</span></li></ul></section>
+      <section><h3>Watch</h3><ul><li><a href="https://www.jiqizhixin.com/">AlphaFold 团队解散</a></li><li><a href="https://huggingface.co/">开放权重生态中国领跑</a></li></ul></section>
+    </article>
+  </div>
+</main>
+<footer>数据模式：GitHub API 精确（20 个仓库 9 项指标）+ 公开 Web 检索混合。本期新增 10 条信号、移出 8 条。外部消息和融资传闻需以一手披露复核。</footer>
+</body>
+</html>
