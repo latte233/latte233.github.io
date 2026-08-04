@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 全域雷达图 · 2026-08-04</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #eee; padding: 20px; }
+        h1 { text-align: center; color: #e94560; margin-bottom: 10px; font-size: 1.5em; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        .radar-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .quadrant { background: #16213e; border-radius: 12px; padding: 20px; min-width: 280px; flex: 1; max-width: 560px; }
+        .quadrant h2 { font-size: 1.1em; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #333; }
+        .quadrant-models h2 { color: #e94560; border-color: #e94560; }
+        .quadrant-frameworks h2 { color: #0f3460; border-color: #533483; }
+        .quadrant-tools h2 { color: #16c79a; border-color: #16c79a; }
+        .quadrant-practices h2 { color: #f0a500; border-color: #f0a500; }
+        .ring { margin-bottom: 15px; }
+        .ring-title { font-size: 0.85em; font-weight: bold; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+        .ring-adopt { background: #16c79a; color: #000; }
+        .ring-trial { background: #f0a500; color: #000; }
+        .ring-assess { background: #533483; color: #fff; }
+        .ring-watch { background: #555; color: #fff; }
+        .signal-item { display: flex; align-items: center; padding: 4px 0; font-size: 0.85em; }
+        .signal-item a { color: #aaa; text-decoration: none; margin-left: 6px; }
+        .signal-item a:hover { color: #e94560; }
+        .signal-tag { font-size: 0.75em; margin-left: 4px; }
+        .tag-new { color: #16c79a; }
+        .tag-up { color: #f0a500; }
+        .tag-fire { color: #e94560; }
+        .stats { display: flex; justify-content: center; gap: 30px; margin: 20px auto; max-width: 600px; }
+        .stat-box { background: #16213e; border-radius: 8px; padding: 12px 24px; text-align: center; }
+        .stat-num { font-size: 1.8em; font-weight: bold; }
+        .stat-label { font-size: 0.75em; color: #888; }
+        .legend { text-align: center; margin: 15px 0; font-size: 0.8em; }
+        .legend span { display: inline-block; margin: 0 10px; }
+        .legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <h1>📊 AI 全域雷达图 · 2026-08-04</h1>
+    <p class="subtitle">扫描周期 2026-07-28 — 2026-08-04 | 全量扫描 | 30 条信号 | 16/16 信号源</p>
+
+    <div class="stats">
+        <div class="stat-box"><div class="stat-num" style="color:#16c79a">5</div><div class="stat-label">Adopt</div></div>
+        <div class="stat-box"><div class="stat-num" style="color:#f0a500">5</div><div class="stat-label">Trial</div></div>
+        <div class="stat-box"><div class="stat-num" style="color:#533483">13</div><div class="stat-label">Assess</div></div>
+        <div class="stat-box"><div class="stat-num" style="color:#888">7</div><div class="stat-label">Watch</div></div>
+    </div>
+
+    <div class="legend">
+        <span><span class="dot" style="background:#16c79a"></span>Adopt 立即行动</span>
+        <span><span class="dot" style="background:#f0a500"></span>Trial 验证</span>
+        <span><span class="dot" style="background:#533483"></span>Assess 了解</span>
+        <span><span class="dot" style="background:#555"></span>Watch 记录</span>
+    </div>
+
+    <div class="radar-container">
+        <div class="quadrant quadrant-models">
+            <h2>Models & Research</h2>
+            <div class="ring"><span class="ring-title ring-trial">Trial</span>
+                <div class="signal-item">▸ <a href="https://www.deepseek.com/">DeepSeek V4 Flash</a> <span class="signal-tag tag-up">⬆️</span></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-assess">Assess</span>
+                <div class="signal-item">▸ <a href="https://openai.com/">OpenAI Astra</a> <span class="signal-tag tag-new">🆕</span></div>
+                <div class="signal-item">▸ <a href="https://github.com/MoonshotAI/Kimi-K3">Kimi K3</a></div>
+                <div class="signal-item">▸ <a href="https://lmarena.ai/">LMArena 榜单</a></div>
+            </div>
+        </div>
+
+        <div class="quadrant quadrant-frameworks">
+            <h2>Frameworks & Infrastructure</h2>
+            <div class="ring"><span class="ring-title ring-adopt">Adopt</span>
+                <div class="signal-item">▸ <a href="https://github.com/affaan-m/ECC">ECC</a> <span class="signal-tag">⚠️</span></div>
+                <div class="signal-item">▸ <a href="https://modelcontextprotocol.io/">MCP Protocol</a></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-trial">Trial</span>
+                <div class="signal-item">▸ <a href="https://github.com/yc-software/qm">qm</a> <span class="signal-tag tag-fire">🔥</span></div>
+                <div class="signal-item">▸ <a href="https://github.com/langchain-ai/openwiki">OpenWiki</a></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-assess">Assess</span>
+                <div class="signal-item">▸ <a href="https://github.com/bytedance/deer-flow">deer-flow</a> <span class="signal-tag tag-new">🆕</span></div>
+                <div class="signal-item">▸ <a href="https://github.com/earendil-works/pi">pi</a> <span class="signal-tag tag-new">🆕</span></div>
+                <div class="signal-item">▸ <a href="https://github.com/obra/superpowers">superpowers</a> <span class="signal-tag">🔄</span></div>
+                <div class="signal-item">▸ <a href="https://github.com/microsoft/SkillOpt">SkillOpt</a></div>
+                <div class="signal-item">▸ <a href="https://github.com/diegosouzapw/OmniRoute">OmniRoute</a></div>
+                <div class="signal-item">▸ <a href="https://github.com/omnigent-ai/omnigent">Omnigent</a></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-watch">Watch</span>
+                <div class="signal-item">▸ <a href="https://github.com/addyosmani/agent-skills">agent-skills</a> <span class="signal-tag tag-new">🆕</span></div>
+                <div class="signal-item">▸ <a href="https://github.com/thedotmack/claude-mem">claude-mem</a> <span class="signal-tag tag-new">🆕</span></div>
+            </div>
+        </div>
+
+        <div class="quadrant quadrant-tools">
+            <h2>Tools & Products</h2>
+            <div class="ring"><span class="ring-title ring-adopt">Adopt</span>
+                <div class="signal-item">▸ <a href="https://github.com/openai/codex">OpenAI Codex</a></div>
+                <div class="signal-item">▸ <a href="https://github.com/anthropics/claude-code">Claude Code</a> <span class="signal-tag">⚠️</span></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-trial">Trial</span>
+                <div class="signal-item">▸ <a href="https://github.com/alibaba/open-code-review">Open Code Review</a></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-assess">Assess</span>
+                <div class="signal-item">▸ <a href="https://github.com/superset-sh/superset">Superset</a></div>
+                <div class="signal-item">▸ <a href="https://github.com/XiaomiMiMo/MiMo-Code">MiMo-Code</a></div>
+                <div class="signal-item">▸ <a href="https://github.com/xai-org/grok-build">Grok Build</a> <span class="signal-tag">⚠️</span></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-watch">Watch</span>
+                <div class="signal-item">▸ <a href="https://github.com/DietrichGebert/ponytail">ponytail</a> <span class="signal-tag">⚠️</span></div>
+                <div class="signal-item">▸ <a href="https://github.com/MoonshotAI/kimi-code">kimi-code</a></div>
+            </div>
+        </div>
+
+        <div class="quadrant quadrant-practices">
+            <h2>Practices & Ecosystem</h2>
+            <div class="ring"><span class="ring-title ring-adopt">Adopt</span>
+                <div class="signal-item">▸ <a href="https://artificialintelligenceact.eu/">EU AI Act 执法</a></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-trial">Trial</span>
+                <div class="signal-item">▸ <a href="https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/">Open Weights 公开信</a></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-assess">Assess</span>
+                <div class="signal-item">▸ <a href="https://aifunding.me/deals">AI 融资超级周期</a></div>
+                <div class="signal-item">▸ <a href="https://www.cursor.com/">SpaceX 收购 Cursor</a></div>
+            </div>
+            <div class="ring"><span class="ring-title ring-watch">Watch</span>
+                <div class="signal-item">▸ <a href="https://news.ycombinator.com/item?id=48767058">Zuckerberg: Agent 减速</a> <span class="signal-tag tag-new">🆕</span></div>
+                <div class="signal-item">▸ <a href="https://www.jiqizhixin.com/">AlphaFold 团队解散</a></div>
+            </div>
+        </div>
+    </div>
+
+    <p class="subtitle" style="margin-top: 30px;">由 AI Radar Skill 自动生成 · 2026-08-04</p>
+</body>
+</html>
