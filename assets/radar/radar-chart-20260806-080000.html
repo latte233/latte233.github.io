@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI 全域雷达图 · 2026-08-06</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0f1115;color:#e6e6e6;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+header{padding:22px 28px 12px}
+h1{margin:0 0 6px;font-size:21px;font-weight:650}
+.sub{color:#9aa4b2;font-size:13px}
+.wrap{display:flex;flex-wrap:wrap;gap:20px;padding:12px 28px 40px;align-items:flex-start}
+.chart{flex:1 1 660px;min-width:340px}
+.side{flex:1 1 380px;min-width:320px;max-height:82vh;overflow:auto}
+svg{width:100%;height:auto;display:block}
+.blip{cursor:pointer}
+.blip circle,.blip polygon{stroke:#0f1115;stroke-width:1.2}
+.blip:hover circle,.blip:hover polygon{stroke:#fff;stroke-width:2}
+.bt{font-size:9px;fill:#0f1115;font-weight:700;pointer-events:none;text-anchor:middle;dominant-baseline:central}
+.ql{font-size:13px;fill:#7f8b9c;font-weight:600}
+.rl{font-size:10px;fill:#5d6675}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 14px;font-size:12px;color:#9aa4b2}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.qgroup{margin-bottom:18px}
+.qh{font-size:13px;font-weight:650;color:#cfd6e0;padding:7px 10px;background:#171a21;border-radius:6px;margin-bottom:8px}
+.item{display:flex;gap:8px;padding:5px 10px;font-size:12.5px;line-height:1.5;border-radius:5px}
+.item:hover{background:#171a21}
+.num{color:#0f1115;font-weight:700;font-size:10px;min-width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.item a{color:#e6e6e6;text-decoration:none}
+.item a:hover{text-decoration:underline}
+.desc{color:#8d97a5;font-size:11.5px}
+.tag{font-size:10px;padding:0 5px;border-radius:3px;margin-left:5px;background:#2a3140;color:#9fb4d8}
+.tip{position:fixed;pointer-events:none;background:#1b1f27;border:1px solid #2c3340;border-radius:7px;padding:9px 12px;font-size:12px;max-width:300px;opacity:0;transition:opacity .12s;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.tip b{display:block;margin-bottom:4px;font-size:12.5px}
+.tip span{color:#95a0b0;font-size:11.5px}
+footer{padding:0 28px 28px;color:#5d6675;font-size:11.5px}
+</style>
+</head>
+<body>
+<header>
+<h1>AI 全域雷达图 · 2026-08-06</h1>
+<div class="sub">全量扫描 · 16/16 信号源 · 46 条信号 · Adopt 5 / Trial 5 / Assess 22 / Watch 14</div>
+</header>
+<div class="wrap">
+<div class="chart">
+<div class="legend">
+<span><i style="background:#5ba85a"></i>Adopt</span>
+<span><i style="background:#4a90d9"></i>Trial</span>
+<span><i style="background:#d9a441"></i>Assess</span>
+<span><i style="background:#c2544d"></i>Watch</span>
+<span>● 已有　▲ 本期新增</span>
+</div>
+<svg id="radar" viewBox="0 0 760 760"></svg>
+</div>
+<div class="side" id="side"></div>
+</div>
+<footer>数据来源：GitHub REST API 精确获取 + 16 个信号源交叉验证。点击条目可跳转原始链接。</footer>
+<div class="tip" id="tip"></div>
+<script>
+const DATA = [{"name": "OpenAI Codex", "ring": "Adopt", "quadrant": "Tools & Products", "isNew": false, "description": "OpenAI 终端编码 Agent，近 7 天 100+ commit，Rust 重写后迭代节奏稳居第一梯队。", "url": "https://github.com/openai/codex", "ringChange": null}, {"name": "Claude Code", "ring": "Adopt", "quadrant": "Tools & Products", "isNew": false, "description": "Anthropic 终端编码 Agent，生态最厚；但近 7 天仅 2 次 commit，迭代明显放缓。", "url": "https://github.com/anthropics/claude-code", "ringChange": null}, {"name": "MCP Protocol", "ring": "Adopt", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "模型上下文协议已成 Agent 工具层事实标准，Anthropic/OpenAI/Meta 三家新品均原生支持。", "url": "https://modelcontextprotocol.io/", "ringChange": null}, {"name": "Hermes Agent", "ring": "Adopt", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "NousResearch 长青 Agent 框架，22.6 万 Star、4.4 万 Fork，8/3 发 v2026.8.3，持续高频迭代。", "url": "https://github.com/NousResearch/hermes-agent", "ringChange": null}, {"name": "ECC（Everything Claude Code）", "ring": "Adopt", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "Claude Code 生态聚合项目，23.8 万 Star，近 7 天 16 次 commit，社区参与度维持高位。", "url": "https://github.com/affaan-m/ECC", "ringChange": null}, {"name": "Meta Muse Code + Muse Spark 1.2", "ring": "Trial", "quadrant": "Tools & Products", "isNew": true, "description": "Meta 首款终端编码 Agent 与协同训练模型同日发布，主打持久化异步后台 Agent 与事件日志断点恢复。", "url": "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2", "ringChange": null}, {"name": "MiniMax H3", "ring": "Trial", "quadrant": "Models & Research", "isNew": true, "description": "首个开放权重全模态视频模型，2K/15 秒/原生立体声一次生成，ComfyUI 同日 Day-0 支持。", "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3", "ringChange": null}, {"name": "Shai-Hulud npm 蠕虫（keyv 供应链攻击）", "ring": "Trial", "quadrant": "Practices & Ecosystem", "isNew": true, "description": "自传播蠕虫劫持 keyv/cacheable 等 400+ 包，恶意载荷藏进 AI Agent 配置文件规避扫描。", "url": "https://cloudsmith.com/blog/keyv-and-cacheable-npm-packages-compromised-in-active-supply-chain-attack", "ringChange": null}, {"name": "Qwen3.8-Max", "ring": "Trial", "quadrant": "Models & Research", "isNew": false, "description": "2.4T 参数 MoE、激活 95B、1M 上下文，Max 级权重首次开源；连续自主编程 16 天产出 265 次提交。", "url": "https://qwen.ai/blog?id=qwen3.8", "ringChange": null}, {"name": "qm（Quartermaster）", "ring": "Trial", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "YC 开源多人协作 Agent harness，按员工/频道隔离沙箱与权限；Star 11120→11675，但仍仅 3 位贡献者。", "url": "https://github.com/yc-software/qm", "ringChange": null}, {"name": "OpenAI Astra 十项数学突破", "ring": "Assess", "quadrant": "Models & Research", "isNew": false, "description": "约 $2000 推理成本攻克 10 项长期未解数学/理论计算机难题，全部经 Lean 形式化验证。", "url": "https://openai.com/index/ten-advances-in-mathematics/", "ringChange": null}, {"name": "AI 评测意外网络攻击事件（AISI / OpenAI / Anthropic）", "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "description": "英国 AISI 关闭安全分类器且不做网络沙箱，122 次评测中 19 次 Agent 攻击真实目标，含供应链投毒与钓鱼。", "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing", "ringChange": null}, {"name": "Don't Be a Meat Proxy", "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "description": "HN 单日最高 1571 分：反对不加消化转发 AI 输出，指出 AI 时代代码审查负担正被转嫁给评审者。", "url": "https://gruhn.me/blog/2026-08-03/", "ringChange": null}, {"name": "Devtools Must Be Open Source", "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "description": "Tailscale 联创提出 Agent 时代源码即扩展系统，插件/配置体系正在被直接改源码 + 自动 rebase 取代。", "url": "https://blog.exe.dev/devtools-must-be-open-source", "ringChange": null}, {"name": "LLM 0.32", "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": true, "description": "Simon Willison 的 LLM CLI 最大版本更新：可见推理轨迹、服务端工具、内容寻址 SQLite 日志。", "url": "https://github.com/simonw/llm", "ringChange": null}, {"name": "Open Code Review", "ring": "Assess", "quadrant": "Tools & Products", "isNew": false, "description": "阿里开源 AI 代码评审，Star 18779→19141，近 7 天 60 次 commit，活跃度较上期显著回升。", "url": "https://github.com/alibaba/open-code-review", "ringChange": null}, {"name": "Codex Security CLI", "ring": "Assess", "quadrant": "Tools & Products", "isNew": false, "description": "OpenAI 安全审计 CLI，Star 8526→8613，近 7 天 56 次 commit，工程投入持续。", "url": "https://github.com/openai/codex-security", "ringChange": null}, {"name": "Graphify", "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "代码库/文档转可查询知识图谱，10.3 万 Star；但近 7 天 commit 从 高位回落至 32，热度趋缓。", "url": "https://github.com/Graphify-Labs/graphify", "ringChange": "Trial → Assess"}, {"name": "OpenWorker", "ring": "Assess", "quadrant": "Tools & Products", "isNew": false, "description": "吴恩达开源本地优先桌面 Agent，Star 12799→13107；但最后 push 停在 8/1，迭代放缓。", "url": "https://github.com/andrewyng/openworker", "ringChange": "Trial → Assess"}, {"name": "GitHub Stacked PRs", "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": false, "description": "GitHub 堆叠 PR 公开预览已发布一周，直指 AI 时代代码审查瓶颈，尚待规模化实践反馈。", "url": "https://github.blog/changelog/2026-07-30-stacked-pull-requests-public-preview/", "ringChange": "Trial → Assess"}, {"name": "anydoc", "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": true, "description": "Firecrawl 开源 Rust 文档转换器，Word/PPT/Excel/PDF 转 Markdown；3 天冲到 4933 Star。", "url": "https://github.com/firecrawl/anydoc", "ringChange": null}, {"name": "pi", "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "轻量 Agent 框架，8.4 万 Star，近 7 天 100+ commit，社区与迭代双高但定位仍偏通用。", "url": "https://github.com/earendil-works/pi", "ringChange": null}, {"name": "deer-flow", "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "字节开源深度研究 Agent 框架，7.9 万 Star，近 7 天 52 次 commit。", "url": "https://github.com/bytedance/deer-flow", "ringChange": null}, {"name": "OmniRoute", "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "多模型路由层，Star 39666→40728，近 7 天 100+ commit，随 OpenRouter 收购传闻关注度上升。", "url": "https://github.com/diegosouzapw/OmniRoute", "ringChange": null}, {"name": "DeepSeek-Reasonix", "ring": "Assess", "quadrant": "Tools & Products", "isNew": true, "description": "DeepSeek 原生终端编码 Agent，3.16 万 Star，近 7 天 100+ commit，Go 实现主打低成本。", "url": "https://github.com/esengine/DeepSeek-Reasonix", "ringChange": null}, {"name": "qwen-code", "ring": "Assess", "quadrant": "Tools & Products", "isNew": true, "description": "Qwen 官方终端编码 Agent，2.68 万 Star，近 7 天 100+ commit，随 Qwen3.8-Max 发布同步升温。", "url": "https://github.com/QwenLM/qwen-code", "ringChange": null}, {"name": "MiMo-Code", "ring": "Assess", "quadrant": "Tools & Products", "isNew": false, "description": "小米开源编码 Agent，Star 12641→12656 近乎停滞，但近 7 天 61 次 commit，872 个未决 issue。", "url": "https://github.com/XiaomiMiMo/MiMo-Code", "ringChange": null}, {"name": "OpenWiki", "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "LangChain 开源代码库文档生成，Star 14114→14214，近 7 天 34 次 commit。", "url": "https://github.com/langchain-ai/openwiki", "ringChange": null}, {"name": "cindy", "ring": "Assess", "quadrant": "Tools & Products", "isNew": true, "description": "开箱即用开源 AI Agent，7 月 22 日创建即达 1780 Star、72 位贡献者，近 7 天 100+ commit。", "url": "https://github.com/makecindy/cindy", "ringChange": null}, {"name": "turbo-fieldfare", "ring": "Assess", "quadrant": "Models & Research", "isNew": false, "description": "Gemma 4 26B-A4B 在 M 系列 MacBook 上 ~2GB 内存推理，Star 4911→5110；但仍是单人项目。", "url": "https://github.com/drumih/turbo-fieldfare", "ringChange": null}, {"name": "Stripe 洽购 OpenRouter", "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "description": "估值约 100 亿美元，较 5 月 13 亿美元估值跃升近 8 倍，交易尚未官宣仍可能破裂。", "url": "https://finance.sina.com.cn/roll/2026-08-06/doc-inimikrp3157306.shtml", "ringChange": null}, {"name": "英伟达为 OpenAI 提供 2500 亿美元融资担保", "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "description": "担保 OpenAI 租赁软银俄亥俄 10GW 园区，项目总成本超 5000 亿美元，信用风险高度集中。", "url": "https://m.21jingji.com/article/20260727/herald/b7d129ad18df76c6dce5aa1bb1213fce.html", "ringChange": null}, {"name": "qwen-audio-agent", "ring": "Watch", "quadrant": "Frameworks & Infrastructure", "isNew": true, "description": "实时语音 Agent 运行时，7/27 创建即 1927 Star；仅 15 位贡献者，尚待验证。", "url": "https://github.com/QwenAudio/qwen-audio-agent", "ringChange": null}, {"name": "microsoft/skill-recorder", "ring": "Watch", "quadrant": "Tools & Products", "isNew": true, "description": "微软桌面录屏转 Agent 技能工具，1956 Star；仅 4 位贡献者、近 7 天 12 次 commit。", "url": "https://github.com/microsoft/skill-recorder", "ringChange": null}, {"name": "genoffice", "ring": "Watch", "quadrant": "Tools & Products", "isNew": true, "description": "GenSpark 开源 AI 原生办公套件（文字/表格/演示），1774 Star，仅 5 位贡献者。", "url": "https://github.com/genspark-ai/genoffice", "ringChange": null}, {"name": "waste", "ring": "Watch", "quadrant": "Models & Research", "isNew": true, "description": "超出可用内存运行完整 2.78T Kimi K3，1762 Star、近 7 天 73 次 commit，仅 4 位贡献者。", "url": "https://github.com/sqliteai/waste", "ringChange": null}, {"name": "kimi-k3-in-c", "ring": "Watch", "quadrant": "Models & Research", "isNew": false, "description": "2.78T Kimi K3 单 CPU 8.24GB 内存推理，Star 2005→2563；但仅 2 位贡献者且已停止 push。", "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c", "ringChange": null}, {"name": "open-kritt", "ring": "Watch", "quadrant": "Tools & Products", "isNew": true, "description": "编排 Agent 挖掘代码真实漏洞，1401 Star；AGPL-3.0 对商业集成有约束。", "url": "https://github.com/Kritt-ai/open-kritt", "ringChange": null}, {"name": "RealReplicaBench", "ring": "Watch", "quadrant": "Models & Research", "isNew": true, "description": "高保真有状态环境下的长程 Agent 基准，8/2 创建即 1018 Star，仅 2 位贡献者无 Release。", "url": "https://github.com/Accio-Lab/RealReplicaBench", "ringChange": null}, {"name": "trycomp CRM", "ring": "Watch", "quadrant": "Tools & Products", "isNew": false, "description": "开源 Agent 优先 CRM，Star 4644→6225（+34%），近 7 天 100+ commit；仅 4 位贡献者。", "url": "https://github.com/trycompai/crm", "ringChange": null}, {"name": "Grok Build", "ring": "Watch", "quadrant": "Tools & Products", "isNew": false, "description": "xAI 构建工具，Star 24128→24218 近乎停滞，近 7 天仅 6 次 commit，仍是单贡献者无 Release。", "url": "https://github.com/xai-org/grok-build", "ringChange": "Assess → Watch"}, {"name": "claude-mem", "ring": "Watch", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "Claude Code 记忆持久化，8.97 万 Star；近 7 天仅 7 次 commit，连续两期低活跃。", "url": "https://github.com/thedotmack/claude-mem", "ringChange": null}, {"name": "agent-skills", "ring": "Watch", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "Agent 技能集合，8.2 万 Star；近 7 天仅 8 次 commit，连续两期低活跃。", "url": "https://github.com/addyosmani/agent-skills", "ringChange": null}, {"name": "superpowers", "ring": "Watch", "quadrant": "Frameworks & Infrastructure", "isNew": false, "description": "Agent 技能框架，26.7 万 Star 但近 7 天 0 次 commit，连续两期零提交。", "url": "https://github.com/obra/superpowers", "ringChange": null}, {"name": "Kimi K3", "ring": "Watch", "quadrant": "Models & Research", "isNew": false, "description": "Moonshot 2.78T 模型仓库，8101 Star；连续两期 0 commit、仅 2 位贡献者、无 Release。", "url": "https://github.com/MoonshotAI/Kimi-K3", "ringChange": "Assess → Watch"}, {"name": "human-writing", "ring": "Watch", "quadrant": "Tools & Products", "isNew": true, "description": "让 AI 写的中文更像真人的通用创作 Skill，当日创建即 1025 Star；单人项目。", "url": "https://github.com/KKKKhazix/human-writing", "ringChange": null}];
+const RINGS=["Adopt","Trial","Assess","Watch"];
+const QUADS=["Models & Research","Frameworks & Infrastructure","Tools & Products","Practices & Ecosystem"];
+const RC={Adopt:"#5ba85a",Trial:"#4a90d9",Assess:"#d9a441",Watch:"#c2544d"};
+const CX=380,CY=380,R=[0,96,178,262,342];
+// 象限角度（SVG 坐标系 y 向下）：0=右上, 1=左上, 2=左下, 3=右下
+// 均按角度递增方向给出，保证线性插值始终落在本象限内
+const QA={0:[-Math.PI/2,0],1:[-Math.PI,-Math.PI/2],2:[Math.PI/2,Math.PI],3:[0,Math.PI/2]};
+const svg=document.getElementById("radar");
+const NS="http://www.w3.org/2000/svg";
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+
+// 环
+for(let i=4;i>=1;i--){
+  svg.appendChild(el("circle",{cx:CX,cy:CY,r:R[i],fill:i%2?"#141821":"#11151d",stroke:"#252b36","stroke-width":1}));
+}
+// 十字轴
+svg.appendChild(el("line",{x1:CX-R[4],y1:CY,x2:CX+R[4],y2:CY,stroke:"#2b3240","stroke-width":1.2}));
+svg.appendChild(el("line",{x1:CX,y1:CY-R[4],x2:CX,y2:CY+R[4],stroke:"#2b3240","stroke-width":1.2}));
+// 环标签
+RINGS.forEach((r,i)=>{
+  const t=el("text",{x:CX+4,y:CY-(R[i]+R[i+1])/2+4,class:"rl"});t.textContent=r;svg.appendChild(t);
+});
+// 象限标签
+const QP=[[CX+R[4]-6,CY-R[4]+6,"end"],[CX-R[4]+6,CY-R[4]+6,"start"],[CX-R[4]+6,CY+R[4]-2,"start"],[CX+R[4]-6,CY+R[4]-2,"end"]];
+QUADS.forEach((q,i)=>{
+  const t=el("text",{x:QP[i][0],y:QP[i][1],class:"ql","text-anchor":QP[i][2]});t.textContent=q;svg.appendChild(t);
+});
+
+// 布局：同象限同环内均匀分布，避免重叠
+const buckets={};
+DATA.forEach(d=>{const k=QUADS.indexOf(d.quadrant)+"|"+RINGS.indexOf(d.ring);(buckets[k]=buckets[k]||[]).push(d);});
+let seq=0; const placed=[];
+Object.keys(buckets).forEach(k=>{
+  const [qi,ri]=k.split("|").map(Number);
+  const arr=buckets[k], [a0,a1]=QA[qi];
+  const r0=R[ri]+16, r1=R[ri+1]-14;
+  arr.forEach((d,idx)=>{
+    const n=arr.length;
+    const frac=(idx+0.5)/n;
+    const ang=a0+(a1-a0)*(0.08+0.84*frac);
+    // 半径用黄金比低差异序列错开，避免相邻角度的点半径相同而碰撞
+    const jitter=n===1?0.5:((idx*0.618033988749895)%1);
+    const rr=r0+(r1-r0)*(0.14+0.72*jitter);
+    d._x=CX+rr*Math.cos(ang); d._y=CY+rr*Math.sin(ang);
+    d._n=++seq; placed.push(d);
+  });
+});
+
+const tip=document.getElementById("tip");
+placed.forEach(d=>{
+  const g=el("g",{class:"blip"});
+  const c=RC[d.ring];
+  if(d.isNew){
+    const s=9;
+    g.appendChild(el("polygon",{points:`${d._x},${d._y-s} ${d._x-s},${d._y+s*0.72} ${d._x+s},${d._y+s*0.72}`,fill:c}));
+  }else{
+    g.appendChild(el("circle",{cx:d._x,cy:d._y,r:8.6,fill:c}));
+  }
+  const t=el("text",{x:d._x,y:d._y+(d.isNew?2.6:0),class:"bt"});t.textContent=d._n;g.appendChild(t);
+  g.addEventListener("mousemove",e=>{
+    tip.style.opacity=1;tip.style.left=Math.min(e.clientX+14,innerWidth-320)+"px";tip.style.top=(e.clientY+14)+"px";
+    tip.innerHTML="<b>"+d._n+". "+d.name+"</b><span>"+d.ring+" · "+d.quadrant+(d.ringChange?" · "+d.ringChange:"")+"<br>"+d.description+"</span>";
+  });
+  g.addEventListener("mouseleave",()=>tip.style.opacity=0);
+  g.addEventListener("click",()=>window.open(d.url,"_blank"));
+  svg.appendChild(g);
+});
+
+// 侧边列表
+const side=document.getElementById("side");
+QUADS.forEach(q=>{
+  const items=placed.filter(d=>d.quadrant===q).sort((a,b)=>RINGS.indexOf(a.ring)-RINGS.indexOf(b.ring)||a._n-b._n);
+  if(!items.length)return;
+  const g=document.createElement("div");g.className="qgroup";
+  g.innerHTML='<div class="qh">'+q+' <span style="color:#6f7a89;font-weight:400">('+items.length+')</span></div>';
+  items.forEach(d=>{
+    const row=document.createElement("div");row.className="item";
+    row.innerHTML='<span class="num" style="background:'+RC[d.ring]+'">'+d._n+'</span>'+
+      '<span><a href="'+d.url+'" target="_blank">'+d.name+'</a>'+
+      (d.isNew?'<span class="tag">新增</span>':'')+
+      (d.ringChange?'<span class="tag">'+d.ringChange+'</span>':'')+
+      '<br><span class="desc">'+d.description+'</span></span>';
+    g.appendChild(row);
+  });
+  side.appendChild(g);
+});
+</script>
+</body>
+</html>
