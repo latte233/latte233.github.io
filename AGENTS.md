@@ -85,6 +85,24 @@ toc: true
 | `layout` | 免写 | `_config.yml` 已对 posts 默认 `layout: post` |
 | `pin` | 可选 | `true` 置顶 |
 | `image` | 可选 | `{ path: /assets/img/xxx.png, alt: "描述" }` |
+| `permalink` | ⚠️ 见下 | 固定 slug 的连载栏目**必须**显式指定，否则 URL 互相覆盖 |
+
+> ### ⚠️ 固定 slug 栏目的 URL 冲突坑（务必看）
+>
+> 站点 permalink 规则是 `/posts/:title/`，Jekyll 的 `:title` **取自文件名去掉日期后的 slug**，
+> 与 front matter 的 `title` 无关。
+>
+> 所以 `2026-08-08-github-ai-hotspot.md` 和 `2026-08-09-github-ai-hotspot.md`
+> 会生成**同一个** URL `/posts/github-ai-hotspot/`，只有最后构建的那篇能被访问，
+> 其余全部静默丢失（目前 `github-ai-hotspot` 系列 30+ 篇已经处于这个状态）。
+>
+> **规则：只要栏目每天/每期复用同一个 slug，就必须在 front matter 里写带日期的 `permalink`：**
+>
+> ```yaml
+> permalink: /posts/ai-hot-daily-2026-08-09/
+> ```
+>
+> 一次性文章用可读的唯一 slug 即可，不需要 permalink。
 
 **现有分类（新文章优先复用，别乱造）：**
 
@@ -94,13 +112,17 @@ toc: true
 | `[AI, GitHub, 开源]` | 30+ | GitHub AI 项目热度榜 |
 | `[AI雷达]` | 30+ | AI 全域雷达报告 |
 | `[深度研究]` | 25+ | 长篇研究文章 |
+| `[AI热点]` | 每日 | AI 热点日报（由 `ai-hot-blog` skill 每天 12:00 自动生成） |
 | 其他 | 各 1–2 | 游戏攻略 / 技术分析 / 工具评测 / 投资分析 / 生活随笔 等 |
 
-**三类固定栏目的标题格式（务必保持一致，否则归档页会乱）：**
+**固定栏目的标题格式（务必保持一致，否则归档页会乱）：**
 
-- 日报：`"Latte 热点报告 · 0809"`（MMDD）
-- 雷达：`"AI 全域雷达报告 · 2026-08-09"`
-- 热度榜：`"GitHub AI Agent 项目综合热度榜 - 2026-08-09"`
+| 栏目 | 标题格式 | 文件 slug | permalink |
+|---|---|---|---|
+| 日报 | `Latte 热点报告 · 0809`（MMDD） | 随机串 | 默认 |
+| 雷达 | `AI 全域雷达报告 · 2026-08-09` | 随机串 | 默认 |
+| 热度榜 | `GitHub AI Agent 项目综合热度榜 - 2026-08-09` | `github-ai-hotspot` | ⚠️ 未设，存在冲突 |
+| AI 热点 | `AI 热点日报 · 2026-08-09` | `ai-hot-daily` | ✅ `/posts/ai-hot-daily-YYYY-MM-DD/` |
 
 ### Step 3 — 正文写作规范
 
@@ -233,6 +255,7 @@ git reset HEAD~1              # 撤销上一次 commit，保留改动
 - [ ] 已 `git pull`
 - [ ] 文件名 `_posts/YYYY-MM-DD-slug.md`，日期与 front matter 一致
 - [ ] front matter YAML 合法，`date` 带 `+0800`
+- [ ] 固定 slug 的连载栏目已写带日期的 `permalink`（否则会覆盖前一期）
 - [ ] `categories` 复用了现有分类
 - [ ] 固定栏目标题格式与历史一致
 - [ ] 站内链接用绝对路径

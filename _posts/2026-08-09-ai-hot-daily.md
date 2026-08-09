@@ -1,6 +1,7 @@
 ---
 title: "AI 热点日报 · 2026-08-09"
 date: 2026-08-09 12:00:00 +0800
+permalink: /posts/ai-hot-daily-2026-08-09/
 author: latte
 categories: [AI热点]
 tags: [AI热点, AI日报, OpenAI, ClaudeCode, Grok, 开源模型, AI安全]
