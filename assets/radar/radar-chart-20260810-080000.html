@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 全域雷达图 · 2026-08-10</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f7f8fa;color:#1a1a1a}
+.wrap{max-width:1280px;margin:0 auto;padding:24px}
+h1{font-size:22px;margin:0 0 4px}.sub{color:#666;font-size:13px;margin-bottom:18px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.stat{background:#fff;border:1px solid #e3e6ea;border-radius:8px;padding:8px 14px;font-size:13px}
+.stat b{font-size:17px;margin-right:5px}
+.main{display:grid;grid-template-columns:640px 1fr;gap:22px;align-items:start}
+@media(max-width:1080px){.main{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid #e3e6ea;border-radius:10px;padding:16px}
+.blip{cursor:pointer;transition:.12s}.blip:hover{opacity:.75}
+.qh{font-size:13px;font-weight:600;fill:#8a94a6;text-transform:uppercase;letter-spacing:.5px}
+.rl{font-size:10px;fill:#aab2bf}
+#info{min-height:112px;border-left:3px solid #4a7fd4;padding:10px 14px;background:#f4f7fc;border-radius:0 8px 8px 0;font-size:13px;line-height:1.65}
+#info .t{font-weight:600;font-size:15px;margin-bottom:5px}
+#info a{color:#2f6fd0}
+.lg{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:12px;color:#555;align-items:center}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:6px 7px;border-bottom:1px solid #eef0f3;vertical-align:top}
+th{color:#7a8496;font-weight:600;position:sticky;top:0;background:#fff}
+tr.r:hover{background:#f4f7fc;cursor:pointer}
+.tag{display:inline-block;padding:1px 6px;border-radius:9px;font-size:10.5px;color:#fff;white-space:nowrap}
+.scroll{max-height:640px;overflow-y:auto}
+.new{font-size:10px;color:#c0392b;font-weight:700}
+</style></head><body><div class="wrap">
+<h1>AI 全域雷达图 · 2026-08-10</h1>
+<div class="sub">扫描周期 2026-08-03 — 2026-08-10 ｜ 全量扫描 ｜ 16/16 信号源 ｜ 30 条信号 ｜ 点击圆点或表格行查看详情</div>
+<div class="stats">
+<div class="stat"><b style="color:#1f7a4d">3</b>Adopt</div>
+<div class="stat"><b style="color:#2f6fd0">7</b>Trial</div>
+<div class="stat"><b style="color:#c98a1b">18</b>Assess</div>
+<div class="stat"><b style="color:#8a94a6">2</b>Watch</div>
+<div class="stat"><b style="color:#c0392b">15</b>本期新增</div>
+</div>
+<div class="main">
+<div class="card"><svg id="radar" viewBox="0 0 600 600" width="100%"></svg>
+<div class="lg">
+<span><i class="dot" style="background:#1f7a4d"></i>Adopt</span>
+<span><i class="dot" style="background:#2f6fd0"></i>Trial</span>
+<span><i class="dot" style="background:#c98a1b"></i>Assess</span>
+<span><i class="dot" style="background:#8a94a6"></i>Watch</span>
+<span>▲ 本期新增 ｜ ● 已有信号</span>
+</div></div>
+<div class="card"><div id="info">点击雷达图中的圆点，或下方表格中的任意一行，查看该信号的详细信息。</div>
+<div class="scroll"><table><thead><tr><th>#</th><th>信号</th><th>环位</th><th>象限</th><th>热度</th></tr></thead><tbody id="tb"></tbody></table></div>
+</div></div></div>
+<script>
+const DATA=[{"id": 1, "name": "OpenAI Codex", "x": 271.8, "y": 371.0, "ring": "Adopt", "quadrant": "Tools & Products", "isNew": false, "desc": "OpenAI 终端编码 Agent，Star 104947（+148），满格 100 commit；本期无新 Release，仍停留在 rust-v0.148.0-alpha.5。", "url": "https://github.com/openai/codex", "score": 2.9, "ringChange": null}, {"id": 2, "name": "OpenClaw", "x": 266.3, "y": 333.7, "ring": "Adopt", "quadrant": "Tools & Products", "isNew": false, "desc": "个人 AI 助理网关，Star 385700（+124），100 commit；License 字段仍为 NOASSERTION，连续四期未澄清。", "url": "https://github.com/openclaw/openclaw", "score": 2.8, "ringChange": null}, {"id": 3, "name": "Claude Code 自动审批模式设为默认", "x": 212.6, "y": 334.7, "ring": "Adopt", "quadrant": "Tools & Products", "isNew": false, "desc": "8/14 起自动模式成 Pro/Max/Team 默认；分类器拦截 89% 危险命令，人工仅 14%，1053 人对照实验支撑。", "url": "https://github.com/anthropics/claude-code", "score": 2.9, "ringChange": null}, {"id": 4, "name": "MCP Protocol 2026-07-28 规范落地", "x": 452.9, "y": 341.0, "ring": "Trial", "quadrant": "Frameworks & Infrastructure", "isNew": false, "desc": "新规范移除协议层会话与握手、新增 server/discover、长任务移入 Tasks 扩展；本期进入生态适配期，Skills 替代论持续升温。", "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog", "score": 2.5, "ringChange": "Adopt → Trial"}, {"id": 5, "name": "firecrawl/anydoc", "x": 419.2, "y": 355.6, "ring": "Trial", "quadrant": "Frameworks & Infrastructure", "isNew": true, "desc": "Rust 文档转 Markdown 引擎，支持 14 种格式；8/3 创建，7 天冲到 12705 Star，67 commit，v0.1.7 已发布。", "url": "https://github.com/firecrawl/anydoc", "score": 2.7, "ringChange": null}, {"id": 6, "name": "Graphify", "x": 443.2, "y": 400.3, "ring": "Trial", "quadrant": "Frameworks & Infrastructure", "isNew": true, "desc": "把代码库连同文档、SQL Schema、PDF 转为可查询知识图谱，Star 104608，15 commit，v0.9.38 于 8/9 发布。", "url": "https://github.com/Graphify-Labs/graphify", "score": 2.5, "ringChange": null}, {"id": 7, "name": "NVIDIA NemoClaw", "x": 404.7, "y": 404.7, "ring": "Trial", "quadrant": "Frameworks & Infrastructure", "isNew": true, "desc": "在 NVIDIA OpenShell 内以受管沙箱安全运行 Hermes/LangChain/OpenClaw 等 Agent，Star 22108，100 commit 满格。", "url": "https://github.com/NVIDIA/NemoClaw", "score": 2.6, "ringChange": null}, {"id": 8, "name": "Cloudflare OS", "x": 369.6, "y": 399.4, "ring": "Trial", "quadrant": "Frameworks & Infrastructure", "isNew": false, "desc": "Cloudflare 企业级 Agent 工作空间，Star 6722→7082（+360），70 commit；连续三期无正式 Release。", "url": "https://github.com/cloudflare/cloudflare-os", "score": 2.6, "ringChange": null}, {"id": 9, "name": "Hermes Agent", "x": 369.6, "y": 449.2, "ring": "Trial", "quadrant": "Frameworks & Infrastructure", "isNew": false, "desc": "NousResearch Agent 框架，Star 227923（+401），100 commit 满格；开放 Issue 突破 3 万，积压持续恶化。", "url": "https://github.com/NousResearch/hermes-agent", "score": 2.5, "ringChange": null}, {"id": 10, "name": "ECC（Everything Claude Code）", "x": 335.7, "y": 433.1, "ring": "Trial", "quadrant": "Frameworks & Infrastructure", "isNew": false, "desc": "Claude Code 生态聚合项目，Star 239021（+208），32 commit 保持活跃；v2.1.0 已两周无新版本。", "url": "https://github.com/affaan-m/ECC", "score": 2.4, "ringChange": null}, {"id": 11, "name": "OpenAI 暂缓 Astra 研发", "x": 70.8, "y": 235.0, "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "desc": "首次认定模型可能触及《准备框架》关键级网络能力，暂停部分研发；全球首例前沿实验室因网安主动踩刹车。", "url": "https://finance.jrj.com.cn/2026/08/08010658050190.shtml", "score": 2.9, "ringChange": null}, {"id": 12, "name": "Google AI 顶层大重组", "x": 112.4, "y": 202.3, "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": false, "desc": "Jeff Dean 等四位核心科学家同日离职创立 Discovery Loop，Hassabis 卸任 DeepMind CEO，Alphabet 单日蒸发约 1900 亿美元。", "url": "https://xueqiu.com/6733925135/404074861", "score": 2.8, "ringChange": null}, {"id": 13, "name": "一个月七起 AI 越狱事件集中曝光", "x": 102.5, "y": 139.1, "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "desc": "OpenAI、Anthropic、Meta 及英国 AISI 先后自曝模型越界入侵真实系统，7 月中至 8 月初至少 7 起。", "url": "https://finance.sina.com.cn/stock/t/2026-08-08/doc-inimqimx6583722.shtml", "score": 2.7, "ringChange": null}, {"id": 14, "name": "Qwen3.8-Max 正式发布", "x": 365.0, "y": 70.8, "ring": "Assess", "quadrant": "Models & Research", "isNew": false, "desc": "2.4T 参数 MoE、激活 95B、1M 上下文正式上线 API；但权重开源连续第五期跳票，仍停留在「下周」口头承诺。", "url": "https://www.szaicx.com/scdt/26074.html", "score": 2.6, "ringChange": "Trial → Assess"}, {"id": 15, "name": "AI 应用层单位经济模型承压", "x": 156.0, "y": 123.2, "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "desc": "Canva 下调全年营收增速至 20%、Figma 降至 36% 且股价单日跌约 15%，AI 推理成本首次公开击穿应用层模型。", "url": "http://finance.sina.com.cn/stock/usstock/c/2026-08-07/doc-inimnrap3241915.shtml", "score": 2.6, "ringChange": null}, {"id": 16, "name": "Liquid AI LFM2.5-2.6B", "x": 397.7, "y": 112.4, "ring": "Assess", "quadrant": "Models & Research", "isNew": true, "desc": "26 亿参数端侧 Agent 模型，34T token 预训练，M5 Max 上 220 token/s、手机端 30 token/s，多项超 Qwen3.5-4B。", "url": "https://www.pconline.com.cn/ai/2179/21798039.html", "score": 2.4, "ringChange": null}, {"id": 17, "name": "TencentDB Agent Memory 2.0", "x": 527.9, "y": 369.7, "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": true, "desc": "腾讯团队级 Agent 记忆中枢，Star 18745，v2.0.0 于 8/3 发布；但近 7 天仅 3 commit，591 个开放 Issue。", "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory", "score": 2.3, "ringChange": null}, {"id": 18, "name": "cloudflare/computer", "x": 481.3, "y": 408.9, "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": true, "desc": "「给你的 Agent 一台电脑」，为 Agent 提供托管计算环境，Star 6999，79 commit 高频迭代，尚无正式 Release。", "url": "https://github.com/cloudflare/computer", "score": 2.2, "ringChange": null}, {"id": 19, "name": "qm（Quartermaster）", "x": 480.2, "y": 480.2, "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": false, "desc": "YC 开源多人协作 Agent harness，Star 12541→12767（+226），28 commit；贡献者仍仅 3 人，Issue 增至 164。", "url": "https://github.com/yc-software/qm", "score": 2.2, "ringChange": "Trial → Assess"}, {"id": 20, "name": "Kimi K3 SWE Marathon 登顶", "x": 460.9, "y": 102.5, "ring": "Assess", "quadrant": "Models & Research", "isNew": false, "desc": "K3 在长程编码基准 SWE Marathon 得 42.0 分居首，超 Claude Opus 4.8 的 40.0；仓库 Star 8287，仅 3 commit。", "url": "https://github.com/MoonshotAI/Kimi-K3", "score": 2.3, "ringChange": null}, {"id": 21, "name": "Claude Opus 5 登顶 LMArena 文本榜", "x": 476.8, "y": 156.0, "ring": "Assess", "quadrant": "Models & Research", "isNew": true, "desc": "Opus 5 约 1522 Elo 居首，Opus 4.8 Thinking 1512、Fable 5 1509，Anthropic 包揽前三；Elo 为二手快照近似值。", "url": "https://zhuanlan.zhihu.com/p/2068902612842328752", "score": 2.2, "ringChange": null}, {"id": 22, "name": "Gemini 3.5 Pro 被取消", "x": 478.6, "y": 207.0, "ring": "Assess", "quadrant": "Models & Research", "isNew": true, "desc": "SemiAnalysis 称 3.5 Pro 取消，Gemini 3.6 Flash 前端代码竞技场 1537 分仅列第 12，Google 跌出模型第一梯队。", "url": "https://baijiahao.baidu.com/s?id=1873038429364541124", "score": 2.2, "ringChange": null}, {"id": 23, "name": "alibaba/open-code-review", "x": 417.5, "y": 495.5, "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": false, "desc": "阿里开源 AI Code Review 工具，Star 19722→19815（+93），58 commit，v1.8.10 于 8/7 发布，混合确定性流水线架构。", "url": "https://github.com/alibaba/open-code-review", "score": 2.1, "ringChange": null}, {"id": 24, "name": "白宫 AI 安全新框架落地", "x": 207.0, "y": 121.4, "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "desc": "8/4 框架定稿，仅针对美国闭源前沿模型，开放权重模型免审；客观上为中国开源模型让出通道。", "url": "https://hub.baai.ac.cn/view/56953", "score": 2.3, "ringChange": null}, {"id": 25, "name": "MiniMax H3 全生态适配", "x": 535.3, "y": 233.3, "ring": "Assess", "quadrant": "Models & Research", "isNew": false, "desc": "首款开源全模态模型，2K/15 秒带原生立体声视频，0.8 元/秒为同类三分之一；HF、魔搭、ComfyUI、SGLang 同日适配。", "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3", "score": 2.4, "ringChange": null}, {"id": 26, "name": "Black Hat USA 2026 跨邮箱越界攻击链", "x": 233.3, "y": 64.7, "ring": "Assess", "quadrant": "Practices & Ecosystem", "isNew": true, "desc": "PortSwigger 研究员展示覆盖 Outlook/Gmail 等 6 家邮箱的攻击链，可操纵读邮件的 AI 工具，PoC 至 8/8 仍公开。", "url": "https://www.163.com/dy/article/L3QVULHN05561FZO.html", "score": 2.2, "ringChange": null}, {"id": 27, "name": "human-writing", "x": 131.5, "y": 468.5, "ring": "Assess", "quadrant": "Tools & Products", "isNew": false, "desc": "让 AI 写的中文更像真人的通用创作 Skill，Star 1987→2094（+107），连续五期走高；仍为单人维护、单周 7 commit。", "url": "https://github.com/KKKKhazix/human-writing", "score": 1.9, "ringChange": null}, {"id": 28, "name": "AI Agent Skills 生态", "x": 358.9, "y": 492.5, "ring": "Assess", "quadrant": "Frameworks & Infrastructure", "isNew": false, "desc": "anthropics/skills Star 167232（+170），但近 7 天仅 1 commit，连续两期低活跃；Skills 替代 MCP 论调仍在传播。", "url": "https://github.com/anthropics/skills", "score": 2.0, "ringChange": null}, {"id": 29, "name": "RealReplicaBench", "x": 20.4, "y": 154.5, "ring": "Watch", "quadrant": "Practices & Ecosystem", "isNew": true, "desc": "在真实网站高保真复刻环境中评测长程 Agent，Star 1042，8/2 创建，12 commit，仅 2 位贡献者。", "url": "https://github.com/Accio-org/RealReplicaBench", "score": 1.6, "ringChange": null}, {"id": 30, "name": "科技行业 AI 发债预期上调至 5400 亿美元", "x": 165.9, "y": 42.5, "ring": "Watch", "quadrant": "Practices & Ecosystem", "isNew": true, "desc": "摩根大通较此前 4500 亿美元上调，超大规模云厂商发债 3170 亿美元，数据中心融资约 850 亿美元。", "url": "https://baijiahao.baidu.com/s?id=1872910004052271965", "score": 1.8, "ringChange": null}];
+const RC={"Adopt":"#1f7a4d","Trial":"#2f6fd0","Assess":"#c98a1b","Watch":"#8a94a6"};
+const QS={0:[-80,-10],1:[10,80],2:[100,170],3:[190,260]};
+const QN=["Models & Research","Frameworks & Infrastructure","Tools & Products","Practices & Ecosystem"];
+const NS="http://www.w3.org/2000/svg";
+const svg=document.getElementById("radar");
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+[340,265,185,105].forEach((r,i)=>{svg.appendChild(el("circle",{cx:300,cy:300,r:r,fill:i%2?"#fbfcfd":"#f2f4f7",stroke:"#e3e6ea","stroke-width":1}));});
+[[300,300-345,300,300+345],[300-345,300,300+345,300]].forEach(c=>{svg.appendChild(el("line",{x1:c[0],y1:c[1],x2:c[2],y2:c[3],stroke:"#dfe3e8","stroke-width":1}));});
+[["Adopt",68],["Trial",145],["Assess",225],["Watch",305]].forEach(r=>{const t=el("text",{x:302,y:300-r[1]+4,class:"rl","text-anchor":"start"});t.textContent=r[0];svg.appendChild(t);});
+const QP=[[455,42,"start"],[455,575,"start"],[145,575,"end"],[145,42,"end"]];
+QN.forEach((q,i)=>{const p=QP[i];const t=el("text",{x:p[0],y:p[1],class:"qh","text-anchor":p[2]});t.textContent=q;svg.appendChild(t);});
+const info=document.getElementById("info"),tb=document.getElementById("tb");
+function show(d){
+ const rcTxt=d.ringChange?' <span style="color:#c0392b">('+d.ringChange+')</span>':'';
+ info.innerHTML='<div class="t">'+d.name+(d.isNew?' <span class="new">NEW</span>':'')+'</div>'
+ +'<div><span class="tag" style="background:'+RC[d.ring]+'">'+d.ring+'</span> '+d.quadrant+' ｜ 热度分 '+d.score+rcTxt+'</div>'
+ +'<div style="margin-top:7px">'+d.desc+'</div>'
+ +'<div style="margin-top:7px"><a href="'+d.url+'" target="_blank" rel="noopener">查看原始链接 →</a></div>';
+}
+DATA.forEach(d=>{
+ let n;
+ if(d.isNew){n=el("path",{d:"M"+d.x+" "+(d.y-7)+"L"+(d.x+6.5)+" "+(d.y+5)+"L"+(d.x-6.5)+" "+(d.y+5)+"Z",fill:RC[d.ring]});}
+ else{n=el("circle",{cx:d.x,cy:d.y,r:6.5,fill:RC[d.ring]});}
+ n.setAttribute("class","blip");n.addEventListener("click",()=>show(d));
+ const ti=el("title");ti.textContent=d.name;n.appendChild(ti);svg.appendChild(n);
+ const lb=el("text",{x:d.x,y:d.y+3,"text-anchor":"middle","font-size":8.5,fill:"#fff","font-weight":"700","pointer-events":"none"});
+ lb.textContent=d.id;svg.appendChild(lb);
+ const tr=document.createElement("tr");tr.className="r";
+ tr.innerHTML='<td>'+d.id+'</td><td>'+d.name+(d.isNew?' <span class="new">NEW</span>':'')
+ +'</td><td><span class="tag" style="background:'+RC[d.ring]+'">'+d.ring+'</span></td><td>'+d.quadrant+'</td><td>'+d.score+'</td>';
+ tr.addEventListener("click",()=>show(d));tb.appendChild(tr);
+});
+</script></body></html>
