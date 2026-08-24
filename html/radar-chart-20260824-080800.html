@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 全域雷达图 · 2026-08-24</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 { color: #e94560; margin-bottom: 5px; font-size: 1.6em; }
+        .subtitle { color: #888; font-size: 0.9em; margin-bottom: 20px; }
+        .radar-container {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            max-width: 95vw;
+            max-height: 95vw;
+        }
+        svg { width: 100%; height: 100%; }
+        .quadrant-label {
+            font-size: 13px;
+            fill: #ccc;
+            font-weight: 600;
+            text-anchor: middle;
+        }
+        .ring-label {
+            font-size: 11px;
+            fill: #666;
+            text-anchor: middle;
+        }
+        .blip {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .blip:hover { transform: scale(1.5); transform-origin: center; }
+        .blip-new { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid #e94560;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-size: 12px;
+            max-width: 300px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 100;
+        }
+        .tooltip strong { color: #e94560; }
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #aaa;
+        }
+        .legend-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI 全域雷达图 · 2026-08-24</h1>
+    <div class="subtitle">全量扫描 | 38 条信号 | 扫描周期 2026-08-17 至 2026-08-24</div>
+    <div class="radar-container">
+        <svg viewBox="0 0 800 800" id="radar">
+            <!-- Rings -->
+            <circle cx="400" cy="400" r="350" fill="none" stroke="#333" stroke-width="1"/>
+            <circle cx="400" cy="400" r="262.5" fill="none" stroke="#333" stroke-width="1"/>
+            <circle cx="400" cy="400" r="175" fill="none" stroke="#333" stroke-width="1"/>
+            <circle cx="400" cy="400" r="87.5" fill="none" stroke="#333" stroke-width="1"/>
+            
+            <!-- Quadrant dividers -->
+            <line x1="400" y1="50" x2="400" y2="750" stroke="#333" stroke-width="1"/>
+            <line x1="50" y1="400" x2="750" y2="400" stroke="#333" stroke-width="1"/>
+            
+            <!-- Ring labels -->
+            <text x="400" y="345" class="ring-label">Adopt</text>
+            <text x="400" y="260" class="ring-label">Trial</text>
+            <text x="400" y="175" class="ring-label">Assess</text>
+            <text x="400" y="90" class="ring-label">Watch</text>
+            
+            <!-- Quadrant labels -->
+            <text x="225" y="35" class="quadrant-label">Frameworks & Infrastructure</text>
+            <text x="575" y="35" class="quadrant-label">Tools & Products</text>
+            <text x="225" y="775" class="quadrant-label">Models & Research</text>
+            <text x="575" y="775" class="quadrant-label">Practices & Ecosystem</text>
+            
+            <!-- Ring backgrounds (subtle) -->
+            <circle cx="400" cy="400" r="350" fill="rgba(233,69,96,0.02)"/>
+            <circle cx="400" cy="400" r="262.5" fill="rgba(233,69,96,0.03)"/>
+            <circle cx="400" cy="400" r="175" fill="rgba(233,69,96,0.04)"/>
+            <circle cx="400" cy="400" r="87.5" fill="rgba(233,69,96,0.06)"/>
+        </svg>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+    <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#e94560"></div>Trial</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#0f3460"></div>Assess</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#16213e"></div>Watch</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e94560;opacity:0.6;border:1px solid #e94560"></div>🆕 新信号</div>
+    </div>
+
+    <script>
+    const signals = [
+        // Trial - Frameworks & Infrastructure (top-left quadrant, angle 180-270)
+        {name:"OpenClaw",ring:"Trial",quadrant:"Tools & Products",isNew:true,desc:"全平台 AI 助手，387k Star",url:"https://github.com/openclaw/openclaw"},
+        {name:"hermes-agent",ring:"Trial",quadrant:"Frameworks & Infrastructure",isNew:true,desc:"Nous Research 个人 Agent，235k Star",url:"https://github.com/NousResearch/hermes-agent"},
+        {name:"DeepSeek Harness",ring:"Trial",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"插件化 Agent 运行时，188k Star",url:"https://github.com/deepseek-ai/deepseek-harness"},
+        {name:"Codex Harness",ring:"Trial",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"OpenAI 开源编码 Agent 运行时，115k Star",url:"https://github.com/openai/codex"},
+        {name:"headroom",ring:"Trial",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"LLM 输入压缩 Token 治理，67k Star",url:"https://github.com/headroomlabs-ai/headroom"},
+        {name:"ruflo",ring:"Trial",quadrant:"Frameworks & Infrastructure",isNew:true,desc:"多 Agent 群 meta-harness，69k Star",url:"https://github.com/ruvnet/ruflo"},
+        {name:"earendil-works/pi",ring:"Trial",quadrant:"Tools & Products",isNew:true,desc:"CLI 编码 Agent 工具包，96k Star",url:"https://github.com/earendil-works/pi"},
+        {name:"mattpocock/skills",ring:"Trial",quadrant:"Practices & Ecosystem",isNew:false,desc:"Agent 技能资产化范式，234k Star",url:"https://github.com/mattpocock/skills"},
+        // Trial - Models & Research
+        {name:"Qwen3.8-27B",ring:"Trial",quadrant:"Models & Research",isNew:true,desc:"单卡旗舰模型超 Claude Opus 4.6 Max",url:"https://huggingface.co/Qwen"},
+        {name:"DeepSeek V4 Pro",ring:"Trial",quadrant:"Models & Research",isNew:true,desc:"Terminal Bench 87.9 分距 Fable 5 差 0.1",url:"https://huggingface.co/deepseek-ai"},
+        {name:"DeepSeek V4 Vision",ring:"Trial",quadrant:"Models & Research",isNew:true,desc:"DeepSeek 首个视觉模型",url:"https://api-docs.deepseek.com/"},
+        {name:"GLM-5.3",ring:"Trial",quadrant:"Models & Research",isNew:false,desc:"智谱 743B 旗舰并列最强开源",url:"https://huggingface.co/zai-org"},
+        // Assess
+        {name:"OpenViking",ring:"Assess",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"火山引擎 Agent 上下文数据库，32k Star",url:"https://github.com/volcengine/OpenViking"},
+        {name:"codebase-memory-mcp",ring:"Assess",quadrant:"Frameworks & Infrastructure",isNew:true,desc:"C 实现代码知识图谱 MCP，40k Star",url:"https://github.com/DeusData/codebase-memory-mcp"},
+        {name:"nanobot",ring:"Assess",quadrant:"Tools & Products",isNew:true,desc:"超轻量自托管 Agent，47k Star",url:"https://github.com/HKUDS/nanobot"},
+        {name:"Cybersecurity-Skills",ring:"Assess",quadrant:"Practices & Ecosystem",isNew:true,desc:"817 条安全技能映射 6 框架",url:"https://github.com/mukul975/Anthropic-Cybersecurity-Skills"},
+        {name:"Cherry Studio 2.0",ring:"Assess",quadrant:"Tools & Products",isNew:true,desc:"AI 桌面应用 Agent 范式重写",url:"https://link.baai.ac.cn/@Fpark/117121391879098153"},
+        {name:"Cursor Plugins",ring:"Assess",quadrant:"Tools & Products",isNew:false,desc:"Cursor 官方插件规范",url:"https://github.com/cursor/plugins"},
+        {name:"Origin by Cursor",ring:"Assess",quadrant:"Tools & Products",isNew:true,desc:"编码 Agent 时代 Git 平台",url:"https://www.producthunt.com/"},
+        {name:"Flue 2",ring:"Assess",quadrant:"Frameworks & Infrastructure",isNew:true,desc:"React 组合式 Agent 框架",url:"https://www.latent.space/"},
+        {name:"Anthropic Model 2",ring:"Assess",quadrant:"Models & Research",isNew:true,desc:"内部未发布模型强于 Claude Mythos 5",url:"https://www-cdn.anthropic.com/"},
+        {name:"Scott Gray 离职",ring:"Assess",quadrant:"Practices & Ecosystem",isNew:true,desc:"OpenAI CUDA 内核第一人离职",url:"https://finance.sina.com.cn/"},
+        {name:"OxAlpha",ring:"Assess",quadrant:"Models & Research",isNew:true,desc:"匿名模型登顶编程排行榜",url:"https://blog.csdn.net/"},
+        {name:"Wiz AI 代码漏洞",ring:"Assess",quadrant:"Practices & Ecosystem",isNew:true,desc:"AI 写+审代码漏洞溜通过",url:"https://hackcv.com/"},
+        {name:"AxiomProver",ring:"Assess",quadrant:"Models & Research",isNew:true,desc:"多 Agent 验证 246 定理",url:"https://baijiahao.baidu.com/"},
+        {name:"SGLang CUDA Graph",ring:"Assess",quadrant:"Frameworks & Infrastructure",isNew:true,desc:"推理优化部署 40 万+ GPU",url:"https://lmsys.org/blog/"},
+        {name:"modular",ring:"Assess",quadrant:"Frameworks & Infrastructure",isNew:false,desc:"MAX+Mojo 本地推理栈，29k Star",url:"https://github.com/modular/modular"},
+        {name:"AI 草案涌入国会",ring:"Assess",quadrant:"Practices & Ecosystem",isNew:true,desc:"AI 起草法案错误泛滥",url:"https://www.politico.com/"},
+        // Watch
+        {name:"Kilcher 终结论",ring:"Watch",quadrant:"Models & Research",isNew:true,desc:"GPT-5 后宣告突破时代终结",url:"https://mp.weixin.qq.com/"},
+        {name:"Stealing Reasoning",ring:"Watch",quadrant:"Models & Research",isNew:true,desc:"可提取专有 LLM 隐藏思维链",url:"https://arxiv.org/abs/2608.09867"},
+        {name:"DeAR",ring:"Watch",quadrant:"Models & Research",isNew:true,desc:"P2P 去中心化 Agent 推理",url:"https://arxiv.org/abs/2608.17282"},
+        {name:"Active Inference",ring:"Watch",quadrant:"Models & Research",isNew:true,desc:"自由能最小化上下文获取",url:"https://arxiv.org/abs/2608.19202"},
+        {name:"世界机器人大会",ring:"Watch",quadrant:"Tools & Products",isNew:true,desc:"人形机器人转向规模化量产",url:"https://baijiahao.baidu.com/"},
+        {name:"Claude 水印移除",ring:"Watch",quadrant:"Practices & Ecosystem",isNew:true,desc:"AI 文本溯源攻防拉锯",url:"https://www.producthunt.com/"},
+        {name:"Claude Code 限免",ring:"Watch",quadrant:"Tools & Products",isNew:true,desc:"Anthropic 放宽周用量限制",url:"https://news.ycombinator.com/"},
+        {name:"superpowers",ring:"Watch",quadrant:"Practices & Ecosystem",isNew:false,desc:"连续 5 期无提交，建议移出",url:"https://github.com/obra/superpowers"},
+    ];
+
+    const ringRadii = {
+        "Adopt": 87.5,
+        "Trial": 175,
+        "Assess": 262.5,
+        "Watch": 350
+    };
+
+    const quadrantAngles = {
+        "Frameworks & Infrastructure": { start: 180, end: 270 }, // top-left
+        "Tools & Products": { start: 270, end: 360 },           // top-right
+        "Models & Research": { start: 90, end: 180 },            // bottom-left
+        "Practices & Ecosystem": { start: 0, end: 90 }           // bottom-right
+    };
+
+    const ringColors = {
+        "Trial": "#e94560",
+        "Assess": "#0f3460",
+        "Watch": "#16213e"
+    };
+
+    const svg = document.getElementById('radar');
+    const tooltip = document.getElementById('tooltip');
+
+    // Group signals by quadrant and ring for positioning
+    const grouped = {};
+    signals.forEach(s => {
+        const key = s.quadrant + '|' + s.ring;
+        if (!grouped[key]) grouped[key] = [];
+        grouped[key].push(s);
+    });
+
+    Object.entries(grouped).forEach(([key, group]) => {
+        const [quadrant, ring] = key.split('|');
+        const { start, end } = quadrantAngles[quadrant];
+        const radius = ringRadii[ring] * 0.92; // slight inset
+        const angleStep = (end - start) / (group.length + 1);
+
+        group.forEach((signal, i) => {
+            const angle = (start + angleStep * (i + 1)) * Math.PI / 180;
+            const x = 400 + radius * Math.cos(angle);
+            const y = 400 + radius * Math.sin(angle);
+            const color = ringColors[signal.ring] || '#888';
+
+            const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            g.classList.add('blip');
+            if (signal.isNew) g.classList.add('blip-new');
+
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', x);
+            circle.setAttribute('cy', y);
+            circle.setAttribute('r', 5);
+            circle.setAttribute('fill', color);
+            circle.setAttribute('stroke', signal.isNew ? '#e94560' : 'none');
+            circle.setAttribute('stroke-width', signal.isNew ? 2 : 0);
+            g.appendChild(circle);
+
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', x);
+            text.setAttribute('y', y - 10);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('font-size', '9');
+            text.setAttribute('fill', '#aaa');
+            text.textContent = signal.name.length > 18 ? signal.name.substring(0, 16) + '…' : signal.name;
+            g.appendChild(text);
+
+            g.addEventListener('mouseenter', (e) => {
+                tooltip.innerHTML = `<strong>${signal.name}</strong><br>${signal.desc}<br>环位: ${signal.ring} | 象限: ${signal.quadrant}${signal.isNew ? '<br>🆕 新信号' : ''}<br><a href="${signal.url}" target="_blank" style="color:#e94560">查看详情 →</a>`;
+                tooltip.style.opacity = 1;
+                const rect = svg.getBoundingClientRect();
+                tooltip.style.left = (e.clientX - rect.left + 15) + 'px';
+                tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+            });
+            g.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+            g.addEventListener('click', () => {
+                window.open(signal.url, '_blank');
+            });
+
+            svg.appendChild(g);
+        });
+    });
+    </script>
+</body>
+</html>
