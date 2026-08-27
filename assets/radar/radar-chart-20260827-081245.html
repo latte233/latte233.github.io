@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 全域雷达 · 2026-08-27</title>
+<style>
+:root{--bg:#09111f;--panel:#101d32;--line:#5d7596;--text:#edf4ff;--muted:#9fb3cc;--adopt:#00b894;--trial:#4cc9f0;--assess:#ffd166;--watch:#ff7b72}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif}header{padding:28px max(24px,calc((100vw - 1240px)/2));background:linear-gradient(120deg,#142846,#0d1727)}h1{margin:0;font-size:28px}header p{margin:7px 0 0;color:var(--muted)}main{max-width:1240px;margin:0 auto;padding:24px;display:grid;grid-template-columns:minmax(520px,1.2fr) minmax(320px,.8fr);gap:24px}.panel{background:var(--panel);border:1px solid #213859;border-radius:12px;padding:18px}.radar-wrap{position:relative;width:min(100%,680px);aspect-ratio:1;margin:0 auto}.ring{position:absolute;border:1px solid var(--line);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.r1{width:25%;height:25%}.r2{width:50%;height:50%}.r3{width:75%;height:75%}.r4{width:100%;height:100%}.cross{position:absolute;left:50%;top:0;bottom:0;border-left:1px solid var(--line)}.cross:after{content:"";position:absolute;top:50%;left:calc(-50vw);width:100vw;border-top:1px solid var(--line)}.q{position:absolute;color:#bcd0eb;font-weight:700}.q1{right:5%;top:6%}.q2{left:5%;top:6%}.q3{left:5%;bottom:6%}.q4{right:5%;bottom:6%}.dot{position:absolute;width:12px;height:12px;border:2px solid white;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;box-shadow:0 0 10px currentColor}.dot.trial{background:var(--trial);color:var(--trial)}.dot.assess{background:var(--assess);color:var(--assess)}.dot.watch{background:var(--watch);color:var(--watch)}.dot:hover{width:17px;height:17px;z-index:3}.legend{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0 0}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:10px;height:10px;border-radius:50%;display:inline-block}.item{padding:11px 0;border-bottom:1px solid #213859}.item:last-child{border-bottom:0}.pill{display:inline-block;font-size:12px;padding:1px 7px;border-radius:99px;margin-left:6px;color:#102030}.trial .pill{background:var(--trial)}.assess .pill{background:var(--assess)}.watch .pill{background:var(--watch)}.item p{margin:5px 0 0;color:var(--muted)}a{color:#81d4fa;text-decoration:none}a:hover{text-decoration:underline}.tooltip{position:fixed;z-index:10;display:none;max-width:310px;background:#06101f;border:1px solid #5d7596;border-radius:8px;padding:10px;box-shadow:0 10px 25px #0008;pointer-events:none}.tooltip b{display:block;margin-bottom:4px}.note{color:var(--muted);margin-top:12px}@media(max-width:900px){main{grid-template-columns:1fr}.radar-wrap{max-width:620px}}
+</style>
+</head>
+<body>
+<header><h1>AI 全域雷达 · 2026-08-27</h1><p>扫描窗口：2026-08-21 — 2026-08-27 08:12（北京时间）｜单击右侧条目可访问原始来源；悬浮圆点查看摘要。</p></header>
+<main>
+<section class="panel"><div class="radar-wrap" id="radar"><div class="ring r4"></div><div class="ring r3"></div><div class="ring r2"></div><div class="ring r1"></div><div class="cross"></div><span class="q q1">Models &amp; Research</span><span class="q q2">Frameworks &amp; Infrastructure</span><span class="q q3">Tools &amp; Products</span><span class="q q4">Practices &amp; Ecosystem</span></div><div class="legend"><span><i class="swatch" style="background:var(--trial)"></i>Trial</span><span><i class="swatch" style="background:var(--assess)"></i>Assess</span><span><i class="swatch" style="background:var(--watch)"></i>Watch</span></div><p class="note">由内至外依次为 Adopt、Trial、Assess、Watch；本期无 Adopt 信号。</p></section>
+<section class="panel"><div id="items"></div></section>
+</main><div class="tooltip" id="tip"></div>
+<script>
+const signals=[
+ {n:'GLM-5.3-Flash',r:'Trial',q:0,d:'320B-A18B 多模态 MoE 开放权重，进入独立性能验证期。',u:'https://z.ai/blog/glm-5.3-flash'},
+ {n:'Qwen3.8-Flash-Next',r:'Trial',q:0,d:'低激活参数、稀疏注意力与新嵌入架构的公开样本。',u:'https://qwen.ai/blog?id=qwen3.8-flash-next'},
+ {n:'Codex Harness',r:'Trial',q:1,d:'开源 CLI、SDK 与 app server，Agent 执行组件化。',u:'https://github.com/openai/codex'},
+ {n:'Claude/Cursor 插件生态',r:'Trial',q:2,d:'技能、插件规范与市场成为 Coding Agent 平台竞争层。',u:'https://github.com/anthropics/claude-plugins-official'},
+ {n:'OpenAI–HF 安全复盘',r:'Trial',q:3,d:'工具化 Agent 的网络、凭证和隔离边界需前置治理。',u:'https://openai.com/index/hugging-face-incident-and-the-road-ahead/'},
+ {n:'SGLang Weight Cache',r:'Assess',q:1,d:'持久化 GPU 权重缓存，加速服务故障恢复。',u:'https://lmsys.org/blog/2026-08-21-sglang-fast-recovery'},
+ {n:'Ling-3.0 Flash 解码',r:'Assess',q:1,d:'针对 Blackwell 的 batch-1 低延迟投机解码。',u:'https://lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell'},
+ {n:'OpenViking',r:'Assess',q:1,d:'Agent 上下文数据库；注意 AGPL-3.0 网络服务义务。',u:'https://github.com/volcengine/OpenViking'},
+ {n:'Apache Maka',r:'Assess',q:1,d:'Apache 孵化的本地优先 Agent 工作台。',u:'https://github.com/apache/maka'},
+ {n:'ai-memory',r:'Assess',q:1,d:'跨 Agent 长期记忆与任务交接。',u:'https://github.com/akitaonrails/ai-memory'},
+ {n:'Copilot 模型策略继承',r:'Assess',q:2,d:'企业 Copilot 模型治理策略进入默认继承阶段。',u:'https://github.blog/changelog/'},
+ {n:'Supernova',r:'Assess',q:2,d:'多数据源接入 Claude/Codex 的数据层产品。',u:'https://www.producthunt.com/'},
+ {n:'Construct Computer',r:'Assess',q:2,d:'为 AI 同事配置技能、应用和工作流。',u:'https://www.producthunt.com/'},
+ {n:'FetchSandbox MCP',r:'Assess',q:2,d:'在沙盒中复现 API 问题并验证 Agent 修复。',u:'https://www.producthunt.com/'},
+ {n:'fx',r:'Assess',q:2,d:'极简开源编码助手路线。',u:'https://github.com/vercel-labs/fx'},
+ {n:'SPADE',r:'Assess',q:0,d:'自博弈生成可执行合成环境的 RL 研究。',u:'https://arxiv.org/abs/2608.19197'},
+ {n:'Hawkeye',r:'Assess',q:1,d:'Agent 自动生成硬件感知 GPU Kernel。',u:'https://jack-clark.net/2026/08/24/import-ai-470/'},
+ {n:'Claude 稳定性',r:'Assess',q:2,d:'多次中断提醒团队规划供应商与模型冗余。',u:'https://status.anthropic.com'},
+ {n:'阿里 AI 再融资',r:'Assess',q:3,d:'约 800 亿港元投向 AI 基础设施。',u:'https://finance.sina.com.cn/stock/hkstock/2026-08-25/doc-inipnuhy5591365.shtml'},
+ {n:'Kimi K2.5 下线',r:'Assess',q:3,d:'供应商生命周期和迁移策略值得前置管理。',u:'https://www.163.com/dy/article/L53MVS6R051191D6.html'},
+ {n:'GPT-5.6 Sol 降价',r:'Assess',q:3,d:'模型价格竞争延续。',u:'https://openai.com/pricing/'},
+ {n:'Jalapeño 推理芯片',r:'Watch',q:1,d:'首批性能信息仍待真实负载独立验证。',u:'https://openai.com'},
+ {n:'Vera Rubin Agent 吞吐',r:'Watch',q:1,d:'面向 Agent 的吞吐主张待生态、价格和供货验证。',u:'https://www.nvidia.com/en-us/events/hot-chips/'},
+ {n:'x64dbg MCP Server',r:'Watch',q:2,d:'MCP 进入逆向工具链；单人维护且需要严格权限治理。',u:'https://github.com/duty1g/x64dbg-mcp-server'},
+ {n:'FrontierAgent',r:'Watch',q:2,d:'新建 Agent 框架，早期活跃但尚未验证长期采用。',u:'https://github.com/ApodexAI/FrontierAgent'},
+ {n:'Anthropic IPO 传闻',r:'Watch',q:3,d:'估值和上市时间未获公司确认。',u:'https://baijiahao.baidu.com/s?id=1874190973803153191'},
+ {n:'Anthropic–Nscale 租约传闻',r:'Watch',q:3,d:'媒体报道的大额算力租约缺少双方确认。',u:'https://www.163.com/dy/article/L541GDK205561FZM.html'},
+ {n:'绿色算力大会',r:'Watch',q:3,d:'算电协同项目签约，待观察实际投产。',u:'http://www.nmg.xinhuanet.com/20260822/ecd79225a3f74cd78053d9a97614b0a3/c.html'},
+ {n:'政府服务 Agent 洪泛风险',r:'Watch',q:0,d:'自动文本对公共服务渠道影响的风险研究。',u:'https://arxiv.org/abs/2608.16603'}
+];
+const radar=document.getElementById('radar'),items=document.getElementById('items'),tip=document.getElementById('tip');
+const ranges={Trial:[18,38],Assess:[40,66],Watch:[68,91]};
+const start=[-40,140,220,40],span=[72,72,72,72];
+signals.forEach((s,i)=>{const a=(start[s.q]+((i*29)%span[s.q]))*Math.PI/180;const [min,max]=ranges[s.r];const rad=min+((i*13)%(max-min));const x=50+Math.cos(a)*rad/2,y=50+Math.sin(a)*rad/2;const dot=document.createElement('button');dot.className='dot '+s.r.toLowerCase();dot.style.left=x+'%';dot.style.top=y+'%';dot.setAttribute('aria-label',s.n);dot.addEventListener('mouseenter',e=>{tip.innerHTML='<b>'+s.n+'</b><span>'+s.d+'</span>';tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});dot.addEventListener('mousemove',e=>{tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});dot.addEventListener('mouseleave',()=>tip.style.display='none');dot.addEventListener('click',()=>window.open(s.u,'_blank','noopener'));radar.appendChild(dot);const el=document.createElement('div');el.className='item '+s.r.toLowerCase();el.innerHTML='<a href="'+s.u+'" target="_blank" rel="noopener">'+s.n+'</a><span class="pill">'+s.r+'</span><p>'+s.d+'</p>';items.appendChild(el)});
+</script></body></html>
