@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 全域雷达 · 2026-08-28 晚间增刊</title>
+<style>
+:root{--bg:#09111f;--panel:#101d32;--line:#5d7596;--text:#edf4ff;--muted:#9fb3cc;--adopt:#00b894;--trial:#4cc9f0;--assess:#ffd166;--watch:#ff7b72}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif}header{padding:28px max(24px,calc((100vw - 1240px)/2));background:linear-gradient(120deg,#142846,#0d1727)}h1{margin:0;font-size:28px}header p{margin:7px 0 0;color:var(--muted)}main{max-width:1240px;margin:0 auto;padding:24px;display:grid;grid-template-columns:minmax(520px,1.2fr) minmax(320px,.8fr);gap:24px}.panel{background:var(--panel);border:1px solid #213859;border-radius:12px;padding:18px}.radar-wrap{position:relative;width:min(100%,680px);aspect-ratio:1;margin:0 auto}.ring{position:absolute;border:1px solid var(--line);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.r1{width:25%;height:25%}.r2{width:50%;height:50%}.r3{width:75%;height:75%}.r4{width:100%;height:100%}.cross{position:absolute;left:50%;top:0;bottom:0;border-left:1px solid var(--line)}.cross:after{content:"";position:absolute;top:50%;left:calc(-50vw);width:100vw;border-top:1px solid var(--line)}.q{position:absolute;color:#bcd0eb;font-weight:700}.q1{right:5%;top:6%}.q2{left:5%;top:6%}.q3{left:5%;bottom:6%}.q4{right:5%;bottom:6%}.dot{position:absolute;width:12px;height:12px;border:2px solid white;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;box-shadow:0 0 10px currentColor}.dot.trial{background:var(--trial);color:var(--trial)}.dot.assess{background:var(--assess);color:var(--assess)}.dot.watch{background:var(--watch);color:var(--watch)}.dot:hover{width:17px;height:17px;z-index:3}.legend{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0 0}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:10px;height:10px;border-radius:50%;display:inline-block}.item{padding:11px 0;border-bottom:1px solid #213859}.item:last-child{border-bottom:0}.pill{display:inline-block;font-size:12px;padding:1px 7px;border-radius:99px;margin-left:6px;color:#102030}.trial .pill{background:var(--trial)}.assess .pill{background:var(--assess)}.watch .pill{background:var(--watch)}.item p{margin:5px 0 0;color:var(--muted)}a{color:#81d4fa;text-decoration:none}a:hover{text-decoration:underline}.tooltip{position:fixed;z-index:10;display:none;max-width:310px;background:#06101f;border:1px solid #5d7596;border-radius:8px;padding:10px;box-shadow:0 10px 25px #0008;pointer-events:none}.tooltip b{display:block;margin-bottom:4px}.note{color:var(--muted);margin-top:12px}@media(max-width:900px){main{grid-template-columns:1fr}.radar-wrap{max-width:620px}}
+</style>
+</head>
+<body>
+<header><h1>AI 全域雷达 · 2026-08-28 晚间增刊</h1><p>扫描窗口：2026-08-21 — 2026-08-28 17:30（北京时间）｜单击右侧条目可访问原始来源；悬浮圆点查看摘要。</p></header>
+<main>
+<section class="panel"><div class="radar-wrap" id="radar"><div class="ring r4"></div><div class="ring r3"></div><div class="ring r2"></div><div class="ring r1"></div><div class="cross"></div><span class="q q1">Models &amp; Research</span><span class="q q2">Frameworks &amp; Infrastructure</span><span class="q q3">Tools &amp; Products</span><span class="q q4">Practices &amp; Ecosystem</span></div><div class="legend"><span><i class="swatch" style="background:var(--trial)"></i>Trial</span><span><i class="swatch" style="background:var(--assess)"></i>Assess</span><span><i class="swatch" style="background:var(--watch)"></i>Watch</span></div><p class="note">由内至外依次为 Adopt、Trial、Assess、Watch；本期无 Adopt 信号。</p></section>
+<section class="panel"><div id="items"></div></section>
+</main><div class="tooltip" id="tip"></div>
+<script>
+const signals=[
+ {n:'DeepSeek Harness',r:'Trial',q:1,d:'⭐201,252，一切皆插件，13 天创 GitHub 增速纪录。',u:'https://github.com/deepseek-ai/deepseek-harness'},
+ {n:'Agent Lightning v1.0',r:'Trial',q:1,d:'⭐17,886，零改造接入生产级 agentic RL，SWE-bench +14.6pp。',u:'https://github.com/microsoft/agent-lightning'},
+ {n:'Qwen3.8-Flash-Next 正式开源',r:'Trial',q:0,d:'125B/6B 激活多模态落地，Qwen4 架构先导。',u:'https://qwen.ai/blog?id=qwen3.8-flash-next'},
+ {n:'Auto Mode 被破解',r:'Trial',q:3,d:'Claude Code 提示注入约 80% 成功，无人值守须沙盒化。',u:'https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/'},
+ {n:'Vercel fx',r:'Assess',q:2,d:'⭐2,552，6.39MB Zig 编码 Agent，WASM 可跑。',u:'https://github.com/vercel-labs/fx'},
+ {n:'herdr',r:'Assess',q:2,d:'⭐33,062，编码 Agent 终端多智能体调度运行时。',u:'https://github.com/herdrdev/herdr'},
+ {n:'book-to-skill',r:'Assess',q:2,d:'⭐26,447，技术书籍蒸馏为可执行 Skill。',u:'https://github.com/virgiliojr94/book-to-skill'},
+ {n:'semantica',r:'Assess',q:1,d:'⭐11,103，Graph-Native 可问责 AI 基础设施。',u:'https://github.com/semantica-agi/semantica'},
+ {n:'x64dbg-MCP-Server',r:'Assess',q:2,d:'⭐1,617，AI Agent 接入二进制逆向调试，恢复活跃。',u:'https://github.com/duty1g/x64dbg-mcp-server'},
+ {n:'modular/modular',r:'Assess',q:1,d:'⭐29,274，MAX+Mojo 推理平台复上榜。',u:'https://github.com/modular/modular'},
+ {n:'obra/superpowers',r:'Assess',q:3,d:'⭐278,805 周榜冠军，但本周 commit 已停。',u:'https://github.com/obra/superpowers'},
+ {n:'mattpocock/skills',r:'Assess',q:3,d:'月增 5 万 Star 的个人 Skill 集。',u:'https://github.com/mattpocock/skills'},
+ {n:'SenseNova U1.5 Lite',r:'Assess',q:0,d:'商汤开源 8B 原生统一多模态模型。',u:'https://huggingface.co/SenseTime'},
+ {n:'FT 价格战与 Fable 流失',r:'Assess',q:3,d:'HN 745 分：最强模型首次输给「够用且便宜」。',u:'https://www.shengyayun.com/blog/ai-newsletter-2026-08-25/'},
+ {n:'$266 root 平板实验',r:'Assess',q:3,d:'HN 676 分：4 模型挖出 Arm GPU UAF 漏洞。',u:'https://www.shengyayun.com/blog/ai-newsletter-2026-08-25/'},
+ {n:'GPT-5.6 Sol 降价与 Kiro',r:'Assess',q:3,d:'API 降价 20-33% 首次低于 Opus 5。',u:'https://blog.csdn.net/qq_35583325/article/details/164044696'},
+ {n:'DeepSeek-V4-Flash-Vision-Exp',r:'Assess',q:0,d:'DeepSeek 首个官方视觉理解 API。',u:'https://blog.csdn.net/enheng1238/article/details/164051930'},
+ {n:'Assistants API 硬停服',r:'Assess',q:2,d:'8/26 硬截止，需迁移 Responses API。',u:'https://blog.csdn.net/xyghehehehe/article/details/163904807'},
+ {n:'HF 出售实质化',r:'Assess',q:3,d:'估值 130 亿+，出售评估启动。',u:'https://blog.csdn.net/xyghehehehe/article/details/164043625'},
+ {n:'Anthropic IPO 路演',r:'Assess',q:3,d:'路演 8/25 公开，募资 ≥750 亿美元（传闻）。',u:'https://blog.csdn.net/xyghehehehe/article/details/163935828'},
+ {n:'阿里 800 亿再融资',r:'Assess',q:3,d:'100% 投向全栈 AI，已超额认购。',u:'https://blog.csdn.net/gedonshen/article/details/164012415'},
+ {n:'Stripe 收购 OpenRouter',r:'Assess',q:3,d:'约 80 亿美元收购模型分发通道。',u:'https://blog.csdn.net/xyghehehehe/article/details/164043625'},
+ {n:'FT 收入数据',r:'Assess',q:3,d:'Anthropic $65bn 预期 Q3 盈利；OpenAI 破 $40bn。',u:'https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245'},
+ {n:'MiniMax 斩杀线',r:'Assess',q:3,d:'释放降价信号，ARR 8 亿美元，价格战白热化。',u:'https://www.zhihu.com/org/xin-zhi-yuan-88-3'},
+ {n:'Gemini 3.7 Flash 登榜',r:'Assess',q:0,d:'Agent Arena #20（上代 #35），WebDev #8。',u:'https://www.linkedin.com/company/arenaai'},
+ {n:'硬件版 MCP',r:'Assess',q:1,d:'Claude 操控机械臂/显微镜，MCP 扩展到物理世界。',u:'https://www.zhihu.com/org/xin-zhi-yuan-88-3'},
+ {n:'OpenAI 停训 RL',r:'Assess',q:3,d:'因入侵事件主动暂停下一代 RL 训练两周。',u:'https://openai.com/index/pacing-model-development-cyber-capabilities/'},
+ {n:'Fuxi',r:'Watch',q:2,d:'⭐2,349，自包含终端编码 Agent。',u:'https://github.com/fuxicodex/Fuxi'},
+ {n:'NVIDIA OpenShell',r:'Watch',q:2,d:'PyPI 发布自主 Agent 安全私有运行时。',u:'https://pypi.org/user/nvidia/'},
+ {n:'Grok 4.7',r:'Watch',q:0,d:'2.1T 参数多 Agent 协作（传闻）。',u:'https://blog.csdn.net/xyghehehehe/article/details/163935828'},
+ {n:'Gemini 4 曝光',r:'Watch',q:0,d:'取代 Gemini 3.5 Pro（传闻）。',u:'https://re.qhdrizhuo.cn/ai/news/3ebaee7e80be8886_google-gemini-4-leaks-point-to-multimodal-upgrades-geeky-gad/'},
+ {n:'Starcloud 融资',r:'Watch',q:1,d:'2.5 亿美元建轨道数据中心（日期不确定）。',u:'https://blog.csdn.net/enheng1238/article/details/163973388'},
+ {n:'WRC 2026 收官',r:'Watch',q:3,d:'机器人大会从 Demo 转向量产定价。',u:'https://blog.csdn.net/xyghehehehe/article/details/163904807'},
+ {n:'Altman 平台化',r:'Watch',q:3,d:'承认改变慢于预期，OpenAI 定位平台公司。',u:'https://baijiahao.baidu.com/s?id=1874597811899829136'},
+ {n:'神经算子物理 AI',r:'Watch',q:0,d:'反 Transformer 架构，推理上下文超 5 万亿 token。',u:'https://www.163.com/dy/article/L5B64UKH0511ABV6.html'},
+ {n:'Embodied Agents',r:'Watch',q:0,d:'Coding Agent 零训练裸接机器人导航达 78%。',u:'https://arxiv.org/pdf/2607.26148'},
+ {n:'SWE Refactor Bench',r:'Watch',q:0,d:'首个整仓库栈迁移能力基准。',u:'https://www.cnblogs.com/verstin/p/22681183'},
+ {n:'Prime Agent',r:'Watch',q:1,d:'持久化 REPL+递归语言模型自我改进。',u:'https://www.cnblogs.com/verstin/p/22681183'},
+ {n:'LoopsBench',r:'Watch',q:0,d:'从 Harness 走向 Loop Engineering 评测范式。',u:'https://arxiv.org/abs/2608.00267'},
+ {n:'TideGS',r:'Watch',q:0,d:'十亿级 3DGS Out-of-Core 训练（ICML 2026）。',u:'https://zhuanlan.zhihu.com/p/2075493646808387961'},
+ {n:'Visual Agentic Memory',r:'Watch',q:0,d:'长视频在线理解的 Agentic 检索框架。',u:'https://zhuanlan.zhihu.com/p/2075493646808387961'}
+];
+const radar=document.getElementById('radar'),items=document.getElementById('items'),tip=document.getElementById('tip');
+const ranges={Trial:[18,38],Assess:[40,66],Watch:[68,91]};
+const start=[-40,140,220,40],span=[72,72,72,72];
+signals.forEach((s,i)=>{const a=(start[s.q]+((i*29)%span[s.q]))*Math.PI/180;const [min,max]=ranges[s.r];const rad=min+((i*13)%(max-min));const x=50+Math.cos(a)*rad/2,y=50+Math.sin(a)*rad/2;const dot=document.createElement('button');dot.className='dot '+s.r.toLowerCase();dot.style.left=x+'%';dot.style.top=y+'%';dot.setAttribute('aria-label',s.n);dot.addEventListener('mouseenter',e=>{tip.innerHTML='<b>'+s.n+'</b><span>'+s.d+'</span>';tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});dot.addEventListener('mousemove',e=>{tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});dot.addEventListener('mouseleave',()=>tip.style.display='none');dot.addEventListener('click',()=>window.open(s.u,'_blank','noopener'));radar.appendChild(dot);const el=document.createElement('div');el.className='item '+s.r.toLowerCase();el.innerHTML='<a href="'+s.u+'" target="_blank" rel="noopener">'+s.n+'</a><span class="pill">'+s.r+'</span><p>'+s.d+'</p>';items.appendChild(el)});
+</script></body></html>
