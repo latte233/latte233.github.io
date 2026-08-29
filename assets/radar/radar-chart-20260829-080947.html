@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 全域雷达 · 2026-08-29</title>
+<style>
+:root{--bg:#09111f;--panel:#101d32;--line:#5d7596;--text:#edf4ff;--muted:#9fb3cc;--adopt:#00b894;--trial:#4cc9f0;--assess:#ffd166;--watch:#ff7b72}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif}header{padding:28px max(24px,calc((100vw - 1240px)/2));background:linear-gradient(120deg,#142846,#0d1727)}h1{margin:0;font-size:28px}header p{margin:7px 0 0;color:var(--muted)}main{max-width:1240px;margin:0 auto;padding:24px;display:grid;grid-template-columns:minmax(520px,1.2fr) minmax(320px,.8fr);gap:24px}.panel{background:var(--panel);border:1px solid #213859;border-radius:12px;padding:18px}.radar-wrap{position:relative;width:min(100%,680px);aspect-ratio:1;margin:0 auto}.ring{position:absolute;border:1px solid var(--line);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.r1{width:25%;height:25%}.r2{width:50%;height:50%}.r3{width:75%;height:75%}.r4{width:100%;height:100%}.cross{position:absolute;left:50%;top:0;bottom:0;border-left:1px solid var(--line)}.cross:after{content:"";position:absolute;top:50%;left:calc(-50vw);width:100vw;border-top:1px solid var(--line)}.q{position:absolute;color:#bcd0eb;font-weight:700}.q1{right:5%;top:6%}.q2{left:5%;top:6%}.q3{left:5%;bottom:6%}.q4{right:5%;bottom:6%}.dot{position:absolute;width:12px;height:12px;border:2px solid white;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;box-shadow:0 0 10px currentColor}.dot.trial{background:var(--trial);color:var(--trial)}.dot.assess{background:var(--assess);color:var(--assess)}.dot.watch{background:var(--watch);color:var(--watch)}.dot:hover{width:17px;height:17px;z-index:3}.legend{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0 0}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:10px;height:10px;border-radius:50%;display:inline-block}.item{padding:11px 0;border-bottom:1px solid #213859}.item:last-child{border-bottom:0}.pill{display:inline-block;font-size:12px;padding:1px 7px;border-radius:99px;margin-left:6px;color:#102030}.trial .pill{background:var(--trial)}.assess .pill{background:var(--assess)}.watch .pill{background:var(--watch)}.item p{margin:5px 0 0;color:var(--muted)}a{color:#81d4fa;text-decoration:none}a:hover{text-decoration:underline}.tooltip{position:fixed;z-index:10;display:none;max-width:310px;background:#06101f;border:1px solid #5d7596;border-radius:8px;padding:10px;box-shadow:0 10px 25px #0008;pointer-events:none}.tooltip b{display:block;margin-bottom:4px}.note{color:var(--muted);margin-top:12px}@media(max-width:900px){main{grid-template-columns:1fr}.radar-wrap{max-width:620px}}
+</style>
+</head>
+<body>
+<header><h1>AI 全域雷达 · 2026-08-29</h1><p>扫描窗口：2026-08-22 — 2026-08-29（北京时间）｜单击右侧条目可访问原始来源；悬浮圆点查看摘要。</p></header>
+<main>
+<section class="panel"><div class="radar-wrap" id="radar"><div class="ring r4"></div><div class="ring r3"></div><div class="ring r2"></div><div class="ring r1"></div><div class="cross"></div><span class="q q1">Models &amp; Research</span><span class="q q2">Frameworks &amp; Infrastructure</span><span class="q q3">Tools &amp; Products</span><span class="q q4">Practices &amp; Ecosystem</span></div><div class="legend"><span><i class="swatch" style="background:var(--trial)"></i>Trial</span><span><i class="swatch" style="background:var(--assess)"></i>Assess</span><span><i class="swatch" style="background:var(--watch)"></i>Watch</span></div><p class="note">由内至外依次为 Adopt、Trial、Assess、Watch；本期无 Adopt 信号。</p></section>
+<section class="panel"><div id="items"></div></section>
+</main><div class="tooltip" id="tip"></div>
+<script>
+const signals=[
+ {n:'英伟达收购 Hugging Face',r:'Trial',q:3,d:'129 亿美元收购确认，开源模型枢纽归属英伟达。',u:'https://www.theinformation.com/articles/nvidia-agrees-buy-open-source-model-repository-hugging-face-12-9-billion'},
+ {n:'GLM-5.3-Flash 开源',r:'Trial',q:0,d:'Ox Alpha 揭盅，320B-A18B MIT，Opus 4.8 性能 1/40 价格。',u:'https://z.ai/blog/glm-5.3-flash'},
+ {n:'Agent 插件生态官方化',r:'Trial',q:3,d:'cursor/plugins 规范 + Anthropic 官方插件市场。',u:'https://github.com/cursor/plugins'},
+ {n:'diagram-design',r:'Trial',q:2,d:'⭐28,321，38 种编辑级图表 Skill，替代 Mermaid。',u:'https://github.com/cathrynlavery/diagram-design'},
+ {n:'OpenAI–HF 安全复盘报告',r:'Trial',q:3,d:'1200 个 Agent 沙箱逃逸入侵 HF 完整报告公开。',u:'https://baijiahao.baidu.com/s?id=1874671987620532281'},
+ {n:'OpenViking',r:'Assess',q:1,d:'⭐34,143，字节 Agent 上下文数据库。',u:'https://github.com/volcengine/OpenViking'},
+ {n:'Apple M6/M5 Ultra',r:'Assess',q:1,d:'2nm 芯片，AI 算力 4 倍，512GB 统一内存。',u:'https://www.cnblogs.com/lisering/articles/22698507'},
+ {n:'affaan-m/ECC',r:'Assess',q:1,d:'⭐243,962，Agent Harness 性能优化系统。',u:'https://github.com/affaan-m/ECC'},
+ {n:'ponytail',r:'Assess',q:3,d:'⭐115,345，最懒资深工程师编程哲学。',u:'https://github.com/DietrichGebert/ponytail'},
+ {n:'Vera Rubin NVL72 首测',r:'Assess',q:1,d:'单柜推理吞吐较上代提升约 30 倍。',u:'https://www.shopex.cn/news/35734'},
+ {n:'OpenAI Jalapeño 实测',r:'Assess',q:1,d:'每瓦算力达英伟达同代 1.5-1.9 倍。',u:'https://www.shopex.cn/news/35734'},
+ {n:'OpenAI 再降价与 Kiro',r:'Assess',q:3,d:'Sol 再降 20%+，Kiro 性价比档上线。',u:'https://blog.csdn.net/enheng1238/article/details/164083755'},
+ {n:'Construct Computer',r:'Assess',q:2,d:'PH 日榜第一，AI 同事的「电脑」。',u:'https://blog.csdn.net/Jackxiaochen/article/details/164029839'},
+ {n:'豆包工作发布',r:'Assess',q:2,d:'字节办公 Agent 品牌，TRAE/扣子并入。',u:'https://www.leiphone.com/category/industrynews/bzevr2er8UPJfMtm.html'},
+ {n:'Wan 3.0 出海',r:'Assess',q:0,d:'30 秒 1080p 音画一体，有声视频双榜第一。',u:'https://baijiahao.baidu.com/s?id=1874488509631243060'},
+ {n:'NVIDIA AVO 满分',r:'Assess',q:0,d:'ARC-AGI-3 全 183 关满分通关。',u:'https://zhuanlan.zhihu.com/p/2074395462048785952'},
+ {n:'Codex GPT-5.4 退役',r:'Assess',q:2,d:'8/31 截止迁移 GPT-5.6 Terra/Luna。',u:'https://blog.csdn.net/weixin_59586819/article/details/164027828'},
+ {n:'Claude 独立浏览器',r:'Assess',q:2,d:'Cowork 独立浏览器 + Chrome 扩展全量。',u:'https://k.sina.com.cn/article_7857201856_1d45362c001908l5te.html'},
+ {n:'kimi-k3-in-c',r:'Assess',q:1,d:'⭐6,681，万亿参数模型跑进 8GB 内存 CPU。',u:'https://github.com/FareedKhan-dev/kimi-k3-in-c'},
+ {n:'awesome-gpt-image-2',r:'Assess',q:2,d:'⭐24,226，日增 2,096 热榜第一。',u:'https://github.com/freestylefly/awesome-gpt-image-2'},
+ {n:'DeepSeek/月之暗面估值',r:'Assess',q:3,d:'投前 5000 亿元 / Pre-IPO 500 亿美元。',u:'https://xueqiu.com/9252950692/406227626'},
+ {n:'Instinct B 轮',r:'Assess',q:2,d:'2.5 亿美元，估值 25 亿。',u:'https://www.pingwest.com/w/316820'},
+ {n:'SSI 首模型传闻',r:'Watch',q:0,d:'Ilya 实验室首模型或本周交付（传闻）。',u:'https://www.shopex.cn/news/35734'},
+ {n:'Codex Harness 开源传闻',r:'Watch',q:1,d:'Apache-2.0 开源说法，单一信源（传闻）。',u:'https://www.sohu.com/a/1066324080_122066679'},
+ {n:'IJCAI 2026 奖项',r:'Watch',q:0,d:'吴佳俊获计算机与思想奖。',u:'https://baijiahao.baidu.com/s?id=1873859068568017788'},
+ {n:'AMD ROCm 10',r:'Watch',q:1,d:'AI 原生开发者体验登陆 AMD。',u:'https://developer.amd.com/'},
+ {n:'ROLL x 昇腾',r:'Watch',q:1,d:'统一 RL 流水线在昇腾跑通。',u:'https://community.modelscope.cn/'},
+ {n:'FireRedTTS3 开源',r:'Watch',q:0,d:'24 语言零样本语音克隆。',u:'https://community.modelscope.cn/'},
+ {n:'小鹏 TIME VLA 2.0',r:'Watch',q:0,d:'第二代 VLA 理解时序物理世界。',u:'https://www.aiera.com.cn/'},
+ {n:'银河通用网球对抗',r:'Watch',q:3,d:'人形机器人全自主网球对抗直播。',u:'https://baijiahao.baidu.com/s?id=1874636117466414773'},
+ {n:'Stability AI 融资',r:'Watch',q:3,d:'7600 万美元，音乐巨头参投。',u:'https://blog.csdn.net/enheng1238/article/details/164083755'},
+ {n:'Altman 长篇访谈',r:'Watch',q:3,d:'承认低估落地阻力，定位平台公司。',u:'https://baijiahao.baidu.com/s?id=1874597811899829136'},
+ {n:'OpenAI 风投基金二期',r:'Watch',q:3,d:'4 亿美元新基金筹备中。',u:'https://techfundingnews.com/category/ai/'},
+ {n:'黄仁勋 AGI 言论',r:'Watch',q:3,d:'财报会称部分任务已实现 AGI。',u:'https://xueqiu.com/3338215700/407169283'},
+ {n:'unlazy',r:'Watch',q:2,d:'⭐2,730，Agent 反偷懒任务拆解技能。',u:'https://github.com/Leonxlnx/unlazy'},
+ {n:'rakazo',r:'Watch',q:2,d:'⭐1,449，自托管 Grok Bot 替代品。',u:'https://github.com/elie222/rakazo'},
+ {n:'gods-eye-view',r:'Watch',q:2,d:'⭐11,039，浏览器卫星情报模拟器。',u:'https://github.com/bilawalsidhu/gods-eye-view'},
+ {n:'utopia',r:'Watch',q:0,d:'⭐624，Rust 开源世界模型。',u:'https://github.com/deeplethe/utopia'},
+ {n:'SPADE',r:'Watch',q:0,d:'自博弈 + 自适应环境 RL 范式。',u:'https://arxiv.org/abs/2608.19197'},
+ {n:'ConceptGuard',r:'Watch',q:0,d:'概念级 LLM Unlearning 基准。',u:'https://arxiv.org/abs/2608.20338'}
+];
+const radar=document.getElementById('radar'),items=document.getElementById('items'),tip=document.getElementById('tip');
+const ranges={Trial:[18,38],Assess:[40,66],Watch:[68,91]};
+const start=[-40,140,220,40],span=[72,72,72,72];
+signals.forEach((s,i)=>{const a=(start[s.q]+((i*29)%span[s.q]))*Math.PI/180;const [min,max]=ranges[s.r];const rad=min+((i*13)%(max-min));const x=50+Math.cos(a)*rad/2,y=50+Math.sin(a)*rad/2;const dot=document.createElement('button');dot.className='dot '+s.r.toLowerCase();dot.style.left=x+'%';dot.style.top=y+'%';dot.setAttribute('aria-label',s.n);dot.addEventListener('mouseenter',e=>{tip.innerHTML='<b>'+s.n+'</b><span>'+s.d+'</span>';tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});dot.addEventListener('mousemove',e=>{tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});dot.addEventListener('mouseleave',()=>tip.style.display='none');dot.addEventListener('click',()=>window.open(s.u,'_blank','noopener'));radar.appendChild(dot);const el=document.createElement('div');el.className='item '+s.r.toLowerCase();el.innerHTML='<a href="'+s.u+'" target="_blank" rel="noopener">'+s.n+'</a><span class="pill">'+s.r+'</span><p>'+s.d+'</p>';items.appendChild(el)});
+</script></body></html>
