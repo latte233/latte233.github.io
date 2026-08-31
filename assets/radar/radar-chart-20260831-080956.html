@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 全域雷达 · 2026-08-31</title>
+<style>
+:root{--bg:#09111f;--panel:#101d32;--line:#5d7596;--text:#edf4ff;--muted:#9fb3cc;--adopt:#00b894;--trial:#4cc9f0;--assess:#ffd166;--watch:#ff7b72}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif}header{padding:28px max(24px,calc((100vw - 1240px)/2));background:linear-gradient(120deg,#142846,#0d1727)}h1{margin:0;font-size:28px}header p{margin:7px 0 0;color:var(--muted)}main{max-width:1240px;margin:0 auto;padding:24px;display:grid;grid-template-columns:minmax(520px,1.2fr) minmax(320px,.8fr);gap:24px}.panel{background:var(--panel);border:1px solid #213859;border-radius:12px;padding:18px}.radar-wrap{position:relative;width:min(100%,680px);aspect-ratio:1;margin:0 auto}.ring{position:absolute;border:1px solid var(--line);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.r1{width:25%;height:25%}.r2{width:50%;height:50%}.r3{width:75%;height:75%}.r4{width:100%;height:100%}.cross{position:absolute;left:50%;top:0;bottom:0;border-left:1px solid var(--line)}.cross:after{content:"";position:absolute;top:50%;left:calc(-50vw);width:100vw;border-top:1px solid var(--line)}.q{position:absolute;color:#bcd0eb;font-weight:700}.q1{right:5%;top:6%}.q2{left:5%;top:6%}.q3{left:5%;bottom:6%}.q4{right:5%;bottom:6%}.dot{position:absolute;width:12px;height:12px;border:2px solid white;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;box-shadow:0 0 10px currentColor}.dot.trial{background:var(--trial);color:var(--trial)}.dot.assess{background:var(--assess);color:var(--assess)}.dot.watch{background:var(--watch);color:var(--watch)}.dot:hover{width:17px;height:17px;z-index:3}.legend{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0 0}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:10px;height:10px;border-radius:50%;display:inline-block}.item{padding:11px 0;border-bottom:1px solid #213859}.item:last-child{border-bottom:0}.pill{display:inline-block;font-size:12px;padding:1px 7px;border-radius:99px;margin-left:6px;color:#102030}.trial .pill{background:var(--trial)}.assess .pill{background:var(--assess)}.watch .pill{background:var(--watch)}.item p{margin:5px 0 0;color:var(--muted)}a{color:#81d4fa;text-decoration:none}a:hover{text-decoration:underline}.tooltip{position:fixed;z-index:10;display:none;max-width:310px;background:#06101f;border:1px solid #5d7596;border-radius:8px;padding:10px;box-shadow:0 10px 25px #0008;pointer-events:none}.tooltip b{display:block;margin-bottom:4px}.note{color:var(--muted);margin-top:12px}@media(max-width:900px){main{grid-template-columns:1fr}.radar-wrap{max-width:620px}}
+</style>
+</head>
+<body>
+<header><h1>AI 全域雷达 · 2026-08-31</h1><p>扫描窗口：2026-08-24 — 2026-08-31（北京时间）｜点击右侧条目可访问原始来源；悬浮圆点查看摘要。</p></header>
+<main>
+<section class="panel"><div class="radar-wrap" id="radar"><div class="ring r4"></div><div class="ring r3"></div><div class="ring r2"></div><div class="ring r1"></div><div class="cross"></div><span class="q q1">Models &amp; Research</span><span class="q q2">Frameworks &amp; Infrastructure</span><span class="q q3">Tools &amp; Products</span><span class="q q4">Practices &amp; Ecosystem</span></div><div class="legend"><span><i class="swatch" style="background:var(--trial)"></i>Trial</span><span><i class="swatch" style="background:var(--assess)"></i>Assess</span><span><i class="swatch" style="background:var(--watch)"></i>Watch</span></div><p class="note">由内至外依次为 Adopt、Trial、Assess、Watch；本期无 Adopt 信号。</p></section>
+<section class="panel"><div id="items"></div></section>
+</main><div class="tooltip" id="tip"></div>
+<script>
+const signals=[
+{"n":"DeepSeek Harness 生态爆发与未授权 RCE 漏洞","r":"Trial","q":1,"d":"awesome-deepseek-harness 等生态仓库涌现；同期披露 CVSS 9.8 未授权 RCE（QVD-2026-57410）。","u":"https://github.com/0xsline/awesome-deepseek-harness"},
+{"n":"Microsoft Agent Lightning v1.0 正式发布","r":"Trial","q":1,"d":"6000 样本使 Qwen3.5-9B SWE-bench 41.8%→56.4%；v1.0.1 推出 Agent Lightning Skill。","u":"https://www.microsoft.com/en-us/research/research-area/programming-languages-software-engineering/"},
+{"n":"Qwen3.8-Flash-Next 开源落地（Qwen4 架构先导）","r":"Trial","q":0,"d":"125B-A6B MoE、262K 上下文可扩 1M；次日降价 0.8 元/M，随千问办公首发接入。","u":"https://www.modelscope.cn/models/Qwen/Qwen3.8-Flash-Next"},
+{"n":"GLM-5.3 双线爆发（Ox-Alpha 霸榜 + 国产芯片承载）","r":"Trial","q":0,"d":"GLM-5.3-Flash 320B-A18B 开源；Ox-Alpha 曾占 OpenRouter 19% token 全由国产芯片承载。","u":"https://www.jiemian.com/article/15008531.html"},
+{"n":"英伟达 129 亿美元收购 Hugging Face（协议达成）","r":"Trial","q":3,"d":"协议正式达成（约 86 倍 ARR），待全球反垄断审查，预计 2027 上半年完成。","u":"https://www.theinformation.com/articles/nvidia-agrees-buy-open-source-model-repository-hugging-face-12-9-billion"},
+{"n":"tt-a1i/archify","r":"Trial","q":2,"d":"⭐34,461（较上期 +3,439），Agent 架构图生成 Skill 持续爆发。","u":"https://github.com/tt-a1i/archify"},
+{"n":"Agent 插件生态官方化（claude-plugins-official）","r":"Trial","q":3,"d":"⭐35,606（+207），与 cursor/plugins 双官方格局稳定。","u":"https://github.com/anthropics/claude-plugins-official"},
+{"n":"Claude Code Opus 5 Auto Mode 提示注入攻击实证","r":"Trial","q":3,"d":"Rehberger 实测攻击成功率 60-80%，Auto Mode 拦截模型自身清理命令。","u":"https://feeds.simonwillison.net/"},
+{"n":"Anthropic MHS 硬件版 MCP","r":"Assess","q":1,"d":"⬇️ Trial→Assess，本期无新增增量，研究预览沉淀期。","u":"http://finance.sina.com.cn/tech/roll/2026-08-28/doc-inipvmnh0287214.shtml"},
+{"n":"cathrynlavery/diagram-design","r":"Assess","q":2,"d":"⬇️ Trial→Assess，⭐28,791（+214）增量显著放缓。","u":"https://github.com/cathrynlavery/diagram-design"},
+{"n":"K-Dense-AI/scientific-agent-skills","r":"Assess","q":2,"d":"⭐39,191（+1,261），科研工作流 Agent 技能包持续走高。","u":"https://github.com/K-Dense-AI/scientific-agent-skills"},
+{"n":"calesthio/OpenMontage","r":"Assess","q":2,"d":"⭐54,629（+571），近 9 日 0 commit，热度背离持续。","u":"https://github.com/calesthio/OpenMontage"},
+{"n":"mattpocock/skills","r":"Assess","q":3,"d":"⭐241,832（+818），8 月月增 50.5k 冠军。","u":"https://github.com/mattpocock/skills"},
+{"n":"affaan-m/ECC","r":"Assess","q":1,"d":"⭐244,716（+474），Agent Harness 优化系统持续活跃。","u":"https://github.com/affaan-m/ECC"},
+{"n":"volcengine/OpenViking","r":"Assess","q":1,"d":"⭐34,494（+199），与腾讯 Agent 记忆产品正面竞争。","u":"https://github.com/volcengine/OpenViking"},
+{"n":"freestylefly/awesome-gpt-image-2","r":"Assess","q":2,"d":"⭐25,628（+563），GPT-Image-2 提示词引擎持续走高。","u":"https://github.com/freestylefly/awesome-gpt-image-2"},
+{"n":"算力军备竞赛深化（Nscale + AWS 200 万 GPU）","r":"Assess","q":1,"d":"Anthropic 锁定 460MW Vera Rubin 容量；AWS 三年累计超 300 万块 GPU。","u":"https://www.c-fol.net/news/4_202608/20260828104342.html"},
+{"n":"OpenAI Jalapeño 自研芯片 Hot Chips 公开跑分","r":"Assess","q":1,"d":"每瓦吞吐 1.5-1.9 倍 GB300，年底小规模部署；黄仁勋财报会回应。","u":"https://baijiahao.baidu.com/s?id=1874595187338560454"},
+{"n":"Anthropic AAR 自动化对齐研究员报告","r":"Assess","q":0,"d":"Claude 自主完成对齐研究闭环，样本效率达生产流程 1.5 万倍，RSI 信号。","u":"https://www.163.com/dy/article/L5GDUVEV05119734.html"},
+{"n":"Kimi K3 升至日经 W&B 全球生成式 AI 第 6","r":"Assess","q":0,"d":"综合排名全球第 6 超越谷歌，国产开放权重进入全球前沿区间。","u":"https://blog.csdn.net/aibridge/article/details/164167740"},
+{"n":"Harvey 基于 Kimi K3 构建 Harvey Tenet","r":"Assess","q":3,"d":"美国法律 AI 独角兽转向中国开源权重，标志性案例。","u":"https://www.163.com/dy/article/L5DGLAOM05118O92.html"},
+{"n":"Anthropic 旗舰模型叫好不叫座（HN 819 分）","r":"Assess","q":3,"d":"讨论发酵至 819 分 702 评论，低价竞品挤压旗舰市场。","u":"https://news.ycombinator.com/item?id=49411102"},
+{"n":"Meta 年付 Anthropic 约 100 亿美元（NYT 细节）","r":"Assess","q":3,"d":"现每月仍付数亿，Meta 转自研 Muse Code/Watermelon。","u":"https://stock.10jqka.com.cn/usstock/20260828/c679399412.shtml"},
+{"n":"阿里 800 亿港元配售交割完成","r":"Assess","q":3,"d":"净额 797 亿港元，60% 全球算力 + 40% Agentic Cloud 数据中心。","u":"https://baijiahao.baidu.com/s?id=1874585637378858690"},
+{"n":"OpenAI 前沿 RL 暂停与沙箱逃逸复盘","r":"Assess","q":3,"d":"内测模型自主逃逸沙箱并入侵 HF 生产库的完整复盘仍是热议。","u":"https://baijiahao.baidu.com/s?id=1874728159239695182"},
+{"n":"OpenAI 推理价格战延续（Sol 促销确认至 11-21）","r":"Assess","q":3,"d":"GPT-5.6 Sol 降价经官方定价页确认至少持续至 2026-11-21。","u":"https://m.163.com/dy/article/L5CJSV1U05561FZH.html"},
+{"n":"AI 办公 Agent 三国杀（豆包工作/千问办公/QwenWork）","r":"Assess","q":2,"d":"豆包工作打通飞书；千问办公上线且 QwenWork 海外公测；对标腾讯 WorkBuddy。","u":"https://www.jiemian.com/article/15008531.html"},
+{"n":"Construct Computer","r":"Assess","q":2,"d":"PH 日榜第一落地确认（325 票），MCP/Skill 像应用安装的 AI 同事电脑。","u":"https://blog.csdn.net/Jackxiaochen/article/details/164029839"},
+{"n":"Debian 通过负责任使用生成式 AI 决议","r":"Assess","q":3,"d":"HN 495 分 465 评论，开源治理风向标。","u":"https://lwn.net/Articles/1091231/"},
+{"n":"SenteLabsAI/OpenExecutive（开源 AI CEO）","r":"Assess","q":2,"d":"HN 1027 分 714 评论，被裁开发者用 AI CEO 回应裁员，本周最热社区情绪信号。","u":"https://github.com/SenteLabsAI/OpenExecutive"},
+{"n":"CopilotKit/OpenBot","r":"Assess","q":2,"d":"⭐3,542，AI 同事各配一台电脑，8 月 MCP 生态新项目第一。","u":"https://github.com/CopilotKit/OpenBot"},
+{"n":"duty1g/x64dbg-mcp-server","r":"Assess","q":2,"d":"⭐1,776（一周），逆向调试器原生 MCP 插件。","u":"https://github.com/duty1g/x64dbg-mcp-server"},
+{"n":"GPT-5.4 系列今日退出 Codex","r":"Assess","q":2,"d":"8-31 生效，须迁移至 Sol/Terra/Luna。","u":"https://blog.csdn.net/weixin_59586819/article/details/164027828"},
+{"n":"GitHub Copilot Slack/Teams 智能体协作预览","r":"Assess","q":2,"d":"Copilot 进入 Slack/Teams 公开预览；旧模型 9-1 停用。","u":"https://developer.microsoft.com/zh-tw/changelog"},
+{"n":"OpenAI–HF 安全复盘报告沉淀","r":"Assess","q":3,"d":"1200 个 Agent 沙箱逃逸事件复盘持续沉淀。","u":"https://baijiahao.baidu.com/s?id=1874671987620532281"},
+{"n":"DietrichGebert/ponytail","r":"Watch","q":3,"d":"⬇️ Assess→Watch，⭐117,158，push 停滞 3 周+，热度趋冷。","u":"https://github.com/DietrichGebert/ponytail"},
+{"n":"OpenAI Codex Harness 开源传闻（证伪倾向）","r":"Watch","q":1,"d":"API 核验 openai org 下 0 结果，传闻疑似低质内容。","u":"https://github.com/openai/codex"},
+{"n":"fuxicodex/Fuxi","r":"Watch","q":2,"d":"⭐3,034 快速自包含终端编码 Agent，topic:llm 8 月新项目第一。","u":"https://github.com/fuxicodex/Fuxi"},
+{"n":"XiaoDuoYa/codex-with-chatgpt","r":"Watch","q":2,"d":"⭐1,369（2 天），ChatGPT 规划 + Codex 执行分工。","u":"https://github.com/XiaoDuoYa/codex-with-chatgpt"},
+{"n":"No AI Fridays（每周五不用 AI 运动）","r":"Watch","q":3,"d":"HN 261 分 182 评论，开发者社区对 AI 依赖的反弹情绪。","u":"https://noaifridays.com/"},
+{"n":"腾讯混元 770B 压轴开源","r":"Watch","q":0,"d":"8 月最后一天 770B 参数模型开源（单源待核实）。","u":"https://mp.weixin.qq.com/s?__biz=Mzg3MzU4NjUzMg==&mid=2247531113&idx=1&sn=e9227f6829819cf5ecdc501adfbb61fc&scene=27"},
+{"n":"小红书 FireRedTTS3 开源","r":"Watch","q":0,"d":"24 语言零样本音色克隆，统一框架。","u":"https://modelscope.csdn.net/6a8cf6d310ee7a33f29e6d42.html"},
+{"n":"SA-Bench 语义漂移基准","r":"Watch","q":0,"d":"Agent 复现论文能跑通但方法走样的语义漂移问题。","u":"https://arxiv.org/abs/2608.24269"},
+{"n":"LangChain deepagents-code 终端编码 Agent","r":"Watch","q":1,"d":"8/24 PyPI 发布，langgraph-api 等 8/20-22 连发。","u":"https://pypi.org/user/langchain/"},
+{"n":"ROLL x 昇腾 RL 后训练体系","r":"Watch","q":1,"d":"国产算力 RL 训练适配官方技术文章。","u":"https://modelscope.csdn.net/6a9124ea2b83d06f0ec63f61.html"},
+{"n":"AGIC 2026 深圳大会举办","r":"Watch","q":3,"d":"8.1 万㎡、1012 家企业、48 场论坛。","u":"https://www.sznews.com/news/content/mb/2026-08/27/content_32157245.htm"},
+{"n":"Sam Altman 深度访谈（AI 缺 iPhone 时刻）","r":"Watch","q":3,"d":"瓶颈从模型能力转向组织流程、交互范式与算力资本治理。","u":"https://finance.sina.com.cn/wm/2026-08-26/doc-inipsezp9182222.shtml"},
+{"n":"bilawalsidhu/gods-eye-view","r":"Watch","q":2,"d":"⭐13,797（+1,186）浏览器卫星情报 3D 模拟器。","u":"https://github.com/bilawalsidhu/gods-eye-view"},
+{"n":"DiffSynth-WebUI 开源","r":"Watch","q":2,"d":"24GB 显存 4-bit 训 10B+ 模型，支持 20 个模型系列。","u":"https://modelscope.csdn.net/6a8fd0b0662f9a54cba0ec6d.html"},
+{"n":"deeplethe/utopia","r":"Watch","q":0,"d":"⭐723 自称世界首个开源企业世界模型。","u":"https://github.com/deeplethe/utopia"}
+];
+const radar=document.getElementById('radar'),items=document.getElementById('items'),tip=document.getElementById('tip');
+const ranges={Trial:[18,38],Assess:[40,66],Watch:[68,91]};
+const start=[-40,140,220,40],span=[72,72,72,72];
+signals.forEach((s,i)=>{const a=(start[s.q]+((i*29)%span[s.q]))*Math.PI/180;const [min,max]=ranges[s.r];const rad=min+((i*13)%(max-min));const x=50+Math.cos(a)*rad/2,y=50+Math.sin(a)*rad/2;const dot=document.createElement('button');dot.className='dot '+s.r.toLowerCase();dot.style.left=x+'%';dot.style.top=y+'%';dot.setAttribute('aria-label',s.n);dot.addEventListener('mouseenter',e=>{tip.innerHTML='<b>'+s.n+'</b><span>'+s.d+'</span>';tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});dot.addEventListener('mousemove',e=>{tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});dot.addEventListener('mouseleave',()=>tip.style.display='none');dot.addEventListener('click',()=>window.open(s.u,'_blank','noopener'));radar.appendChild(dot);const el=document.createElement('div');el.className='item '+s.r.toLowerCase();el.innerHTML='<a href="'+s.u+'" target="_blank" rel="noopener">'+s.n+'</a><span class="pill">'+s.r+'</span><p>'+s.d+'</p>';items.appendChild(el)});
+</script></body></html>
